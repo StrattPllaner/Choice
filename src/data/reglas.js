@@ -10,6 +10,7 @@ export const CAMPOS_DUROS = [
   'laboral.saturacion',
   'costos.publicaMxn',
   'costos.privadaMxn',
+  'dondeEstudiar',
 ];
 
 export const MAX_PALABRAS_MARTES = 120;

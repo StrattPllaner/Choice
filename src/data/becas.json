@@ -7,7 +7,11 @@
       "nombre": "Beca Jóvenes Escribiendo el Futuro",
       "institucion": "Coordinación Nacional de Becas para el Bienestar Benito Juárez",
       "montoMxn": {
-        "valor": { "min": 5800, "max": 5800, "periodicidad": "semestral" },
+        "valor": {
+          "min": 5800,
+          "max": 5800,
+          "periodicidad": "bimestral"
+        },
         "fuentes": [
           {
             "nombre": "gob.mx · Conoce todo sobre la Beca Jóvenes Escribiendo el Futuro",
@@ -18,7 +22,11 @@
           }
         ]
       },
-      "aplicaNiveles": ["licenciatura", "ingenieria", "tsu"],
+      "aplicaNiveles": [
+        "licenciatura",
+        "ingenieria",
+        "tsu"
+      ],
       "soloPublicas": true,
       "requisitosResumen": "Para estudiantes de licenciatura, TSU o equivalente que vienen de primaria o secundaria prioritaria y están inscritos en las instituciones que marca el programa (Universidades Interculturales, Escuelas Normales Indígenas, Universidades para el Bienestar Benito Juárez García, entre otras). Hay que solicitarla en cada convocatoria y cumplir las Reglas de Operación vigentes.",
       "url": "https://www.gob.mx/becasbenitojuarez/articulos/conoce-todo-sobre-la-beca-jovenes-escribiendo-el-futuro",

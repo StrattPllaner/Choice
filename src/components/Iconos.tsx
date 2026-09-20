@@ -28,11 +28,10 @@ export const IconoExplorar = ({ className }: Props) => (
   </svg>
 );
 
-export const IconoTest = ({ className }: Props) => (
+export const IconoMapa = ({ className }: Props) => (
   <svg {...comunes} className={className}>
-    <path d="M9 3h6v3H9z" />
-    <path d="M7 6h10v15H7z" />
-    <path d="M10 11h4M10 15h4" />
+    <path d="m9 4 6 2 5-2v14l-5 2-6-2-5 2V6z" />
+    <path d="M9 4v14M15 6v14" />
   </svg>
 );
 

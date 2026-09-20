@@ -16,14 +16,14 @@ export default function Inicio() {
           ¿Qué vas a estudiar cuando salgas de la prepa?
         </h1>
         <p className="text-texto-suave">
-          Aquí puedes ver a qué se dedica cada carrera, cuánto se gana al empezar y dónde se estudia. Sin
-          palabras raras y sin necesitar internet.
+          Aquí puedes ver a qué se dedica cada carrera, qué se estudia y qué dicen los datos. Sin palabras
+          raras y sin necesitar internet.
         </p>
       </section>
 
       <div className="space-y-3">
-        <BotonEnlace a="/test" anchoCompleto>
-          Empezar el test
+        <BotonEnlace a="/mapa" anchoCompleto>
+          Armar mi mapa
         </BotonEnlace>
         <BotonEnlace a="/explorar" variante="secundario" anchoCompleto>
           Ver carreras

@@ -96,11 +96,40 @@ function dibujar(size, { maskable }) {
   return png(size, size, rgba);
 }
 
+/** Portada 1200×630 para la tarjeta de vista previa de WhatsApp y redes. */
+function portada(ancho, alto) {
+  const rgba = Buffer.alloc(ancho * alto * 4);
+  const grosor = 0.09;
+  for (let y = 0; y < alto; y++) {
+    for (let x = 0; x < ancho; x++) {
+      const i = (y * ancho + x) * 4;
+      rgba[i] = MARCA[0];
+      rgba[i + 1] = MARCA[1];
+      rgba[i + 2] = MARCA[2];
+      rgba[i + 3] = 255;
+      // flecha centrada, en proporción al alto
+      const u = (x - (ancho - alto) / 2) / alto;
+      const v = y / alto;
+      const enFlecha =
+        distanciaASegmento(u, v, 0.5, 0.3, 0.28, 0.56) < grosor / 2 ||
+        distanciaASegmento(u, v, 0.5, 0.3, 0.72, 0.56) < grosor / 2 ||
+        distanciaASegmento(u, v, 0.5, 0.32, 0.5, 0.74) < grosor / 2;
+      if (enFlecha) {
+        rgba[i] = BLANCO[0];
+        rgba[i + 1] = BLANCO[1];
+        rgba[i + 2] = BLANCO[2];
+      }
+    }
+  }
+  return png(ancho, alto, rgba);
+}
+
 mkdirSync(SALIDA, { recursive: true });
 const archivos = [
   ['icono-192.png', dibujar(192, { maskable: false })],
   ['icono-512.png', dibujar(512, { maskable: false })],
   ['icono-maskable-512.png', dibujar(512, { maskable: true })],
+  ['portada-1200x630.png', portada(1200, 630)],
 ];
 for (const [nombre, datos] of archivos) {
   writeFileSync(resolve(SALIDA, nombre), datos);

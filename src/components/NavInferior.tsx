@@ -1,10 +1,10 @@
 import { NavLink } from 'react-router-dom';
-import { IconoExplorar, IconoInicio, IconoPerfil, IconoTest } from './Iconos';
+import { IconoExplorar, IconoInicio, IconoMapa, IconoPerfil } from './Iconos';
 
 const enlaces = [
   { a: '/', etiqueta: 'Inicio', Icono: IconoInicio },
   { a: '/explorar', etiqueta: 'Explorar', Icono: IconoExplorar },
-  { a: '/test', etiqueta: 'Test', Icono: IconoTest },
+  { a: '/mapa', etiqueta: 'Mi mapa', Icono: IconoMapa },
   { a: '/perfil', etiqueta: 'Mi perfil', Icono: IconoPerfil },
 ];
 

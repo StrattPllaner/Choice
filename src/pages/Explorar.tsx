@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import { Cargando, Esqueleto } from '@/components/Cargando';
 import {
   cargarCarreras,
@@ -7,14 +7,16 @@ import {
   ordenarCarreras,
   type FiltrosCarrera,
 } from '@/lib/carreras';
-import { ETIQUETA_NIVEL, type Carrera, type Nivel } from '@/data/tipos';
+import { ETIQUETA_NIVEL, type Carrera, type IdArea, type Nivel } from '@/data/tipos';
 
 const NIVELES: Nivel[] = ['licenciatura', 'ingenieria', 'tsu', 'tecnica', 'certificacion'];
 
 export default function Explorar() {
   const [carreras, setCarreras] = useState<Carrera[] | null>(null);
   const [error, setError] = useState(false);
-  const [filtros, setFiltros] = useState<FiltrosCarrera>({});
+  const [parametros] = useSearchParams();
+  const areaInicial = parametros.get('area') as IdArea | null;
+  const [filtros, setFiltros] = useState<FiltrosCarrera>(areaInicial ? { areas: [areaInicial] } : {});
 
   useEffect(() => {
     let vigente = true;
@@ -64,6 +66,19 @@ export default function Explorar() {
           className="toque mt-1 w-full rounded-xl2 border border-borde bg-superficie-2 px-4 py-3 text-base"
         />
       </div>
+
+      {filtros.areas?.length ? (
+        <p className="flex items-center gap-2 text-sm">
+          <span className="rounded-full bg-marca-suave px-3 py-1 text-marca">Filtrando por área</span>
+          <button
+            type="button"
+            onClick={() => setFiltros((p) => ({ ...p, areas: [] }))}
+            className="underline text-texto-suave"
+          >
+            Quitar filtro
+          </button>
+        </p>
+      ) : null}
 
       <fieldset>
         <legend className="text-sm font-semibold">Tipo de carrera</legend>

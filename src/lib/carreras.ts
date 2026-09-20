@@ -211,14 +211,13 @@ export function textoDeDato<T>(dato: Dato<T>, formatear: (valor: T) => string): 
 const pesos = new Intl.NumberFormat('es-MX', { style: 'currency', currency: 'MXN', maximumFractionDigits: 0 });
 
 export const formatearRango = (rango: RangoMxn): string => {
-  const periodo =
-    rango.periodicidad === 'mensual'
-      ? 'al mes'
-      : rango.periodicidad === 'semestral'
-        ? 'por semestre'
-        : rango.periodicidad === 'anual'
-          ? 'al año'
-          : 'en toda la carrera';
+  const periodo = {
+    mensual: 'al mes',
+    bimestral: 'cada dos meses',
+    semestral: 'por semestre',
+    anual: 'al año',
+    total_carrera: 'en toda la carrera',
+  }[rango.periodicidad];
   return rango.min === rango.max
     ? `${pesos.format(rango.min)} ${periodo}`
     : `${pesos.format(rango.min)} a ${pesos.format(rango.max)} ${periodo}`;

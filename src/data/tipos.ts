@@ -89,7 +89,7 @@ export const ETIQUETA_SATURACION: Record<NivelSaturacion, string> = {
 
 /* ── Piezas de la ficha ──────────────────────────────────────────────── */
 
-export type Periodicidad = 'mensual' | 'semestral' | 'anual' | 'total_carrera';
+export type Periodicidad = 'mensual' | 'bimestral' | 'semestral' | 'anual' | 'total_carrera';
 
 export interface RangoMxn {
   min: number;
@@ -146,6 +146,15 @@ export interface DatosLaborales {
   saturacion: Dato<NivelSaturacion>;
 }
 
+export interface Institucion {
+  nombre: string;
+  tipo: 'publica' | 'privada';
+  /** Entidad federativa, para el "dónde se estudia cerca de ti". */
+  estado: string;
+  ciudad?: string;
+  url?: string;
+}
+
 export interface Costos {
   /** Costo total de estudiarla en institución pública (inscripciones, materiales, transporte). */
   publicaMxn: Dato<RangoMxn>;
@@ -180,6 +189,8 @@ export interface Carrera {
   quienBatalla: PerfilBatalla;
   laboral: DatosLaborales;
   costos: Costos;
+  /** Dónde se imparte. Dato duro: sin fuente va en null. */
+  dondeEstudiar: Dato<Institucion[]>;
   /** ids del catálogo de becas. */
   becas: string[];
   /** true solo si TODOS los datos duros tienen fuente. Lo recalcula el validador del build. */

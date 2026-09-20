@@ -5,7 +5,7 @@
    - /datos/*    → caché primero con revalidación (lectura completa offline)
    - lo demás    → red con respaldo de caché                                        */
 
-const VERSION = 'v2';
+const VERSION = 'v3';
 const CACHE_SHELL = `nombreapp-shell-${VERSION}`;
 const CACHE_DATOS = `nombreapp-datos-${VERSION}`;
 const CACHES_VIGENTES = [CACHE_SHELL, CACHE_DATOS];
@@ -60,6 +60,12 @@ self.addEventListener('fetch', (evento) => {
   if (url.origin !== self.location.origin) return; // no tocamos terceros
 
   if (peticion.mode === 'navigate') {
+    // las páginas para compartir (/c/<id>.html) son documentos propios con sus etiquetas
+    // Open Graph: si les servimos el shell de la SPA, el enlace compartido se rompe
+    if (url.pathname.startsWith(ruta('c/'))) {
+      evento.respondWith(redConRespaldo(peticion, CACHE_SHELL));
+      return;
+    }
     evento.respondWith(responderNavegacion(peticion));
     return;
   }

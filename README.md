@@ -71,6 +71,26 @@ Estado de la semilla: 30 carreras (14 licenciaturas, 6 ingenierías, 3 TSU, 4 t�
 certificaciones). Los campos descriptivos están llenos; los 7 datos duros por carrera están en `null`
 a la espera de ser procesados desde ENOE/ANUIES.
 
+## Perfil de exploración (no es un test)
+
+22 reactivos en cuatro bloques (intereses 40%, materias 25%, forma de trabajo 15%, valores 20%),
+menos de 7 minutos, se pausa y se retoma solo. El resultado es un **mapa de áreas, mínimo tres**,
+nunca "tu carrera es X". Se presenta siempre con el aviso de que es una guía, no un diagnóstico.
+
+- Lógica de puntuación: `src/features/perfil/puntuacion.ts`, explicada en
+  [`docs/puntuacion-perfil.md`](docs/puntuacion-perfil.md) para que sea auditable.
+- Pesos de los reactivos: `src/features/perfil/reactivos.ts` (una sola tabla, a la vista).
+- Pruebas: `npm run probar-puntuacion` (corre en el build).
+- Historial versionado en `src/lib/perfil.ts`: cada intento se guarda como versión nueva con
+  fecha, grado y versión del algoritmo, para comparar primero contra tercero de prepa.
+
+## Compartir por WhatsApp
+
+`npm run tarjetas` genera `dist/c/<id>.html`: una página estática por carrera, solo con etiquetas
+Open Graph, que redirige a la ficha en la app. WhatsApp no ejecuta JavaScript, así que sin estas
+páginas un enlace a una SPA con hash nunca tendría vista previa. El service worker las excluye del
+fallback del shell para no romperlas.
+
 ## Reglas del proyecto
 
 - Ningún componente toca `localStorage`: todo pasa por `src/lib/storage.ts` (API asíncrona,

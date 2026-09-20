@@ -10,6 +10,8 @@ export interface SesionAlumno {
   nombre: string | null;
   grado: 1 | 2 | 3 | null;
   escuela: string | null;
+  /** Entidad federativa, para "dónde se estudia cerca de ti". */
+  estado: string | null;
   licencia: Licencia;
   favoritas: string[];
   /** id de carrera → visto en (ISO) */
@@ -33,6 +35,7 @@ export function sesionNueva(): SesionAlumno {
     nombre: null,
     grado: null,
     escuela: null,
+    estado: null,
     licencia: 'gratis',
     favoritas: [],
     vistas: {},
