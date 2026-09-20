@@ -18,7 +18,7 @@
     { "src": "./iconos/icono-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
   ],
   "shortcuts": [
-    { "name": "Explorar carreras", "url": "./explorar" },
-    { "name": "Mi perfil", "url": "./perfil" }
+    { "name": "Explorar carreras", "url": "./#/explorar" },
+    { "name": "Mi perfil", "url": "./#/perfil" }
   ]
 }

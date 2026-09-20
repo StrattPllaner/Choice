@@ -12,7 +12,22 @@ npm run build      # iconos + tsc + vite build + presupuesto de peso
 npm run preview    # sirve dist/ (aquí SÍ se registra el service worker)
 ```
 
-Para GitHub Pages u otro subdirectorio: `VITE_BASE=/nombreapp/ npm run build`.
+En línea: **https://strattpllaner.github.io/Choice/**
+
+> `dist/index.html` NO se puede abrir con doble clic (`file://`): Chrome bloquea los módulos ES
+> por CORS y la pantalla sale en blanco. Siempre por servidor (`npm run preview`) o por la URL.
+
+### Publicar en GitHub Pages
+
+```bash
+npm run build
+cd dist && touch .nojekyll && git init -q -b gh-pages && git add -A \
+  && git commit -qm "Publicar build" \
+  && git push -qf https://github.com/StrattPllaner/Choice.git gh-pages:gh-pages && rm -rf .git
+```
+
+El build usa `base: './'`, así que el mismo `dist/` sirve en cualquier subcarpeta. El ruteo es
+por hash (`/#/explorar`) porque Pages no reescribe rutas.
 
 ## Estructura
 

@@ -2,9 +2,10 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { fileURLToPath, URL } from 'node:url'
 
-// base configurable: '/' en hosting propio, '/nombreapp/' en GitHub Pages
+// base relativa: el mismo build sirve en dominio propio y en cualquier subcarpeta
+// (GitHub Pages) sin recompilar
 export default defineConfig({
-  base: process.env.VITE_BASE ?? '/',
+  base: './',
   plugins: [react()],
   resolve: {
     alias: { '@': fileURLToPath(new URL('./src', import.meta.url)) },
