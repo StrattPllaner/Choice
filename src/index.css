@@ -1,0 +1,129 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Tokens de color (claro) ─────────────────────────────────────────── */
+:root {
+  --c-fondo: 255 255 255;
+  --c-superficie: 255 255 255;
+  --c-superficie-2: 244 246 251;
+  --c-borde: 209 216 228;
+  --c-texto: 17 24 39;          /* 16.1:1 sobre fondo  */
+  --c-texto-suave: 75 85 99;    /*  7.6:1 sobre fondo  */
+  --c-marca: 29 78 216;         /*  6.3:1 con blanco   */
+  --c-marca-fuerte: 23 61 173;
+  --c-marca-suave: 235 242 255;
+  --c-sobre-marca: 255 255 255;
+  --c-exito: 21 128 61;
+  --c-aviso: 180 83 9;
+  --c-error: 185 28 28;
+  --c-foco: 29 78 216;
+
+  --sombra-1: 0 1px 2px rgb(17 24 39 / 0.06), 0 1px 3px rgb(17 24 39 / 0.08);
+  color-scheme: light;
+}
+
+/* ── Tokens de color (oscuro) ────────────────────────────────────────── */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-tema='claro']) {
+    --c-fondo: 11 18 32;
+    --c-superficie: 19 28 46;
+    --c-superficie-2: 27 38 59;
+    --c-borde: 51 65 92;
+    --c-texto: 240 244 252;
+    --c-texto-suave: 174 187 208;
+    --c-marca: 125 176 255;
+    --c-marca-fuerte: 158 197 255;
+    --c-marca-suave: 25 40 70;
+    --c-sobre-marca: 8 14 26;
+    --c-exito: 74 222 128;
+    --c-aviso: 251 191 36;
+    --c-error: 248 113 113;
+    --c-foco: 147 197 253;
+    --sombra-1: 0 1px 2px rgb(0 0 0 / 0.5);
+    color-scheme: dark;
+  }
+}
+
+:root[data-tema='oscuro'] {
+  --c-fondo: 11 18 32;
+  --c-superficie: 19 28 46;
+  --c-superficie-2: 27 38 59;
+  --c-borde: 51 65 92;
+  --c-texto: 240 244 252;
+  --c-texto-suave: 174 187 208;
+  --c-marca: 125 176 255;
+  --c-marca-fuerte: 158 197 255;
+  --c-marca-suave: 25 40 70;
+  --c-sobre-marca: 8 14 26;
+  --c-exito: 74 222 128;
+  --c-aviso: 251 191 36;
+  --c-error: 248 113 113;
+  --c-foco: 147 197 253;
+  --sombra-1: 0 1px 2px rgb(0 0 0 / 0.5);
+  color-scheme: dark;
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-fondo text-texto font-sans antialiased;
+    font-size: 1rem;      /* nunca menos de 16px en móvil */
+    line-height: 1.6;
+    min-height: 100dvh;
+    text-wrap: pretty;
+  }
+
+  h1, h2, h3 {
+    @apply font-semibold text-texto;
+    line-height: 1.25;
+    text-wrap: balance;
+  }
+
+  /* foco visible siempre, también en gama baja sin hover */
+  :focus-visible {
+    outline: 3px solid rgb(var(--c-foco));
+    outline-offset: 2px;
+    border-radius: 0.375rem;
+  }
+
+  ::selection {
+    background: rgb(var(--c-marca) / 0.25);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  /* área de toque mínima 44x44 (WCAG 2.5.8 / guía de Android) */
+  .toque {
+    @apply min-h-toque min-w-toque inline-flex items-center justify-center;
+  }
+
+  .tarjeta {
+    @apply bg-superficie border border-borde rounded-xl2 p-4;
+    box-shadow: var(--sombra-1);
+  }
+
+  .contenedor-app {
+    @apply mx-auto w-full max-w-contenido px-4;
+  }
+
+  /* solo visible al navegar con teclado */
+  .salta-al-contenido {
+    @apply sr-only;
+  }
+  .salta-al-contenido:focus {
+    @apply not-sr-only fixed left-4 top-4 z-50 rounded-lg bg-marca px-4 py-3 text-sobre-marca;
+  }
+}
