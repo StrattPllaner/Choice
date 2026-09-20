@@ -1,0 +1,5812 @@
+{
+  "version": 2,
+  "actualizado": "2026-09-20",
+  "politicaDeDatos": "Ningún dato duro (salarios, desempleo, informalidad, saturación, costos) se publica sin fuente citada. Si no hay fuente, el campo va en null y la app muestra 'dato no disponible'. Nunca se estima ni se inventa. Los mapas de materias marcados como 'plantilla' son materias típicas de la carrera en México, no el plan de estudios de una universidad en particular; para marcarlos 'verificado' hay que citar el plan publicado.",
+  "fuentesRecomendadas": [
+    {
+      "nombre": "INEGI · Encuesta Nacional de Ocupación y Empleo (ENOE), población de 15 años y más",
+      "url": "https://www.inegi.org.mx/programas/enoe/15ymas/",
+      "anio": 2026,
+      "tipo": "inegi_enoe",
+      "nota": "Microdatos públicos: de aquí salen ingreso, desocupación e informalidad por carrera. Requiere procesar los microdatos trimestrales."
+    },
+    {
+      "nombre": "ANUIES · Anuario Estadístico de Educación Superior",
+      "url": "http://www.anuies.mx/informacion-y-servicios/informacion-estadistica-de-educacion-superior/anuario-estadistico-de-educacion-superior",
+      "anio": 2026,
+      "tipo": "anuies",
+      "nota": "Matrícula y egresados por programa: base para estimar saturación con fuente."
+    },
+    {
+      "nombre": "SEP · Principales Cifras del Sistema Educativo Nacional",
+      "url": "https://www.planeacion.sep.gob.mx/principalescifras/",
+      "anio": 2026,
+      "tipo": "sep",
+      "nota": "Matrícula, escuelas y docentes por nivel y entidad."
+    },
+    {
+      "nombre": "IMCO · Compara Carreras",
+      "url": "https://comparacarreras.imco.org.mx/",
+      "anio": 2026,
+      "tipo": "referencia",
+      "nota": "SOLO referencia: se enlaza y se cita. Prohibido copiar o raspar su base de datos."
+    }
+  ],
+  "carreras": [
+    {
+      "id": "medicina",
+      "nombre": "Médico Cirujano",
+      "nombresAlternativos": [
+        "Medicina",
+        "Doctor",
+        "Médico General",
+        "Médico Cirujano y Partero"
+      ],
+      "area": "salud",
+      "nivel": "licenciatura",
+      "duracionAnios": 7,
+      "modalidades": [
+        "escolarizada"
+      ],
+      "martesTipico": "Llegas al hospital antes de las siete y pasas visita con tu equipo: revisas a cada paciente, checas sus estudios y anotas cómo van. A media mañana atiendes consulta, uno tras otro, y explicas lo mismo con palabras distintas hasta que la familia entiende. Comes rápido, si comes. En la tarde te toca guardia: suturas, canalizas, calmas a un señor asustado y llenas expedientes. Buena parte del día es escribir y hablar con gente preocupada, no solo curar.",
+      "mapaMaterias": {
+        "tipoPeriodo": "semestre",
+        "estado": "plantilla",
+        "fuentePlan": null,
+        "periodos": [
+          {
+            "numero": 1,
+            "materias": [
+              {
+                "nombre": "Anatomía humana",
+                "riesgo": "alta_reprobacion"
+              },
+              {
+                "nombre": "Biología celular"
+              },
+              {
+                "nombre": "Bioquímica",
+                "riesgo": "alta_reprobacion"
+              },
+              {
+                "nombre": "Introducción a la clínica"
+              },
+              {
+                "nombre": "Salud pública"
+              }
+            ]
+          },
+          {
+            "numero": 2,
+            "materias": [
+              {
+                "nombre": "Histología"
+              },
+              {
+                "nombre": "Embriología"
+              },
+              {
+                "nombre": "Fisiología",
+                "riesgo": "alta_reprobacion"
+              },
+              {
+                "nombre": "Bioquímica médica",
+                "riesgo": "alta_reprobacion"
+              },
+              {
+                "nombre": "Psicología médica"
+              }
+            ]
+          },
+          {
+            "numero": 3,
+            "materias": [
+              {
+                "nombre": "Fisiología II",
+                "riesgo": "alta_reprobacion"
+              },
+              {
+                "nombre": "Farmacología",
+                "riesgo": "alta_reprobacion"
+              },
+              {
+                "nombre": "Microbiología"
+              },
+              {
+                "nombre": "Inmunología"
+              },
+              {
+                "nombre": "Metodología de la investigación"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "materias": [
+              {
+                "nombre": "Patología",
+                "riesgo": "alta_reprobacion"
+              },
+              {
+                "nombre": "Farmacología clínica"
+              },
+              {
+                "nombre": "Parasitología"
+              },
+              {
+                "nombre": "Imagenología"
+              },
+              {
+                "nombre": "Bioética"
+              }
+            ]
+          },
+          {
+            "numero": 5,
+            "materias": [
+              {
+                "nombre": "Propedéutica clínica",
+                "riesgo": "filtro"
+              },
+              {
+                "nombre": "Medicina interna"
+              },
+              {
+                "nombre": "Cirugía I"
+              },
+              {
+                "nombre": "Epidemiología"
+              },
+              {
+                "nombre": "Genética"
+              }
+            ]
+          },
+          {
+            "numero": 6,
+            "materias": [
+              {
+                "nombre": "Medicina interna II",
+                "riesgo": "alta_reprobacion"
+              },
+              {
+                "nombre": "Cirugía II"
+              },
+              {
+                "nombre": "Pediatría"
+              },
+              {
+                "nombre": "Ginecología y obstetricia"
+              },
+              {
+                "nombre": "Urgencias"
+              }
+            ]
+          },
+          {
+            "numero": 7,
+            "materias": [
+              {
+                "nombre": "Traumatología"
+              },
+              {
+                "nombre": "Neurología"
+              },
+              {
+                "nombre": "Psiquiatría"
+              },
+              {
+                "nombre": "Oftalmología y ORL"
+              },
+              {
+                "nombre": "Medicina familiar"
+              }
+            ]
+          },
+          {
+            "numero": 8,
+            "materias": [
+              {
+                "nombre": "Oncología"
+              },
+              {
+                "nombre": "Geriatría"
+              },
+              {
+                "nombre": "Dermatología"
+              },
+              {
+                "nombre": "Medicina legal"
+              },
+              {
+                "nombre": "Administración en salud"
+              }
+            ]
+          },
+          {
+            "numero": 9,
+            "materias": [
+              {
+                "nombre": "Internado rotatorio de pregrado",
+                "riesgo": "alta_desercion"
+              }
+            ]
+          },
+          {
+            "numero": 10,
+            "materias": [
+              {
+                "nombre": "Servicio social",
+                "riesgo": "alta_desercion"
+              }
+            ]
+          }
+        ]
+      },
+      "quienBatalla": {
+        "resumen": "Batalla quien entró por la idea de la bata y no por el gusto de estudiar todos los días. Son siete años más internado y servicio social: memorizas muchísimo, duermes poco en guardias y ves gente morir. El filtro no es la inteligencia, es el aguante y tener con qué sostenerse mientras no ganas.",
+        "senales": [
+          "Te cuesta sostener un hábito de estudio diario",
+          "Te afecta mucho ver sangre, dolor o familias llorando",
+          "Dependes de trabajar desde ahorita para tus gastos",
+          "Buscas ganar bien pronto"
+        ],
+        "queAyuda": [
+          "Ir a un hospital a ver un turno real antes de decidir",
+          "Armar grupo de estudio desde primer semestre",
+          "Tener resuelto hospedaje y comida cerca de la escuela",
+          "Hablar con un interno o residente, no solo con médicos ya establecidos"
+        ]
+      },
+      "laboral": {
+        "salarioEntradaMxn": null,
+        "salarioCincoAniosMxn": null,
+        "tasaDesempleo": null,
+        "tasaInformalidad": null,
+        "saturacion": null
+      },
+      "costos": {
+        "publicaMxn": null,
+        "privadaMxn": null
+      },
+      "becas": [
+        "jovenes-escribiendo-el-futuro"
+      ],
+      "verificado": false,
+      "pendientes": [
+        "laboral.salarioEntradaMxn",
+        "laboral.salarioCincoAniosMxn",
+        "laboral.tasaDesempleo",
+        "laboral.tasaInformalidad",
+        "laboral.saturacion",
+        "costos.publicaMxn",
+        "costos.privadaMxn"
+      ],
+      "fuentes": [],
+      "actualizado": "2026-09-20"
+    },
+    {
+      "id": "enfermeria-licenciatura",
+      "nombre": "Licenciatura en Enfermería",
+      "nombresAlternativos": [
+        "Enfermería",
+        "Enfermera",
+        "Enfermero",
+        "Licenciado en Enfermería y Obstetricia"
+      ],
+      "area": "salud",
+      "nivel": "licenciatura",
+      "duracionAnios": 4,
+      "modalidades": [
+        "escolarizada",
+        "mixta"
+      ],
+      "martesTipico": "Recibes el turno: te cuentan cómo pasó la noche cada paciente y firmas lo que recibes. Tomas signos, aplicas medicamentos a la hora exacta, curas heridas, canalizas y mueves pacientes que no se pueden mover solos. Entre eso, explicas a una señora cómo cuidar a su papá en casa y tranquilizas a un niño antes de un piquete. Registras todo, porque lo que no se anota no existe. Terminas el turno de pie, con la espalda cansada y varias personas que la pasaron mejor por ti.",
+      "mapaMaterias": {
+        "tipoPeriodo": "semestre",
+        "estado": "plantilla",
+        "fuentePlan": null,
+        "periodos": [
+          {
+            "numero": 1,
+            "materias": [
+              {
+                "nombre": "Anatomía y fisiología",
+                "riesgo": "alta_reprobacion"
+              },
+              {
+                "nombre": "Fundamentos de enfermería"
+              },
+              {
+                "nombre": "Bioquímica"
+              },
+              {
+                "nombre": "Comunicación en salud"
+              },
+              {
+                "nombre": "Salud pública"
+              }
+            ]
+          },
+          {
+            "numero": 2,
+            "materias": [
+              {
+                "nombre": "Farmacología",
+                "riesgo": "alta_reprobacion"
+              },
+              {
+                "nombre": "Microbiología"
+              },
+              {
+                "nombre": "Enfermería clínica I"
+              },
+              {
+                "nombre": "Nutrición"
+              },
+              {
+                "nombre": "Psicología del desarrollo"
+              }
+            ]
+          },
+          {
+            "numero": 3,
+            "materias": [
+              {
+                "nombre": "Enfermería médico-quirúrgica I",
+                "riesgo": "alta_reprobacion"
+              },
+              {
+                "nombre": "Cálculo de dosis",
+                "riesgo": "filtro"
+              },
+              {
+                "nombre": "Ética y legislación"
+              },
+              {
+                "nombre": "Educación para la salud"
+              },
+              {
+                "nombre": "Práctica clínica I"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "materias": [
+              {
+                "nombre": "Enfermería médico-quirúrgica II",
+                "riesgo": "alta_reprobacion"
+              },
+              {
+                "nombre": "Materno infantil"
+              },
+              {
+                "nombre": "Pediatría"
+              },
+              {
+                "nombre": "Investigación en enfermería"
+              },
+              {
+                "nombre": "Práctica clínica II"
+              }
+            ]
+          },
+          {
+            "numero": 5,
+            "materias": [
+              {
+                "nombre": "Salud mental"
+              },
+              {
+                "nombre": "Enfermería del adulto mayor"
+              },
+              {
+                "nombre": "Urgencias"
+              },
+              {
+                "nombre": "Cuidados intensivos",
+                "riesgo": "alta_reprobacion"
+              },
+              {
+                "nombre": "Práctica clínica III"
+              }
+            ]
+          },
+          {
+            "numero": 6,
+            "materias": [
+              {
+                "nombre": "Administración de servicios de enfermería"
+              },
+              {
+                "nombre": "Epidemiología"
+              },
+              {
+                "nombre": "Comunitaria"
+              },
+              {
+                "nombre": "Seminario de titulación"
+              },
+              {
+                "nombre": "Práctica clínica IV"
+              }
+            ]
+          },
+          {
+            "numero": 7,
+            "materias": [
+              {
+                "nombre": "Internado rotatorio",
+                "riesgo": "alta_desercion"
+              }
+            ]
+          },
+          {
+            "numero": 8,
+            "materias": [
+              {
+                "nombre": "Servicio social",
+                "riesgo": "alta_desercion"
+              }
+            ]
+          }
+        ]
+      },
+      "quienBatalla": {
+        "resumen": "Batalla quien cree que es la versión fácil de medicina. No lo es: hay cálculo de dosis, farmacología pesada y turnos donde te equivocas y alguien sale lastimado. También pega el trato: pacientes groseros, familiares desesperados y jefes exigentes. Aguanta quien tiene estómago, orden y no se toma personal el mal humor ajeno.",
+        "senales": [
+          "Se te complican las operaciones con decimales y reglas de tres",
+          "Te desespera repetir la misma explicación",
+          "Te cuesta trabajar de noche o rotando turnos",
+          "Te incomoda el contacto físico con desconocidos"
+        ],
+        "queAyuda": [
+          "Practicar cálculo de dosis hasta que salga sin pensarlo",
+          "Cuidar espalda y rodillas desde la escuela",
+          "Buscar un hospital con buen trato al practicante",
+          "Tener a alguien con quien desahogar los días pesados"
+        ]
+      },
+      "laboral": {
+        "salarioEntradaMxn": null,
+        "salarioCincoAniosMxn": null,
+        "tasaDesempleo": null,
+        "tasaInformalidad": null,
+        "saturacion": null
+      },
+      "costos": {
+        "publicaMxn": null,
+        "privadaMxn": null
+      },
+      "becas": [
+        "jovenes-escribiendo-el-futuro"
+      ],
+      "verificado": false,
+      "pendientes": [
+        "laboral.salarioEntradaMxn",
+        "laboral.salarioCincoAniosMxn",
+        "laboral.tasaDesempleo",
+        "laboral.tasaInformalidad",
+        "laboral.saturacion",
+        "costos.publicaMxn",
+        "costos.privadaMxn"
+      ],
+      "fuentes": [],
+      "actualizado": "2026-09-20"
+    },
+    {
+      "id": "nutricion",
+      "nombre": "Nutrición",
+      "nombresAlternativos": [
+        "Licenciatura en Nutrición",
+        "Nutriólogo",
+        "Nutrición y Dietética"
+      ],
+      "area": "salud",
+      "nivel": "licenciatura",
+      "duracionAnios": 4,
+      "modalidades": [
+        "escolarizada",
+        "mixta"
+      ],
+      "martesTipico": "Atiendes consultas de una hora: pesas, mides, preguntas qué come de verdad esa persona y no lo que cree que debería comer. Armas un plan con lo que sí hay en su despensa y a su precio. En la tarde das una plática en una escuela o revisas menús de un comedor. Buena parte del trabajo es convencer, no calcular: la gente sabe qué le hace daño, lo difícil es que cambie. Si trabajas en hospital, calculas dietas para pacientes que no pueden comer normal.",
+      "mapaMaterias": {
+        "tipoPeriodo": "semestre",
+        "estado": "plantilla",
+        "fuentePlan": null,
+        "periodos": [
+          {
+            "numero": 1,
+            "materias": [
+              {
+                "nombre": "Anatomía y fisiología",
+                "riesgo": "alta_reprobacion"
+              },
+              {
+                "nombre": "Bioquímica",
+                "riesgo": "alta_reprobacion"
+              },
+              {
+                "nombre": "Química de alimentos"
+              },
+              {
+                "nombre": "Introducción a la nutrición"
+              },
+              {
+                "nombre": "Estadística"
+              }
+            ]
+          },
+          {
+            "numero": 2,
+            "materias": [
+              {
+                "nombre": "Bioquímica de la nutrición",
+                "riesgo": "alta_reprobacion"
+              },
+              {
+                "nombre": "Fisiología digestiva"
+              },
+              {
+                "nombre": "Evaluación del estado nutricio"
+              },
+              {
+                "nombre": "Psicología de la alimentación"
+              },
+              {
+                "nombre": "Salud pública"
+              }
+            ]
+          },
+          {
+            "numero": 3,
+            "materias": [
+              {
+                "nombre": "Nutrición clínica I"
+              },
+              {
+                "nombre": "Dietoterapia",
+                "riesgo": "filtro"
+              },
+              {
+                "nombre": "Microbiología de alimentos"
+              },
+              {
+                "nombre": "Cálculo dietético",
+                "riesgo": "filtro"
+              },
+              {
+                "nombre": "Educación alimentaria"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "materias": [
+              {
+                "nombre": "Nutrición clínica II",
+                "riesgo": "alta_reprobacion"
+              },
+              {
+                "nombre": "Nutrición materno infantil"
+              },
+              {
+                "nombre": "Tecnología de alimentos"
+              },
+              {
+                "nombre": "Metodología de la investigación"
+              },
+              {
+                "nombre": "Prácticas clínicas"
+              }
+            ]
+          },
+          {
+            "numero": 5,
+            "materias": [
+              {
+                "nombre": "Nutrición deportiva"
+              },
+              {
+                "nombre": "Nutrición del adulto mayor"
+              },
+              {
+                "nombre": "Administración de servicios de alimentos"
+              },
+              {
+                "nombre": "Epidemiología nutricional"
+              },
+              {
+                "nombre": "Consultorio"
+              }
+            ]
+          },
+          {
+            "numero": 6,
+            "materias": [
+              {
+                "nombre": "Seminario de tesis"
+              },
+              {
+                "nombre": "Emprendimiento en salud"
+              },
+              {
+                "nombre": "Nutrición comunitaria"
+              },
+              {
+                "nombre": "Ética profesional"
+              },
+              {
+                "nombre": "Prácticas profesionales"
+              }
+            ]
+          },
+          {
+            "numero": 7,
+            "materias": [
+              {
+                "nombre": "Servicio social",
+                "riesgo": "alta_desercion"
+              }
+            ]
+          },
+          {
+            "numero": 8,
+            "materias": [
+              {
+                "nombre": "Titulación"
+              }
+            ]
+          }
+        ]
+      },
+      "quienBatalla": {
+        "resumen": "Batalla quien entró pensando en dietas y se topa con bioquímica y cálculo dietético. También pesa el mercado: mucha gente se recibe y termina cobrando barato la consulta o vendiendo suplementos. Le va bien a quien sabe vender su servicio y aguanta que los pacientes no siempre hacen caso.",
+        "senales": [
+          "Te cuesta la química",
+          "Esperas resultados rápidos de tus pacientes",
+          "No te late vender ni conseguir clientes",
+          "Tienes una relación complicada con tu propia comida"
+        ],
+        "queAyuda": [
+          "Reforzar química desde prepa",
+          "Empezar a hacer contenido o consulta desde los últimos semestres",
+          "Especializarte en algo concreto (deportiva, clínica, infantil)",
+          "Terapia si el tema comida te pega personal"
+        ]
+      },
+      "laboral": {
+        "salarioEntradaMxn": null,
+        "salarioCincoAniosMxn": null,
+        "tasaDesempleo": null,
+        "tasaInformalidad": null,
+        "saturacion": null
+      },
+      "costos": {
+        "publicaMxn": null,
+        "privadaMxn": null
+      },
+      "becas": [
+        "jovenes-escribiendo-el-futuro"
+      ],
+      "verificado": false,
+      "pendientes": [
+        "laboral.salarioEntradaMxn",
+        "laboral.salarioCincoAniosMxn",
+        "laboral.tasaDesempleo",
+        "laboral.tasaInformalidad",
+        "laboral.saturacion",
+        "costos.publicaMxn",
+        "costos.privadaMxn"
+      ],
+      "fuentes": [],
+      "actualizado": "2026-09-20"
+    },
+    {
+      "id": "fisioterapia",
+      "nombre": "Fisioterapia",
+      "nombresAlternativos": [
+        "Terapia Física",
+        "Licenciatura en Fisioterapia",
+        "Rehabilitación"
+      ],
+      "area": "salud",
+      "nivel": "licenciatura",
+      "duracionAnios": 4,
+      "modalidades": [
+        "escolarizada"
+      ],
+      "martesTipico": "Tu día son personas en camilla: un albañil con la espalda tronada, una señora operada de rodilla, un niño con parálisis cerebral. A cada uno le haces evaluación, le mueves las articulaciones, le pones ejercicios y lo animas cuando duele y no quiere. Usas tus manos casi todo el turno, así que terminas con los brazos cansados. Llevas registro del avance de cada quien y ajustas el plan. Mucho del trabajo es paciencia: los avances tardan semanas y el paciente quiere estar bien mañana.",
+      "mapaMaterias": {
+        "tipoPeriodo": "semestre",
+        "estado": "plantilla",
+        "fuentePlan": null,
+        "periodos": [
+          {
+            "numero": 1,
+            "materias": [
+              {
+                "nombre": "Anatomía humana",
+                "riesgo": "alta_reprobacion"
+              },
+              {
+                "nombre": "Fisiología"
+              },
+              {
+                "nombre": "Biomecánica",
+                "riesgo": "alta_reprobacion"
+              },
+              {
+                "nombre": "Introducción a la fisioterapia"
+              },
+              {
+                "nombre": "Primeros auxilios"
+              }
+            ]
+          },
+          {
+            "numero": 2,
+            "materias": [
+              {
+                "nombre": "Anatomía musculoesquelética",
+                "riesgo": "alta_reprobacion"
+              },
+              {
+                "nombre": "Kinesiología",
+                "riesgo": "filtro"
+              },
+              {
+                "nombre": "Patología general"
+              },
+              {
+                "nombre": "Psicología de la salud"
+              },
+              {
+                "nombre": "Ética"
+              }
+            ]
+          },
+          {
+            "numero": 3,
+            "materias": [
+              {
+                "nombre": "Evaluación funcional"
+              },
+              {
+                "nombre": "Agentes físicos"
+              },
+              {
+                "nombre": "Terapia manual"
+              },
+              {
+                "nombre": "Neuroanatomía",
+                "riesgo": "alta_reprobacion"
+              },
+              {
+                "nombre": "Práctica clínica I"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "materias": [
+              {
+                "nombre": "Fisioterapia ortopédica"
+              },
+              {
+                "nombre": "Fisioterapia neurológica",
+                "riesgo": "alta_reprobacion"
+              },
+              {
+                "nombre": "Ejercicio terapéutico"
+              },
+              {
+                "nombre": "Imagenología"
+              },
+              {
+                "nombre": "Práctica clínica II"
+              }
+            ]
+          },
+          {
+            "numero": 5,
+            "materias": [
+              {
+                "nombre": "Fisioterapia cardiorrespiratoria"
+              },
+              {
+                "nombre": "Fisioterapia deportiva"
+              },
+              {
+                "nombre": "Pediátrica"
+              },
+              {
+                "nombre": "Geriátrica"
+              },
+              {
+                "nombre": "Práctica clínica III"
+              }
+            ]
+          },
+          {
+            "numero": 6,
+            "materias": [
+              {
+                "nombre": "Administración de clínica"
+              },
+              {
+                "nombre": "Investigación"
+              },
+              {
+                "nombre": "Ortesis y prótesis"
+              },
+              {
+                "nombre": "Seminario de titulación"
+              },
+              {
+                "nombre": "Práctica clínica IV"
+              }
+            ]
+          },
+          {
+            "numero": 7,
+            "materias": [
+              {
+                "nombre": "Servicio social",
+                "riesgo": "alta_desercion"
+              }
+            ]
+          },
+          {
+            "numero": 8,
+            "materias": [
+              {
+                "nombre": "Titulación"
+              }
+            ]
+          }
+        ]
+      },
+      "quienBatalla": {
+        "resumen": "Batalla quien no aguanta el desgaste físico: te duele la espalda y las manos, y cargas gente. También quien esperaba un consultorio bonito desde el principio; al inicio se trabaja en clínicas con sueldos bajos y mucho paciente. Le va bien a quien es físicamente resistente y sabe hacerse de clientela propia.",
+        "senales": [
+          "Tienes lesiones o dolor crónico",
+          "Te desanima que los resultados tarden",
+          "No quieres trabajar por tu cuenta",
+          "Te cuesta memorizar anatomía"
+        ],
+        "queAyuda": [
+          "Cuidar tu propio cuerpo y técnica desde la escuela",
+          "Hacer prácticas en deportivo, hospital y clínica para saber qué te gusta",
+          "Aprender lo básico de negocio: precios, citas, redes",
+          "Estudiar anatomía con modelos y con tu propio cuerpo"
+        ]
+      },
+      "laboral": {
+        "salarioEntradaMxn": null,
+        "salarioCincoAniosMxn": null,
+        "tasaDesempleo": null,
+        "tasaInformalidad": null,
+        "saturacion": null
+      },
+      "costos": {
+        "publicaMxn": null,
+        "privadaMxn": null
+      },
+      "becas": [
+        "jovenes-escribiendo-el-futuro"
+      ],
+      "verificado": false,
+      "pendientes": [
+        "laboral.salarioEntradaMxn",
+        "laboral.salarioCincoAniosMxn",
+        "laboral.tasaDesempleo",
+        "laboral.tasaInformalidad",
+        "laboral.saturacion",
+        "costos.publicaMxn",
+        "costos.privadaMxn"
+      ],
+      "fuentes": [],
+      "actualizado": "2026-09-20"
+    },
+    {
+      "id": "psicologia",
+      "nombre": "Psicología",
+      "nombresAlternativos": [
+        "Licenciatura en Psicología",
+        "Psicólogo",
+        "Psicóloga"
+      ],
+      "area": "sociales",
+      "nivel": "licenciatura",
+      "duracionAnios": 4,
+      "modalidades": [
+        "escolarizada",
+        "mixta",
+        "en_linea"
+      ],
+      "martesTipico": "Depende de dónde acabes. En clínica: tres o cuatro sesiones de una hora, escuchando y haciendo preguntas que mueven algo, más tus notas de cada caso. En una empresa: entrevistas a candidatos, aplicas pruebas y armas un taller de trabajo en equipo. En escuela: hablas con un niño que no quiere entrar al salón y luego con sus papás, que se echan la culpa entre ellos. Casi siempre hay reportes que escribir. Lo que no hay es adivinar lo que la gente piensa.",
+      "mapaMaterias": {
+        "tipoPeriodo": "semestre",
+        "estado": "plantilla",
+        "fuentePlan": null,
+        "periodos": [
+          {
+            "numero": 1,
+            "materias": [
+              {
+                "nombre": "Historia de la psicología"
+              },
+              {
+                "nombre": "Procesos psicológicos básicos"
+              },
+              {
+                "nombre": "Biología del comportamiento",
+                "riesgo": "alta_reprobacion"
+              },
+              {
+                "nombre": "Metodología de la investigación"
+              },
+              {
+                "nombre": "Redacción académica"
+              }
+            ]
+          },
+          {
+            "numero": 2,
+            "materias": [
+              {
+                "nombre": "Estadística",
+                "riesgo": "alta_reprobacion"
+              },
+              {
+                "nombre": "Psicología del desarrollo"
+              },
+              {
+                "nombre": "Neurofisiología",
+                "riesgo": "alta_reprobacion"
+              },
+              {
+                "nombre": "Teorías de la personalidad"
+              },
+              {
+                "nombre": "Ética profesional"
+              }
+            ]
+          },
+          {
+            "numero": 3,
+            "materias": [
+              {
+                "nombre": "Estadística inferencial",
+                "riesgo": "alta_reprobacion"
+              },
+              {
+                "nombre": "Psicometría",
+                "riesgo": "filtro"
+              },
+              {
+                "nombre": "Psicopatología"
+              },
+              {
+                "nombre": "Psicología social"
+              },
+              {
+                "nombre": "Entrevista"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "materias": [
+              {
+                "nombre": "Evaluación psicológica",
+                "riesgo": "filtro"
+              },
+              {
+                "nombre": "Psicología clínica"
+              },
+              {
+                "nombre": "Psicología educativa"
+              },
+              {
+                "nombre": "Psicología organizacional"
+              },
+              {
+                "nombre": "Prácticas I"
+              }
+            ]
+          },
+          {
+            "numero": 5,
+            "materias": [
+              {
+                "nombre": "Terapias cognitivo-conductuales"
+              },
+              {
+                "nombre": "Terapia familiar"
+              },
+              {
+                "nombre": "Psicología comunitaria"
+              },
+              {
+                "nombre": "Diseño de investigación"
+              },
+              {
+                "nombre": "Prácticas II"
+              }
+            ]
+          },
+          {
+            "numero": 6,
+            "materias": [
+              {
+                "nombre": "Intervención en crisis"
+              },
+              {
+                "nombre": "Neuropsicología"
+              },
+              {
+                "nombre": "Seminario de tesis"
+              },
+              {
+                "nombre": "Supervisión de casos"
+              },
+              {
+                "nombre": "Prácticas III"
+              }
+            ]
+          },
+          {
+            "numero": 7,
+            "materias": [
+              {
+                "nombre": "Servicio social",
+                "riesgo": "alta_desercion"
+              }
+            ]
+          },
+          {
+            "numero": 8,
+            "materias": [
+              {
+                "nombre": "Titulación",
+                "riesgo": "alta_desercion"
+              }
+            ]
+          }
+        ]
+      },
+      "quienBatalla": {
+        "resumen": "Batalla quien creía que no había números: hay estadística y psicometría, y ahí se cae mucha gente. Después pega el mercado: salen muchísimos psicólogos cada año y los primeros empleos pagan poco. Le va bien a quien se especializa, aguanta cargar con historias pesadas y aprende a cobrar.",
+        "senales": [
+          "Te llevas los problemas ajenos a tu casa",
+          "Odias las matemáticas y la estadística",
+          "Entraste a la carrera para resolver lo tuyo",
+          "No te ves consiguiendo tus propios pacientes"
+        ],
+        "queAyuda": [
+          "Ir a terapia tú también",
+          "Tomar en serio estadística desde segundo semestre",
+          "Elegir un campo (clínica, laboral, educativa) antes de salir",
+          "Buscar supervisión con alguien con experiencia"
+        ]
+      },
+      "laboral": {
+        "salarioEntradaMxn": null,
+        "salarioCincoAniosMxn": null,
+        "tasaDesempleo": null,
+        "tasaInformalidad": null,
+        "saturacion": null
+      },
+      "costos": {
+        "publicaMxn": null,
+        "privadaMxn": null
+      },
+      "becas": [
+        "jovenes-escribiendo-el-futuro"
+      ],
+      "verificado": false,
+      "pendientes": [
+        "laboral.salarioEntradaMxn",
+        "laboral.salarioCincoAniosMxn",
+        "laboral.tasaDesempleo",
+        "laboral.tasaInformalidad",
+        "laboral.saturacion",
+        "costos.publicaMxn",
+        "costos.privadaMxn"
+      ],
+      "fuentes": [],
+      "actualizado": "2026-09-20"
+    },
+    {
+      "id": "derecho",
+      "nombre": "Derecho",
+      "nombresAlternativos": [
+        "Licenciatura en Derecho",
+        "Abogado",
+        "Abogada",
+        "Leyes",
+        "Ciencias Jurídicas"
+      ],
+      "area": "sociales",
+      "nivel": "licenciatura",
+      "duracionAnios": 5,
+      "modalidades": [
+        "escolarizada",
+        "mixta",
+        "en_linea"
+      ],
+      "martesTipico": "Te levantas temprano para alcanzar una audiencia; esperas más de lo que hablas. De regreso al despacho revisas un contrato línea por línea, redactas una demanda y persigues a un cliente que no manda los documentos que le pediste. Contestas mensajes de gente angustiada. Vas al juzgado a revisar el acuerdo de un expediente. Casi todo el día es leer, escribir y negociar; los discursos de película casi no existen. Los plazos mandan: si se te pasa uno, se pierde el caso.",
+      "mapaMaterias": {
+        "tipoPeriodo": "semestre",
+        "estado": "plantilla",
+        "fuentePlan": null,
+        "periodos": [
+          {
+            "numero": 1,
+            "materias": [
+              {
+                "nombre": "Introducción al derecho"
+              },
+              {
+                "nombre": "Derecho romano"
+              },
+              {
+                "nombre": "Teoría del Estado"
+              },
+              {
+                "nombre": "Metodología jurídica"
+              },
+              {
+                "nombre": "Redacción jurídica",
+                "riesgo": "alta_reprobacion"
+              }
+            ]
+          },
+          {
+            "numero": 2,
+            "materias": [
+              {
+                "nombre": "Derecho civil I: personas"
+              },
+              {
+                "nombre": "Derecho constitucional",
+                "riesgo": "alta_reprobacion"
+              },
+              {
+                "nombre": "Historia del derecho"
+              },
+              {
+                "nombre": "Sociología jurídica"
+              },
+              {
+                "nombre": "Argumentación"
+              }
+            ]
+          },
+          {
+            "numero": 3,
+            "materias": [
+              {
+                "nombre": "Derecho civil II: bienes"
+              },
+              {
+                "nombre": "Derecho penal I",
+                "riesgo": "filtro"
+              },
+              {
+                "nombre": "Derecho administrativo"
+              },
+              {
+                "nombre": "Derechos humanos"
+              },
+              {
+                "nombre": "Oratoria"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "materias": [
+              {
+                "nombre": "Derecho civil III: obligaciones",
+                "riesgo": "alta_reprobacion"
+              },
+              {
+                "nombre": "Derecho penal II"
+              },
+              {
+                "nombre": "Derecho laboral"
+              },
+              {
+                "nombre": "Derecho fiscal",
+                "riesgo": "alta_reprobacion"
+              },
+              {
+                "nombre": "Clínica jurídica"
+              }
+            ]
+          },
+          {
+            "numero": 5,
+            "materias": [
+              {
+                "nombre": "Derecho mercantil"
+              },
+              {
+                "nombre": "Procesal civil",
+                "riesgo": "filtro"
+              },
+              {
+                "nombre": "Procesal penal"
+              },
+              {
+                "nombre": "Amparo",
+                "riesgo": "alta_reprobacion"
+              },
+              {
+                "nombre": "Prácticas"
+              }
+            ]
+          },
+          {
+            "numero": 6,
+            "materias": [
+              {
+                "nombre": "Amparo II",
+                "riesgo": "alta_reprobacion"
+              },
+              {
+                "nombre": "Derecho internacional"
+              },
+              {
+                "nombre": "Medios alternos de solución"
+              },
+              {
+                "nombre": "Ética de la abogacía"
+              },
+              {
+                "nombre": "Prácticas"
+              }
+            ]
+          },
+          {
+            "numero": 7,
+            "materias": [
+              {
+                "nombre": "Juicios orales"
+              },
+              {
+                "nombre": "Derecho familiar"
+              },
+              {
+                "nombre": "Seminario de tesis"
+              },
+              {
+                "nombre": "Especialidad optativa"
+              },
+              {
+                "nombre": "Prácticas"
+              }
+            ]
+          },
+          {
+            "numero": 8,
+            "materias": [
+              {
+                "nombre": "Servicio social",
+                "riesgo": "alta_desercion"
+              }
+            ]
+          },
+          {
+            "numero": 9,
+            "materias": [
+              {
+                "nombre": "Titulación y examen profesional",
+                "riesgo": "alta_desercion"
+              }
+            ]
+          }
+        ]
+      },
+      "quienBatalla": {
+        "resumen": "Batalla quien no soporta leer mucho: son cientos de páginas por semana y exámenes orales donde te preguntan artículos. Después pega otra cosa: hay demasiados abogados y sin contactos ni especialidad los primeros años se pagan muy mal. Le va bien a quien lee rápido, escribe claro y construye red desde estudiante.",
+        "senales": [
+          "Te aburre leer textos largos",
+          "Te paralizas al hablar en público",
+          "No tienes contactos ni quieres buscarlos",
+          "Crees que vas a litigar como en las series"
+        ],
+        "queAyuda": [
+          "Practicar en despacho o juzgado desde tercer semestre",
+          "Elegir especialidad (laboral, fiscal, familiar) antes de salir",
+          "Entrenar redacción: la mayoría del trabajo es escribir",
+          "Buscar mentor que te deje acompañarlo a audiencias"
+        ]
+      },
+      "laboral": {
+        "salarioEntradaMxn": null,
+        "salarioCincoAniosMxn": null,
+        "tasaDesempleo": null,
+        "tasaInformalidad": null,
+        "saturacion": null
+      },
+      "costos": {
+        "publicaMxn": null,
+        "privadaMxn": null
+      },
+      "becas": [
+        "jovenes-escribiendo-el-futuro"
+      ],
+      "verificado": false,
+      "pendientes": [
+        "laboral.salarioEntradaMxn",
+        "laboral.salarioCincoAniosMxn",
+        "laboral.tasaDesempleo",
+        "laboral.tasaInformalidad",
+        "laboral.saturacion",
+        "costos.publicaMxn",
+        "costos.privadaMxn"
+      ],
+      "fuentes": [],
+      "actualizado": "2026-09-20"
+    },
+    {
+      "id": "trabajo-social",
+      "nombre": "Trabajo Social",
+      "nombresAlternativos": [
+        "Licenciatura en Trabajo Social",
+        "Trabajadora social",
+        "Trabajador social"
+      ],
+      "area": "sociales",
+      "nivel": "licenciatura",
+      "duracionAnios": 4,
+      "modalidades": [
+        "escolarizada",
+        "mixta"
+      ],
+      "martesTipico": "Sales a campo: visitas casas para ver de verdad cómo vive una familia que pidió apoyo, y escribes el estudio socioeconómico que decide si le dan la beca o el servicio. En el hospital o el DIF atiendes a quien llega desesperado y le explicas qué trámite sigue. Gestionas con oficinas que no contestan. Llevas expedientes, muchos. Es un trabajo de estar en la calle, tocar puertas y pelear por otros ante instituciones lentas.",
+      "mapaMaterias": {
+        "tipoPeriodo": "semestre",
+        "estado": "plantilla",
+        "fuentePlan": null,
+        "periodos": [
+          {
+            "numero": 1,
+            "materias": [
+              {
+                "nombre": "Introducción al trabajo social"
+              },
+              {
+                "nombre": "Sociología"
+              },
+              {
+                "nombre": "Psicología social"
+              },
+              {
+                "nombre": "Metodología de la investigación"
+              },
+              {
+                "nombre": "Redacción de informes"
+              }
+            ]
+          },
+          {
+            "numero": 2,
+            "materias": [
+              {
+                "nombre": "Teoría social"
+              },
+              {
+                "nombre": "Política social"
+              },
+              {
+                "nombre": "Estadística",
+                "riesgo": "alta_reprobacion"
+              },
+              {
+                "nombre": "Derechos humanos"
+              },
+              {
+                "nombre": "Comunicación"
+              }
+            ]
+          },
+          {
+            "numero": 3,
+            "materias": [
+              {
+                "nombre": "Trabajo social de caso",
+                "riesgo": "filtro"
+              },
+              {
+                "nombre": "Familia y comunidad"
+              },
+              {
+                "nombre": "Economía"
+              },
+              {
+                "nombre": "Salud pública"
+              },
+              {
+                "nombre": "Práctica comunitaria I"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "materias": [
+              {
+                "nombre": "Trabajo social de grupo"
+              },
+              {
+                "nombre": "Diagnóstico social",
+                "riesgo": "filtro"
+              },
+              {
+                "nombre": "Legislación social"
+              },
+              {
+                "nombre": "Gestión de proyectos"
+              },
+              {
+                "nombre": "Práctica comunitaria II"
+              }
+            ]
+          },
+          {
+            "numero": 5,
+            "materias": [
+              {
+                "nombre": "Trabajo social en salud"
+              },
+              {
+                "nombre": "Trabajo social escolar"
+              },
+              {
+                "nombre": "Intervención en crisis"
+              },
+              {
+                "nombre": "Evaluación de programas"
+              },
+              {
+                "nombre": "Práctica institucional"
+              }
+            ]
+          },
+          {
+            "numero": 6,
+            "materias": [
+              {
+                "nombre": "Administración de programas sociales"
+              },
+              {
+                "nombre": "Seminario de tesis"
+              },
+              {
+                "nombre": "Ética profesional"
+              },
+              {
+                "nombre": "Procuración de fondos"
+              },
+              {
+                "nombre": "Práctica institucional"
+              }
+            ]
+          },
+          {
+            "numero": 7,
+            "materias": [
+              {
+                "nombre": "Servicio social",
+                "riesgo": "alta_desercion"
+              }
+            ]
+          },
+          {
+            "numero": 8,
+            "materias": [
+              {
+                "nombre": "Titulación"
+              }
+            ]
+          }
+        ]
+      },
+      "quienBatalla": {
+        "resumen": "Batalla quien no aguanta el desgaste emocional ni la burocracia: ves pobreza y violencia de cerca y muchas veces no puedes resolver. Los sueldos en gobierno son bajos y los trámites lentos. Aguanta quien tiene piel gruesa, sabe poner límites y le encuentra sentido a los avances chiquitos.",
+        "senales": [
+          "Te desgasta mucho el dolor ajeno",
+          "Te desespera la burocracia",
+          "Buscas un sueldo alto pronto",
+          "Te cuesta escribir informes"
+        ],
+        "queAyuda": [
+          "Acompañar a una trabajadora social en campo antes de decidir",
+          "Aprender a separar trabajo y vida personal",
+          "Especializarte en salud, jurídico o empresas",
+          "Aprender gestión de proyectos y fondos"
+        ]
+      },
+      "laboral": {
+        "salarioEntradaMxn": null,
+        "salarioCincoAniosMxn": null,
+        "tasaDesempleo": null,
+        "tasaInformalidad": null,
+        "saturacion": null
+      },
+      "costos": {
+        "publicaMxn": null,
+        "privadaMxn": null
+      },
+      "becas": [
+        "jovenes-escribiendo-el-futuro"
+      ],
+      "verificado": false,
+      "pendientes": [
+        "laboral.salarioEntradaMxn",
+        "laboral.salarioCincoAniosMxn",
+        "laboral.tasaDesempleo",
+        "laboral.tasaInformalidad",
+        "laboral.saturacion",
+        "costos.publicaMxn",
+        "costos.privadaMxn"
+      ],
+      "fuentes": [],
+      "actualizado": "2026-09-20"
+    },
+    {
+      "id": "comunicacion",
+      "nombre": "Ciencias de la Comunicación",
+      "nombresAlternativos": [
+        "Comunicación",
+        "Periodismo",
+        "Comunicación Social",
+        "Medios"
+      ],
+      "area": "sociales",
+      "nivel": "licenciatura",
+      "duracionAnios": 4,
+      "modalidades": [
+        "escolarizada",
+        "mixta",
+        "en_linea"
+      ],
+      "martesTipico": "Depende del lado. En medios: buscas de qué escribir, llamas a tres personas para confirmar un dato, transcribes, redactas contra reloj y peleas por espacio. En agencia o empresa: planeas el contenido del mes, grabas y editas video, revisas números de alcance y contestas comentarios. En los dos casos hay juntas, cambios de último minuto y un jefe que quiere 'algo que se haga viral'. Se produce mucho y rápido, casi siempre con equipo prestado y poco presupuesto.",
+      "mapaMaterias": {
+        "tipoPeriodo": "semestre",
+        "estado": "plantilla",
+        "fuentePlan": null,
+        "periodos": [
+          {
+            "numero": 1,
+            "materias": [
+              {
+                "nombre": "Teorías de la comunicación"
+              },
+              {
+                "nombre": "Redacción",
+                "riesgo": "alta_reprobacion"
+              },
+              {
+                "nombre": "Historia contemporánea"
+              },
+              {
+                "nombre": "Fotografía"
+              },
+              {
+                "nombre": "Tecnologías de la información"
+              }
+            ]
+          },
+          {
+            "numero": 2,
+            "materias": [
+              {
+                "nombre": "Redacción periodística",
+                "riesgo": "alta_reprobacion"
+              },
+              {
+                "nombre": "Semiótica"
+              },
+              {
+                "nombre": "Sociología de la comunicación"
+              },
+              {
+                "nombre": "Producción de audio"
+              },
+              {
+                "nombre": "Estadística"
+              }
+            ]
+          },
+          {
+            "numero": 3,
+            "materias": [
+              {
+                "nombre": "Géneros periodísticos"
+              },
+              {
+                "nombre": "Producción audiovisual",
+                "riesgo": "filtro"
+              },
+              {
+                "nombre": "Opinión pública"
+              },
+              {
+                "nombre": "Diseño editorial"
+              },
+              {
+                "nombre": "Derecho de la información"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "materias": [
+              {
+                "nombre": "Investigación de la comunicación",
+                "riesgo": "alta_reprobacion"
+              },
+              {
+                "nombre": "Comunicación organizacional"
+              },
+              {
+                "nombre": "Publicidad"
+              },
+              {
+                "nombre": "Edición de video"
+              },
+              {
+                "nombre": "Prácticas"
+              }
+            ]
+          },
+          {
+            "numero": 5,
+            "materias": [
+              {
+                "nombre": "Marketing digital"
+              },
+              {
+                "nombre": "Producción de TV"
+              },
+              {
+                "nombre": "Comunicación política"
+              },
+              {
+                "nombre": "Analítica de audiencias"
+              },
+              {
+                "nombre": "Prácticas"
+              }
+            ]
+          },
+          {
+            "numero": 6,
+            "materias": [
+              {
+                "nombre": "Gestión de proyectos"
+              },
+              {
+                "nombre": "Seminario de tesis"
+              },
+              {
+                "nombre": "Ética de los medios"
+              },
+              {
+                "nombre": "Emprendimiento en medios"
+              },
+              {
+                "nombre": "Prácticas"
+              }
+            ]
+          },
+          {
+            "numero": 7,
+            "materias": [
+              {
+                "nombre": "Servicio social",
+                "riesgo": "alta_desercion"
+              }
+            ]
+          },
+          {
+            "numero": 8,
+            "materias": [
+              {
+                "nombre": "Titulación",
+                "riesgo": "alta_desercion"
+              }
+            ]
+          }
+        ]
+      },
+      "quienBatalla": {
+        "resumen": "Batalla quien creía que era carrera de hablar bonito: es escribir, producir y entregar a tiempo, todos los días. Hay muchísimos egresados y el primer trabajo suele ser mal pagado o por proyecto. Le va bien a quien desde estudiante junta portafolio, aprende edición y no espera a titularse para trabajar.",
+        "senales": [
+          "Escribes poco y te cuesta",
+          "No te gusta buscar y perseguir gente para entrevistar",
+          "Esperas sueldo fijo y estable desde el inicio",
+          "No tienes portafolio ni proyectos propios"
+        ],
+        "queAyuda": [
+          "Publicar desde primer semestre, donde sea",
+          "Aprender edición de video y datos",
+          "Buscar prácticas en medios locales aunque paguen poco",
+          "Especializarte: deportes, datos, salud, política"
+        ]
+      },
+      "laboral": {
+        "salarioEntradaMxn": null,
+        "salarioCincoAniosMxn": null,
+        "tasaDesempleo": null,
+        "tasaInformalidad": null,
+        "saturacion": null
+      },
+      "costos": {
+        "publicaMxn": null,
+        "privadaMxn": null
+      },
+      "becas": [
+        "jovenes-escribiendo-el-futuro"
+      ],
+      "verificado": false,
+      "pendientes": [
+        "laboral.salarioEntradaMxn",
+        "laboral.salarioCincoAniosMxn",
+        "laboral.tasaDesempleo",
+        "laboral.tasaInformalidad",
+        "laboral.saturacion",
+        "costos.publicaMxn",
+        "costos.privadaMxn"
+      ],
+      "fuentes": [],
+      "actualizado": "2026-09-20"
+    },
+    {
+      "id": "contaduria",
+      "nombre": "Contaduría Pública",
+      "nombresAlternativos": [
+        "Contabilidad",
+        "Contador",
+        "Contadora",
+        "Contaduría"
+      ],
+      "area": "economico",
+      "nivel": "licenciatura",
+      "duracionAnios": 4,
+      "modalidades": [
+        "escolarizada",
+        "mixta",
+        "en_linea"
+      ],
+      "martesTipico": "Abres el sistema y empiezas a registrar facturas y movimientos del mes de varios clientes. Concilias el banco contra lo que dice la contabilidad hasta que cuadra al peso. Calculas impuestos y revisas dos veces antes de declarar, porque un error cuesta multa. Contestas al dueño de una tienda que no entiende por qué debe pagar tanto y se lo explicas sin tecnicismos. Fin de mes y temporada de declaraciones son pesados; el resto del año es más tranquilo.",
+      "mapaMaterias": {
+        "tipoPeriodo": "semestre",
+        "estado": "plantilla",
+        "fuentePlan": null,
+        "periodos": [
+          {
+            "numero": 1,
+            "materias": [
+              {
+                "nombre": "Contabilidad básica",
+                "riesgo": "alta_reprobacion"
+              },
+              {
+                "nombre": "Matemáticas financieras",
+                "riesgo": "alta_reprobacion"
+              },
+              {
+                "nombre": "Derecho mercantil"
+              },
+              {
+                "nombre": "Informática administrativa"
+              },
+              {
+                "nombre": "Comunicación"
+              }
+            ]
+          },
+          {
+            "numero": 2,
+            "materias": [
+              {
+                "nombre": "Contabilidad intermedia",
+                "riesgo": "alta_reprobacion"
+              },
+              {
+                "nombre": "Estadística"
+              },
+              {
+                "nombre": "Microeconomía"
+              },
+              {
+                "nombre": "Derecho laboral"
+              },
+              {
+                "nombre": "Ética"
+              }
+            ]
+          },
+          {
+            "numero": 3,
+            "materias": [
+              {
+                "nombre": "Contabilidad de costos",
+                "riesgo": "filtro"
+              },
+              {
+                "nombre": "Derecho fiscal",
+                "riesgo": "alta_reprobacion"
+              },
+              {
+                "nombre": "Macroeconomía"
+              },
+              {
+                "nombre": "Finanzas I"
+              },
+              {
+                "nombre": "Paquetes contables"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "materias": [
+              {
+                "nombre": "Contabilidad de sociedades"
+              },
+              {
+                "nombre": "Impuestos I",
+                "riesgo": "filtro"
+              },
+              {
+                "nombre": "Auditoría I"
+              },
+              {
+                "nombre": "Finanzas II"
+              },
+              {
+                "nombre": "Nóminas y seguridad social"
+              }
+            ]
+          },
+          {
+            "numero": 5,
+            "materias": [
+              {
+                "nombre": "Impuestos II",
+                "riesgo": "alta_reprobacion"
+              },
+              {
+                "nombre": "Auditoría II"
+              },
+              {
+                "nombre": "Contabilidad gubernamental"
+              },
+              {
+                "nombre": "Análisis financiero"
+              },
+              {
+                "nombre": "Prácticas"
+              }
+            ]
+          },
+          {
+            "numero": 6,
+            "materias": [
+              {
+                "nombre": "Normas internacionales"
+              },
+              {
+                "nombre": "Seminario de tesis"
+              },
+              {
+                "nombre": "Contraloría"
+              },
+              {
+                "nombre": "Emprendimiento"
+              },
+              {
+                "nombre": "Prácticas"
+              }
+            ]
+          },
+          {
+            "numero": 7,
+            "materias": [
+              {
+                "nombre": "Servicio social",
+                "riesgo": "alta_desercion"
+              }
+            ]
+          },
+          {
+            "numero": 8,
+            "materias": [
+              {
+                "nombre": "Titulación"
+              }
+            ]
+          }
+        ]
+      },
+      "quienBatalla": {
+        "resumen": "Batalla quien no soporta el detalle: aquí un número mal capturado se vuelve multa. También quien odia leer leyes, porque la parte fiscal cambia cada año y hay que estudiar siempre. Le va bien a quien es ordenado, paciente y aguanta las temporadas fuertes de cierre y declaraciones.",
+        "senales": [
+          "Eres desordenado con fechas y papeles",
+          "Te aburren las reglas y los formatos",
+          "Te frustra revisar lo mismo varias veces",
+          "No te gusta tratar con clientes enojados"
+        ],
+        "queAyuda": [
+          "Dominar Excel desde el primer año",
+          "Practicar en despacho pequeño: ahí ves de todo",
+          "Mantenerte al día con los cambios fiscales",
+          "Aprender a explicar impuestos en palabras simples"
+        ]
+      },
+      "laboral": {
+        "salarioEntradaMxn": null,
+        "salarioCincoAniosMxn": null,
+        "tasaDesempleo": null,
+        "tasaInformalidad": null,
+        "saturacion": null
+      },
+      "costos": {
+        "publicaMxn": null,
+        "privadaMxn": null
+      },
+      "becas": [
+        "jovenes-escribiendo-el-futuro"
+      ],
+      "verificado": false,
+      "pendientes": [
+        "laboral.salarioEntradaMxn",
+        "laboral.salarioCincoAniosMxn",
+        "laboral.tasaDesempleo",
+        "laboral.tasaInformalidad",
+        "laboral.saturacion",
+        "costos.publicaMxn",
+        "costos.privadaMxn"
+      ],
+      "fuentes": [],
+      "actualizado": "2026-09-20"
+    },
+    {
+      "id": "administracion",
+      "nombre": "Administración de Empresas",
+      "nombresAlternativos": [
+        "Administración",
+        "Licenciatura en Administración",
+        "Negocios",
+        "LAE"
+      ],
+      "area": "economico",
+      "nivel": "licenciatura",
+      "duracionAnios": 4,
+      "modalidades": [
+        "escolarizada",
+        "mixta",
+        "en_linea"
+      ],
+      "martesTipico": "Junta temprano para ver los números de la semana: qué se vendió, qué se gastó, qué se atoró. Revisas inventario o el avance de un proveedor que no entregó. Armas un reporte en Excel para tu jefe y otro más simple para el dueño. En la tarde entrevistas a un candidato, resuelves un pleito entre dos áreas y apagas un fuego que nadie previó. Es un trabajo de coordinar personas y números; casi nada se hace solo y casi todo urge.",
+      "mapaMaterias": {
+        "tipoPeriodo": "semestre",
+        "estado": "plantilla",
+        "fuentePlan": null,
+        "periodos": [
+          {
+            "numero": 1,
+            "materias": [
+              {
+                "nombre": "Introducción a la administración"
+              },
+              {
+                "nombre": "Contabilidad",
+                "riesgo": "alta_reprobacion"
+              },
+              {
+                "nombre": "Matemáticas",
+                "riesgo": "alta_reprobacion"
+              },
+              {
+                "nombre": "Informática"
+              },
+              {
+                "nombre": "Comunicación oral y escrita"
+              }
+            ]
+          },
+          {
+            "numero": 2,
+            "materias": [
+              {
+                "nombre": "Teoría administrativa"
+              },
+              {
+                "nombre": "Contabilidad de costos"
+              },
+              {
+                "nombre": "Estadística",
+                "riesgo": "alta_reprobacion"
+              },
+              {
+                "nombre": "Microeconomía"
+              },
+              {
+                "nombre": "Derecho empresarial"
+              }
+            ]
+          },
+          {
+            "numero": 3,
+            "materias": [
+              {
+                "nombre": "Administración de operaciones"
+              },
+              {
+                "nombre": "Finanzas I",
+                "riesgo": "alta_reprobacion"
+              },
+              {
+                "nombre": "Mercadotecnia"
+              },
+              {
+                "nombre": "Recursos humanos"
+              },
+              {
+                "nombre": "Métodos cuantitativos",
+                "riesgo": "filtro"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "materias": [
+              {
+                "nombre": "Finanzas II",
+                "riesgo": "alta_reprobacion"
+              },
+              {
+                "nombre": "Cadena de suministro"
+              },
+              {
+                "nombre": "Investigación de mercados"
+              },
+              {
+                "nombre": "Comportamiento organizacional"
+              },
+              {
+                "nombre": "Prácticas"
+              }
+            ]
+          },
+          {
+            "numero": 5,
+            "materias": [
+              {
+                "nombre": "Planeación estratégica"
+              },
+              {
+                "nombre": "Evaluación de proyectos",
+                "riesgo": "filtro"
+              },
+              {
+                "nombre": "Calidad"
+              },
+              {
+                "nombre": "Negociación"
+              },
+              {
+                "nombre": "Prácticas"
+              }
+            ]
+          },
+          {
+            "numero": 6,
+            "materias": [
+              {
+                "nombre": "Emprendimiento"
+              },
+              {
+                "nombre": "Seminario de tesis"
+              },
+              {
+                "nombre": "Dirección"
+              },
+              {
+                "nombre": "Simulador de negocios"
+              },
+              {
+                "nombre": "Prácticas"
+              }
+            ]
+          },
+          {
+            "numero": 7,
+            "materias": [
+              {
+                "nombre": "Servicio social",
+                "riesgo": "alta_desercion"
+              }
+            ]
+          },
+          {
+            "numero": 8,
+            "materias": [
+              {
+                "nombre": "Titulación"
+              }
+            ]
+          }
+        ]
+      },
+      "quienBatalla": {
+        "resumen": "Batalla quien la eligió porque 'sirve para todo': al salir compite con miles de egresados sin nada que lo distinga. También pesan finanzas y métodos cuantitativos, que tumban a quien viene peleado con los números. Le va bien a quien se especializa y consigue experiencia real desde la escuela.",
+        "senales": [
+          "La escogiste por descarte",
+          "Evitas las materias con números",
+          "No has trabajado ni en un negocio familiar",
+          "No te gusta dirigir ni que te reclamen"
+        ],
+        "queAyuda": [
+          "Elegir un área: finanzas, logística, recursos humanos, ventas",
+          "Aprender Excel y datos de verdad",
+          "Prácticas desde segundo año, aunque sean chicas",
+          "Manejar un proyecto o negocio propio aunque sea pequeño"
+        ]
+      },
+      "laboral": {
+        "salarioEntradaMxn": null,
+        "salarioCincoAniosMxn": null,
+        "tasaDesempleo": null,
+        "tasaInformalidad": null,
+        "saturacion": null
+      },
+      "costos": {
+        "publicaMxn": null,
+        "privadaMxn": null
+      },
+      "becas": [
+        "jovenes-escribiendo-el-futuro"
+      ],
+      "verificado": false,
+      "pendientes": [
+        "laboral.salarioEntradaMxn",
+        "laboral.salarioCincoAniosMxn",
+        "laboral.tasaDesempleo",
+        "laboral.tasaInformalidad",
+        "laboral.saturacion",
+        "costos.publicaMxn",
+        "costos.privadaMxn"
+      ],
+      "fuentes": [],
+      "actualizado": "2026-09-20"
+    },
+    {
+      "id": "ing-software",
+      "nombre": "Ingeniería en Software",
+      "nombresAlternativos": [
+        "Sistemas",
+        "Ingeniería en Sistemas Computacionales",
+        "Programación",
+        "Desarrollo de Software"
+      ],
+      "area": "ingenierias",
+      "nivel": "ingenieria",
+      "duracionAnios": 4,
+      "modalidades": [
+        "escolarizada",
+        "mixta",
+        "en_linea"
+      ],
+      "martesTipico": "Junta corta de quince minutos donde cada quien dice en qué va. Luego te sientas a programar: tomas una tarea del tablero, lees código que escribió alguien más, lo entiendes y lo cambias sin romper lo demás. A media mañana algo falla en producción y todos paran para arreglarlo. Revisas el código de un compañero y te revisan el tuyo. Escribes pruebas. Gran parte del día es leer, preguntar y pensar; teclear es lo de menos.",
+      "mapaMaterias": {
+        "tipoPeriodo": "semestre",
+        "estado": "plantilla",
+        "fuentePlan": null,
+        "periodos": [
+          {
+            "numero": 1,
+            "materias": [
+              {
+                "nombre": "Fundamentos de programación",
+                "riesgo": "alta_reprobacion"
+              },
+              {
+                "nombre": "Matemáticas discretas",
+                "riesgo": "alta_reprobacion"
+              },
+              {
+                "nombre": "Cálculo diferencial",
+                "riesgo": "alta_reprobacion"
+              },
+              {
+                "nombre": "Inglés técnico"
+              },
+              {
+                "nombre": "Introducción a la ingeniería"
+              }
+            ]
+          },
+          {
+            "numero": 2,
+            "materias": [
+              {
+                "nombre": "Programación orientada a objetos",
+                "riesgo": "alta_reprobacion"
+              },
+              {
+                "nombre": "Estructuras de datos",
+                "riesgo": "filtro"
+              },
+              {
+                "nombre": "Cálculo integral"
+              },
+              {
+                "nombre": "Álgebra lineal"
+              },
+              {
+                "nombre": "Bases de datos"
+              }
+            ]
+          },
+          {
+            "numero": 3,
+            "materias": [
+              {
+                "nombre": "Algoritmos",
+                "riesgo": "filtro"
+              },
+              {
+                "nombre": "Bases de datos avanzadas"
+              },
+              {
+                "nombre": "Arquitectura de computadoras"
+              },
+              {
+                "nombre": "Probabilidad y estadística"
+              },
+              {
+                "nombre": "Desarrollo web"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "materias": [
+              {
+                "nombre": "Ingeniería de software"
+              },
+              {
+                "nombre": "Sistemas operativos",
+                "riesgo": "alta_reprobacion"
+              },
+              {
+                "nombre": "Redes"
+              },
+              {
+                "nombre": "Programación móvil"
+              },
+              {
+                "nombre": "Métodos numéricos"
+              }
+            ]
+          },
+          {
+            "numero": 5,
+            "materias": [
+              {
+                "nombre": "Arquitectura de software"
+              },
+              {
+                "nombre": "Calidad y pruebas"
+              },
+              {
+                "nombre": "Seguridad informática"
+              },
+              {
+                "nombre": "Nube y DevOps"
+              },
+              {
+                "nombre": "Proyecto integrador"
+              }
+            ]
+          },
+          {
+            "numero": 6,
+            "materias": [
+              {
+                "nombre": "Inteligencia artificial"
+              },
+              {
+                "nombre": "Gestión de proyectos"
+              },
+              {
+                "nombre": "Optativa de especialidad"
+              },
+              {
+                "nombre": "Ética profesional"
+              },
+              {
+                "nombre": "Residencia profesional"
+              }
+            ]
+          },
+          {
+            "numero": 7,
+            "materias": [
+              {
+                "nombre": "Residencia profesional",
+                "riesgo": "alta_desercion"
+              }
+            ]
+          },
+          {
+            "numero": 8,
+            "materias": [
+              {
+                "nombre": "Titulación"
+              }
+            ]
+          }
+        ]
+      },
+      "quienBatalla": {
+        "resumen": "Batalla quien entró por el sueldo sin que le guste resolver problemas. Los primeros tres semestres tumban gente: programación, estructuras de datos y cálculo. Si no practicas fuera de clase, no alcanza. También batalla quien no sabe inglés, porque casi toda la documentación está en inglés.",
+        "senales": [
+          "Te frustras rápido cuando algo no sale",
+          "No practicas fuera de las tareas",
+          "Tu inglés de lectura es débil",
+          "Entraste solo por el dinero"
+        ],
+        "queAyuda": [
+          "Programar todos los días aunque sea poco",
+          "Aprender a leer inglés técnico desde el semestre uno",
+          "Subir proyectos a un repositorio público desde el inicio",
+          "Pedir ayuda temprano: aquí atorarte solo es lo normal, aguantarte no"
+        ]
+      },
+      "laboral": {
+        "salarioEntradaMxn": null,
+        "salarioCincoAniosMxn": null,
+        "tasaDesempleo": null,
+        "tasaInformalidad": null,
+        "saturacion": null
+      },
+      "costos": {
+        "publicaMxn": null,
+        "privadaMxn": null
+      },
+      "becas": [
+        "jovenes-escribiendo-el-futuro"
+      ],
+      "verificado": false,
+      "pendientes": [
+        "laboral.salarioEntradaMxn",
+        "laboral.salarioCincoAniosMxn",
+        "laboral.tasaDesempleo",
+        "laboral.tasaInformalidad",
+        "laboral.saturacion",
+        "costos.publicaMxn",
+        "costos.privadaMxn"
+      ],
+      "fuentes": [],
+      "actualizado": "2026-09-20"
+    },
+    {
+      "id": "ing-industrial",
+      "nombre": "Ingeniería Industrial",
+      "nombresAlternativos": [
+        "Industrial",
+        "Ingeniería Industrial y de Sistemas",
+        "Procesos"
+      ],
+      "area": "ingenierias",
+      "nivel": "ingenieria",
+      "duracionAnios": 4,
+      "modalidades": [
+        "escolarizada",
+        "dual"
+      ],
+      "martesTipico": "Recorres la planta con casco: ves dónde se atora la línea, cuánto tarda cada paso y por qué se para la máquina de la estación tres. Cronometras, anotas y luego te sientas a sacar números para proponer un cambio que ahorre tiempo o material. Juntas con producción, calidad y mantenimiento, que suelen echarse la culpa entre ellos. Capacitas a operadores en un procedimiento nuevo. Al final del día reportas indicadores: producción, desperdicio, paros.",
+      "mapaMaterias": {
+        "tipoPeriodo": "semestre",
+        "estado": "plantilla",
+        "fuentePlan": null,
+        "periodos": [
+          {
+            "numero": 1,
+            "materias": [
+              {
+                "nombre": "Cálculo diferencial",
+                "riesgo": "alta_reprobacion"
+              },
+              {
+                "nombre": "Química"
+              },
+              {
+                "nombre": "Fundamentos de investigación"
+              },
+              {
+                "nombre": "Taller de ética"
+              },
+              {
+                "nombre": "Dibujo industrial"
+              }
+            ]
+          },
+          {
+            "numero": 2,
+            "materias": [
+              {
+                "nombre": "Cálculo integral",
+                "riesgo": "alta_reprobacion"
+              },
+              {
+                "nombre": "Álgebra lineal"
+              },
+              {
+                "nombre": "Estadística I"
+              },
+              {
+                "nombre": "Química orgánica"
+              },
+              {
+                "nombre": "Probabilidad"
+              }
+            ]
+          },
+          {
+            "numero": 3,
+            "materias": [
+              {
+                "nombre": "Cálculo vectorial",
+                "riesgo": "alta_reprobacion"
+              },
+              {
+                "nombre": "Estadística II",
+                "riesgo": "filtro"
+              },
+              {
+                "nombre": "Física"
+              },
+              {
+                "nombre": "Procesos de fabricación"
+              },
+              {
+                "nombre": "Economía"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "materias": [
+              {
+                "nombre": "Investigación de operaciones I",
+                "riesgo": "filtro"
+              },
+              {
+                "nombre": "Estudio del trabajo"
+              },
+              {
+                "nombre": "Termodinámica"
+              },
+              {
+                "nombre": "Contabilidad de costos"
+              },
+              {
+                "nombre": "Algoritmos"
+              }
+            ]
+          },
+          {
+            "numero": 5,
+            "materias": [
+              {
+                "nombre": "Investigación de operaciones II",
+                "riesgo": "alta_reprobacion"
+              },
+              {
+                "nombre": "Control estadístico de la calidad"
+              },
+              {
+                "nombre": "Logística"
+              },
+              {
+                "nombre": "Higiene y seguridad"
+              },
+              {
+                "nombre": "Planeación de la producción"
+              }
+            ]
+          },
+          {
+            "numero": 6,
+            "materias": [
+              {
+                "nombre": "Simulación"
+              },
+              {
+                "nombre": "Administración de proyectos"
+              },
+              {
+                "nombre": "Manufactura esbelta"
+              },
+              {
+                "nombre": "Mercadotecnia"
+              },
+              {
+                "nombre": "Residencia profesional"
+              }
+            ]
+          },
+          {
+            "numero": 7,
+            "materias": [
+              {
+                "nombre": "Residencia profesional",
+                "riesgo": "alta_desercion"
+              }
+            ]
+          },
+          {
+            "numero": 8,
+            "materias": [
+              {
+                "nombre": "Titulación"
+              }
+            ]
+          }
+        ]
+      },
+      "quienBatalla": {
+        "resumen": "Batalla quien pensó que por ser 'la ingeniería más fácil' no tiene matemáticas: tiene cálculo, estadística e investigación de operaciones. También quien no soporta el piso de planta: ruido, calor, turnos y gente con años de oficio que no le hace caso a un recién llegado.",
+        "senales": [
+          "Vienes peleado con las matemáticas",
+          "No te ves en una fábrica ni en turno nocturno",
+          "Te cuesta que te tomen en serio",
+          "Odias los reportes y los indicadores"
+        ],
+        "queAyuda": [
+          "Reforzar cálculo y estadística desde prepa",
+          "Hacer prácticas en planta lo antes posible",
+          "Aprender Excel avanzado y algo de programación",
+          "Ganarte a los operadores: ellos saben más del proceso que tú"
+        ]
+      },
+      "laboral": {
+        "salarioEntradaMxn": null,
+        "salarioCincoAniosMxn": null,
+        "tasaDesempleo": null,
+        "tasaInformalidad": null,
+        "saturacion": null
+      },
+      "costos": {
+        "publicaMxn": null,
+        "privadaMxn": null
+      },
+      "becas": [
+        "jovenes-escribiendo-el-futuro"
+      ],
+      "verificado": false,
+      "pendientes": [
+        "laboral.salarioEntradaMxn",
+        "laboral.salarioCincoAniosMxn",
+        "laboral.tasaDesempleo",
+        "laboral.tasaInformalidad",
+        "laboral.saturacion",
+        "costos.publicaMxn",
+        "costos.privadaMxn"
+      ],
+      "fuentes": [],
+      "actualizado": "2026-09-20"
+    },
+    {
+      "id": "ing-civil",
+      "nombre": "Ingeniería Civil",
+      "nombresAlternativos": [
+        "Civil",
+        "Construcción",
+        "Ingeniero Civil"
+      ],
+      "area": "ingenierias",
+      "nivel": "ingenieria",
+      "duracionAnios": 4,
+      "modalidades": [
+        "escolarizada"
+      ],
+      "martesTipico": "A las siete ya estás en obra con botas y casco. Revisas que lo construido coincida con el plano, checas el acero antes de colar y detienes el colado si algo no va. Discutes con el maestro de obra y con el proveedor que mandó menos material. En la tarde, oficina: actualizas el avance, haces números de volúmenes y pagos, y ajustas el programa porque llovió dos días. Es trabajo de sol, polvo y responsabilidad: lo que se hace mal, se cae o se paga caro.",
+      "mapaMaterias": {
+        "tipoPeriodo": "semestre",
+        "estado": "plantilla",
+        "fuentePlan": null,
+        "periodos": [
+          {
+            "numero": 1,
+            "materias": [
+              {
+                "nombre": "Cálculo diferencial",
+                "riesgo": "alta_reprobacion"
+              },
+              {
+                "nombre": "Química"
+              },
+              {
+                "nombre": "Dibujo asistido por computadora"
+              },
+              {
+                "nombre": "Topografía"
+              },
+              {
+                "nombre": "Fundamentos de investigación"
+              }
+            ]
+          },
+          {
+            "numero": 2,
+            "materias": [
+              {
+                "nombre": "Cálculo integral",
+                "riesgo": "alta_reprobacion"
+              },
+              {
+                "nombre": "Álgebra lineal"
+              },
+              {
+                "nombre": "Estática",
+                "riesgo": "filtro"
+              },
+              {
+                "nombre": "Geología"
+              },
+              {
+                "nombre": "Probabilidad y estadística"
+              }
+            ]
+          },
+          {
+            "numero": 3,
+            "materias": [
+              {
+                "nombre": "Cálculo vectorial"
+              },
+              {
+                "nombre": "Dinámica",
+                "riesgo": "alta_reprobacion"
+              },
+              {
+                "nombre": "Mecánica de materiales",
+                "riesgo": "filtro"
+              },
+              {
+                "nombre": "Materiales de construcción"
+              },
+              {
+                "nombre": "Ecuaciones diferenciales",
+                "riesgo": "alta_reprobacion"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "materias": [
+              {
+                "nombre": "Análisis estructural",
+                "riesgo": "alta_reprobacion"
+              },
+              {
+                "nombre": "Mecánica de suelos",
+                "riesgo": "filtro"
+              },
+              {
+                "nombre": "Hidráulica básica"
+              },
+              {
+                "nombre": "Costos y presupuestos"
+              },
+              {
+                "nombre": "Topografía aplicada"
+              }
+            ]
+          },
+          {
+            "numero": 5,
+            "materias": [
+              {
+                "nombre": "Concreto reforzado",
+                "riesgo": "alta_reprobacion"
+              },
+              {
+                "nombre": "Estructuras de acero"
+              },
+              {
+                "nombre": "Hidrología"
+              },
+              {
+                "nombre": "Vías terrestres"
+              },
+              {
+                "nombre": "Administración de la construcción"
+              }
+            ]
+          },
+          {
+            "numero": 6,
+            "materias": [
+              {
+                "nombre": "Cimentaciones"
+              },
+              {
+                "nombre": "Instalaciones"
+              },
+              {
+                "nombre": "Impacto ambiental"
+              },
+              {
+                "nombre": "Supervisión de obra"
+              },
+              {
+                "nombre": "Residencia profesional"
+              }
+            ]
+          },
+          {
+            "numero": 7,
+            "materias": [
+              {
+                "nombre": "Residencia profesional",
+                "riesgo": "alta_desercion"
+              }
+            ]
+          },
+          {
+            "numero": 8,
+            "materias": [
+              {
+                "nombre": "Titulación"
+              }
+            ]
+          }
+        ]
+      },
+      "quienBatalla": {
+        "resumen": "Batalla quien no aguanta física y matemáticas pesadas: estática, mecánica de materiales y análisis estructural son el filtro clásico. Después pega la obra: horarios largos, sol, cambios de ciudad y mucha dependencia de la obra pública, que sube y baja con los presupuestos y los sexenios.",
+        "senales": [
+          "Se te complican física y cálculo",
+          "No quieres trabajar fuera de tu ciudad",
+          "Te incomoda mandar a gente con más experiencia que tú",
+          "Buscas horario fijo de oficina"
+        ],
+        "queAyuda": [
+          "Ir a obra desde los primeros semestres",
+          "Aprender AutoCAD, Revit y presupuestos",
+          "Cuidar la parte legal y de seguridad: firmas responsabilidad",
+          "Tener red de contactos para los periodos flojos"
+        ]
+      },
+      "laboral": {
+        "salarioEntradaMxn": null,
+        "salarioCincoAniosMxn": null,
+        "tasaDesempleo": null,
+        "tasaInformalidad": null,
+        "saturacion": null
+      },
+      "costos": {
+        "publicaMxn": null,
+        "privadaMxn": null
+      },
+      "becas": [
+        "jovenes-escribiendo-el-futuro"
+      ],
+      "verificado": false,
+      "pendientes": [
+        "laboral.salarioEntradaMxn",
+        "laboral.salarioCincoAniosMxn",
+        "laboral.tasaDesempleo",
+        "laboral.tasaInformalidad",
+        "laboral.saturacion",
+        "costos.publicaMxn",
+        "costos.privadaMxn"
+      ],
+      "fuentes": [],
+      "actualizado": "2026-09-20"
+    },
+    {
+      "id": "ing-mecatronica",
+      "nombre": "Ingeniería Mecatrónica",
+      "nombresAlternativos": [
+        "Mecatrónica",
+        "Robótica",
+        "Automatización"
+      ],
+      "area": "ingenierias",
+      "nivel": "ingenieria",
+      "duracionAnios": 4,
+      "modalidades": [
+        "escolarizada",
+        "dual"
+      ],
+      "martesTipico": "La celda de producción se detuvo: bajas a revisar si fue el sensor, el PLC o la parte mecánica. Conectas la laptop, lees el programa, encuentras la falla y la corriges. Después sigues con tu proyecto: armar un dispositivo que mueva piezas solo, entre diseño en computadora, cableado y pruebas que fallan varias veces antes de salir. Documentas todo. Mezclas tres mundos: mecánica, electrónica y programación, y te toca traducir entre los que saben de cada uno.",
+      "mapaMaterias": {
+        "tipoPeriodo": "semestre",
+        "estado": "plantilla",
+        "fuentePlan": null,
+        "periodos": [
+          {
+            "numero": 1,
+            "materias": [
+              {
+                "nombre": "Cálculo diferencial",
+                "riesgo": "alta_reprobacion"
+              },
+              {
+                "nombre": "Química"
+              },
+              {
+                "nombre": "Dibujo mecánico"
+              },
+              {
+                "nombre": "Fundamentos de programación",
+                "riesgo": "alta_reprobacion"
+              },
+              {
+                "nombre": "Introducción a la ingeniería"
+              }
+            ]
+          },
+          {
+            "numero": 2,
+            "materias": [
+              {
+                "nombre": "Cálculo integral",
+                "riesgo": "alta_reprobacion"
+              },
+              {
+                "nombre": "Álgebra lineal"
+              },
+              {
+                "nombre": "Estática"
+              },
+              {
+                "nombre": "Programación avanzada"
+              },
+              {
+                "nombre": "Electricidad y magnetismo",
+                "riesgo": "alta_reprobacion"
+              }
+            ]
+          },
+          {
+            "numero": 3,
+            "materias": [
+              {
+                "nombre": "Ecuaciones diferenciales",
+                "riesgo": "alta_reprobacion"
+              },
+              {
+                "nombre": "Dinámica",
+                "riesgo": "filtro"
+              },
+              {
+                "nombre": "Electrónica analógica",
+                "riesgo": "alta_reprobacion"
+              },
+              {
+                "nombre": "Mecánica de materiales"
+              },
+              {
+                "nombre": "Métodos numéricos"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "materias": [
+              {
+                "nombre": "Electrónica digital"
+              },
+              {
+                "nombre": "Máquinas eléctricas"
+              },
+              {
+                "nombre": "Sistemas de control",
+                "riesgo": "filtro"
+              },
+              {
+                "nombre": "Microcontroladores",
+                "riesgo": "alta_reprobacion"
+              },
+              {
+                "nombre": "Termodinámica"
+              }
+            ]
+          },
+          {
+            "numero": 5,
+            "materias": [
+              {
+                "nombre": "Control automático",
+                "riesgo": "alta_reprobacion"
+              },
+              {
+                "nombre": "Robótica"
+              },
+              {
+                "nombre": "Neumática e hidráulica"
+              },
+              {
+                "nombre": "Instrumentación"
+              },
+              {
+                "nombre": "Manufactura"
+              }
+            ]
+          },
+          {
+            "numero": 6,
+            "materias": [
+              {
+                "nombre": "PLC y automatización"
+              },
+              {
+                "nombre": "Visión artificial"
+              },
+              {
+                "nombre": "Diseño mecatrónico"
+              },
+              {
+                "nombre": "Gestión de proyectos"
+              },
+              {
+                "nombre": "Residencia profesional"
+              }
+            ]
+          },
+          {
+            "numero": 7,
+            "materias": [
+              {
+                "nombre": "Residencia profesional",
+                "riesgo": "alta_desercion"
+              }
+            ]
+          },
+          {
+            "numero": 8,
+            "materias": [
+              {
+                "nombre": "Titulación"
+              }
+            ]
+          }
+        ]
+      },
+      "quienBatalla": {
+        "resumen": "Batalla quien es bueno en una sola pata: aquí hay que sobrevivir a la vez a cálculo, electrónica y programación. Los proyectos comen tiempo y dinero (componentes, impresiones 3D). Le va bien a quien arma cosas por gusto desde antes y no se rinde cuando el circuito no prende.",
+        "senales": [
+          "Odias una de las tres áreas: mecánica, electrónica o código",
+          "Te desespera que los proyectos fallen muchas veces",
+          "No tienes con qué comprar materiales",
+          "Solo estudias para el examen"
+        ],
+        "queAyuda": [
+          "Hacer proyectos propios con Arduino o ESP32 desde el inicio",
+          "Buscar equipo fijo para los proyectos",
+          "Aprender PLC: es lo que más se pide en la industria",
+          "Prácticas en planta antes de salir"
+        ]
+      },
+      "laboral": {
+        "salarioEntradaMxn": null,
+        "salarioCincoAniosMxn": null,
+        "tasaDesempleo": null,
+        "tasaInformalidad": null,
+        "saturacion": null
+      },
+      "costos": {
+        "publicaMxn": null,
+        "privadaMxn": null
+      },
+      "becas": [
+        "jovenes-escribiendo-el-futuro"
+      ],
+      "verificado": false,
+      "pendientes": [
+        "laboral.salarioEntradaMxn",
+        "laboral.salarioCincoAniosMxn",
+        "laboral.tasaDesempleo",
+        "laboral.tasaInformalidad",
+        "laboral.saturacion",
+        "costos.publicaMxn",
+        "costos.privadaMxn"
+      ],
+      "fuentes": [],
+      "actualizado": "2026-09-20"
+    },
+    {
+      "id": "ing-energias-renovables",
+      "nombre": "Ingeniería en Energías Renovables",
+      "nombresAlternativos": [
+        "Energías Renovables",
+        "Energía Solar",
+        "Ingeniería en Energía"
+      ],
+      "area": "ingenierias",
+      "nivel": "ingenieria",
+      "duracionAnios": 4,
+      "modalidades": [
+        "escolarizada",
+        "dual"
+      ],
+      "martesTipico": "Vas a un techo industrial a revisar por qué un sistema solar produce menos de lo prometido: mides, revisas sombras, checas inversores y cables. De regreso corres una simulación de producción y armas la cotización de un proyecto nuevo con números de retorno de inversión. Hablas con el cliente que quiere saber en cuántos años recupera su dinero. Hay trámites con la comisión eléctrica y papeleo de interconexión. Mezclas campo, cálculo y ventas.",
+      "mapaMaterias": {
+        "tipoPeriodo": "semestre",
+        "estado": "plantilla",
+        "fuentePlan": null,
+        "periodos": [
+          {
+            "numero": 1,
+            "materias": [
+              {
+                "nombre": "Cálculo diferencial",
+                "riesgo": "alta_reprobacion"
+              },
+              {
+                "nombre": "Química"
+              },
+              {
+                "nombre": "Física"
+              },
+              {
+                "nombre": "Fundamentos de programación"
+              },
+              {
+                "nombre": "Introducción a las energías"
+              }
+            ]
+          },
+          {
+            "numero": 2,
+            "materias": [
+              {
+                "nombre": "Cálculo integral",
+                "riesgo": "alta_reprobacion"
+              },
+              {
+                "nombre": "Álgebra lineal"
+              },
+              {
+                "nombre": "Electricidad y magnetismo",
+                "riesgo": "alta_reprobacion"
+              },
+              {
+                "nombre": "Termodinámica",
+                "riesgo": "filtro"
+              },
+              {
+                "nombre": "Estadística"
+              }
+            ]
+          },
+          {
+            "numero": 3,
+            "materias": [
+              {
+                "nombre": "Ecuaciones diferenciales",
+                "riesgo": "alta_reprobacion"
+              },
+              {
+                "nombre": "Transferencia de calor",
+                "riesgo": "alta_reprobacion"
+              },
+              {
+                "nombre": "Circuitos eléctricos"
+              },
+              {
+                "nombre": "Mecánica de fluidos",
+                "riesgo": "filtro"
+              },
+              {
+                "nombre": "Meteorología"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "materias": [
+              {
+                "nombre": "Energía solar fotovoltaica"
+              },
+              {
+                "nombre": "Energía solar térmica"
+              },
+              {
+                "nombre": "Máquinas eléctricas"
+              },
+              {
+                "nombre": "Instalaciones eléctricas"
+              },
+              {
+                "nombre": "Métodos numéricos"
+              }
+            ]
+          },
+          {
+            "numero": 5,
+            "materias": [
+              {
+                "nombre": "Energía eólica"
+              },
+              {
+                "nombre": "Biomasa y biogás"
+              },
+              {
+                "nombre": "Sistemas de almacenamiento"
+              },
+              {
+                "nombre": "Evaluación de proyectos",
+                "riesgo": "filtro"
+              },
+              {
+                "nombre": "Normatividad energética"
+              }
+            ]
+          },
+          {
+            "numero": 6,
+            "materias": [
+              {
+                "nombre": "Eficiencia energética"
+              },
+              {
+                "nombre": "Diseño de sistemas"
+              },
+              {
+                "nombre": "Impacto ambiental"
+              },
+              {
+                "nombre": "Gestión de proyectos"
+              },
+              {
+                "nombre": "Residencia profesional"
+              }
+            ]
+          },
+          {
+            "numero": 7,
+            "materias": [
+              {
+                "nombre": "Residencia profesional",
+                "riesgo": "alta_desercion"
+              }
+            ]
+          },
+          {
+            "numero": 8,
+            "materias": [
+              {
+                "nombre": "Titulación"
+              }
+            ]
+          }
+        ]
+      },
+      "quienBatalla": {
+        "resumen": "Batalla quien la escogió por el tema ambiental sin ver que es una ingeniería dura, con termodinámica y fluidos. Además el mercado depende de reglas del gobierno y de precios de la luz: hay años buenos y años parados. Le va bien a quien sabe vender proyectos y entiende los números de retorno de inversión.",
+        "senales": [
+          "Vienes peleado con física",
+          "Te imaginabas un trabajo de oficina o de activismo",
+          "No te gusta vender ni cotizar",
+          "No te acomoda trabajar en techos o en campo"
+        ],
+        "queAyuda": [
+          "Certificarte en instalación fotovoltaica",
+          "Aprender a hacer números de retorno de inversión",
+          "Prácticas con una empresa instaladora",
+          "Seguir de cerca las reglas de interconexión"
+        ]
+      },
+      "laboral": {
+        "salarioEntradaMxn": null,
+        "salarioCincoAniosMxn": null,
+        "tasaDesempleo": null,
+        "tasaInformalidad": null,
+        "saturacion": null
+      },
+      "costos": {
+        "publicaMxn": null,
+        "privadaMxn": null
+      },
+      "becas": [
+        "jovenes-escribiendo-el-futuro"
+      ],
+      "verificado": false,
+      "pendientes": [
+        "laboral.salarioEntradaMxn",
+        "laboral.salarioCincoAniosMxn",
+        "laboral.tasaDesempleo",
+        "laboral.tasaInformalidad",
+        "laboral.saturacion",
+        "costos.publicaMxn",
+        "costos.privadaMxn"
+      ],
+      "fuentes": [],
+      "actualizado": "2026-09-20"
+    },
+    {
+      "id": "arquitectura",
+      "nombre": "Arquitectura",
+      "nombresAlternativos": [
+        "Arquitecto",
+        "Arquitecta",
+        "Diseño Arquitectónico"
+      ],
+      "area": "arte",
+      "nivel": "licenciatura",
+      "duracionAnios": 5,
+      "modalidades": [
+        "escolarizada"
+      ],
+      "martesTipico": "Mañana en el escritorio: dibujas en computadora, ajustas un plano porque el cliente quiere otra recámara y revisas que todo cumpla el reglamento. A mediodía vas a obra a ver un detalle que no se entendió y a discutir con el contratista. Regresas a cotizar acabados y a preparar la lámina que vas a presentar. En la escuela es parecido pero con desvelo: las entregas de taller de proyectos se hacen de madrugada.",
+      "mapaMaterias": {
+        "tipoPeriodo": "semestre",
+        "estado": "plantilla",
+        "fuentePlan": null,
+        "periodos": [
+          {
+            "numero": 1,
+            "materias": [
+              {
+                "nombre": "Taller de proyectos I",
+                "riesgo": "filtro"
+              },
+              {
+                "nombre": "Dibujo arquitectónico"
+              },
+              {
+                "nombre": "Geometría descriptiva",
+                "riesgo": "alta_reprobacion"
+              },
+              {
+                "nombre": "Historia de la arquitectura"
+              },
+              {
+                "nombre": "Expresión gráfica"
+              }
+            ]
+          },
+          {
+            "numero": 2,
+            "materias": [
+              {
+                "nombre": "Taller de proyectos II",
+                "riesgo": "filtro"
+              },
+              {
+                "nombre": "Estructuras I",
+                "riesgo": "alta_reprobacion"
+              },
+              {
+                "nombre": "Materiales"
+              },
+              {
+                "nombre": "Teoría de la arquitectura"
+              },
+              {
+                "nombre": "Modelado digital"
+              }
+            ]
+          },
+          {
+            "numero": 3,
+            "materias": [
+              {
+                "nombre": "Taller de proyectos III",
+                "riesgo": "filtro"
+              },
+              {
+                "nombre": "Estructuras II",
+                "riesgo": "alta_reprobacion"
+              },
+              {
+                "nombre": "Instalaciones"
+              },
+              {
+                "nombre": "Urbanismo"
+              },
+              {
+                "nombre": "Topografía"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "materias": [
+              {
+                "nombre": "Taller de proyectos IV",
+                "riesgo": "filtro"
+              },
+              {
+                "nombre": "Construcción"
+              },
+              {
+                "nombre": "Costos y presupuestos"
+              },
+              {
+                "nombre": "Diseño bioclimático"
+              },
+              {
+                "nombre": "Paisaje"
+              }
+            ]
+          },
+          {
+            "numero": 5,
+            "materias": [
+              {
+                "nombre": "Taller de proyectos V",
+                "riesgo": "filtro"
+              },
+              {
+                "nombre": "Restauración"
+              },
+              {
+                "nombre": "Normatividad y reglamentos"
+              },
+              {
+                "nombre": "Administración de obra"
+              },
+              {
+                "nombre": "Vivienda"
+              }
+            ]
+          },
+          {
+            "numero": 6,
+            "materias": [
+              {
+                "nombre": "Taller de proyectos VI",
+                "riesgo": "filtro"
+              },
+              {
+                "nombre": "Proyecto ejecutivo",
+                "riesgo": "alta_reprobacion"
+              },
+              {
+                "nombre": "Gerencia de proyectos"
+              },
+              {
+                "nombre": "Ética profesional"
+              },
+              {
+                "nombre": "Prácticas"
+              }
+            ]
+          },
+          {
+            "numero": 7,
+            "materias": [
+              {
+                "nombre": "Taller terminal",
+                "riesgo": "alta_desercion"
+              },
+              {
+                "nombre": "Seminario de titulación"
+              }
+            ]
+          },
+          {
+            "numero": 8,
+            "materias": [
+              {
+                "nombre": "Servicio social",
+                "riesgo": "alta_desercion"
+              }
+            ]
+          },
+          {
+            "numero": 9,
+            "materias": [
+              {
+                "nombre": "Titulación",
+                "riesgo": "alta_desercion"
+              }
+            ]
+          }
+        ]
+      },
+      "quienBatalla": {
+        "resumen": "Batalla quien no aguanta los desvelos de taller ni la crítica en público: aquí te tumban el proyecto enfrente de todos. También pega el costo de materiales, impresiones y maquetas. Al salir, los primeros sueldos en despacho son bajos y hay mucha competencia; el dinero llega con obra propia o especialidad.",
+        "senales": [
+          "No manejas bien el tiempo y entregas a última hora",
+          "Te hunde la crítica",
+          "No te alcanza para materiales e impresiones",
+          "Dibujas poco por tu cuenta"
+        ],
+        "queAyuda": [
+          "Aprender a cerrar entregas sin desvelarte todo el semestre",
+          "Dominar software: AutoCAD, Revit, SketchUp, render",
+          "Trabajar en despacho desde tercer año",
+          "Guardar todo en portafolio desde el primer taller"
+        ]
+      },
+      "laboral": {
+        "salarioEntradaMxn": null,
+        "salarioCincoAniosMxn": null,
+        "tasaDesempleo": null,
+        "tasaInformalidad": null,
+        "saturacion": null
+      },
+      "costos": {
+        "publicaMxn": null,
+        "privadaMxn": null
+      },
+      "becas": [
+        "jovenes-escribiendo-el-futuro"
+      ],
+      "verificado": false,
+      "pendientes": [
+        "laboral.salarioEntradaMxn",
+        "laboral.salarioCincoAniosMxn",
+        "laboral.tasaDesempleo",
+        "laboral.tasaInformalidad",
+        "laboral.saturacion",
+        "costos.publicaMxn",
+        "costos.privadaMxn"
+      ],
+      "fuentes": [],
+      "actualizado": "2026-09-20"
+    },
+    {
+      "id": "diseno-grafico",
+      "nombre": "Diseño Gráfico",
+      "nombresAlternativos": [
+        "Diseño",
+        "Comunicación Visual",
+        "Diseño y Comunicación Gráfica"
+      ],
+      "area": "arte",
+      "nivel": "licenciatura",
+      "duracionAnios": 4,
+      "modalidades": [
+        "escolarizada",
+        "mixta",
+        "en_linea"
+      ],
+      "martesTipico": "Abres el correo con los cambios del cliente: quiere el logo 'más moderno' sin saber qué significa. Haces tres versiones y preparas cómo se lo vas a explicar. Después armas las piezas para redes de la semana, adaptas un anuncio a cinco tamaños distintos y mandas un archivo a imprenta revisando colores y márgenes. Cobras una factura pendiente. Es menos inspiración y más resolver problemas con reglas: legibilidad, jerarquía, presupuesto y tiempos.",
+      "mapaMaterias": {
+        "tipoPeriodo": "semestre",
+        "estado": "plantilla",
+        "fuentePlan": null,
+        "periodos": [
+          {
+            "numero": 1,
+            "materias": [
+              {
+                "nombre": "Fundamentos del diseño"
+              },
+              {
+                "nombre": "Dibujo"
+              },
+              {
+                "nombre": "Teoría del color"
+              },
+              {
+                "nombre": "Historia del arte"
+              },
+              {
+                "nombre": "Software de diseño"
+              }
+            ]
+          },
+          {
+            "numero": 2,
+            "materias": [
+              {
+                "nombre": "Tipografía",
+                "riesgo": "filtro"
+              },
+              {
+                "nombre": "Composición"
+              },
+              {
+                "nombre": "Fotografía"
+              },
+              {
+                "nombre": "Semiótica"
+              },
+              {
+                "nombre": "Ilustración digital"
+              }
+            ]
+          },
+          {
+            "numero": 3,
+            "materias": [
+              {
+                "nombre": "Diseño editorial"
+              },
+              {
+                "nombre": "Identidad corporativa",
+                "riesgo": "filtro"
+              },
+              {
+                "nombre": "Producción gráfica",
+                "riesgo": "alta_reprobacion"
+              },
+              {
+                "nombre": "Redacción publicitaria"
+              },
+              {
+                "nombre": "Diseño web"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "materias": [
+              {
+                "nombre": "Empaque"
+              },
+              {
+                "nombre": "Animación"
+              },
+              {
+                "nombre": "Diseño de interfaces"
+              },
+              {
+                "nombre": "Fotografía publicitaria"
+              },
+              {
+                "nombre": "Costos y presupuestos",
+                "riesgo": "filtro"
+              }
+            ]
+          },
+          {
+            "numero": 5,
+            "materias": [
+              {
+                "nombre": "Dirección de arte"
+              },
+              {
+                "nombre": "Branding"
+              },
+              {
+                "nombre": "Motion graphics"
+              },
+              {
+                "nombre": "Portafolio"
+              },
+              {
+                "nombre": "Prácticas"
+              }
+            ]
+          },
+          {
+            "numero": 6,
+            "materias": [
+              {
+                "nombre": "Gestión de proyectos"
+              },
+              {
+                "nombre": "Emprendimiento creativo"
+              },
+              {
+                "nombre": "Seminario de titulación"
+              },
+              {
+                "nombre": "Ética profesional"
+              },
+              {
+                "nombre": "Prácticas"
+              }
+            ]
+          },
+          {
+            "numero": 7,
+            "materias": [
+              {
+                "nombre": "Servicio social",
+                "riesgo": "alta_desercion"
+              }
+            ]
+          },
+          {
+            "numero": 8,
+            "materias": [
+              {
+                "nombre": "Titulación"
+              }
+            ]
+          }
+        ]
+      },
+      "quienBatalla": {
+        "resumen": "Batalla quien cree que es dibujar bonito: es resolver encargos con fecha y presupuesto, y aguantar que te cambien todo tres veces. Mucha competencia y clientes que regatean. Le va bien a quien aprende a cobrar, a poner límites y a especializarse en algo que se pague (interfaces, motion, empaque).",
+        "senales": [
+          "Te tomas personal los cambios y las críticas",
+          "No sabes cuánto cobrar",
+          "Solo diseñas lo que te gusta",
+          "No tienes portafolio ordenado"
+        ],
+        "queAyuda": [
+          "Armar portafolio con proyectos reales, aunque sean de conocidos",
+          "Aprender a cotizar y a firmar acuerdos por escrito",
+          "Especializarte en UI/UX o motion si quieres mejor pago",
+          "Conseguir clientes chicos desde los primeros semestres"
+        ]
+      },
+      "laboral": {
+        "salarioEntradaMxn": null,
+        "salarioCincoAniosMxn": null,
+        "tasaDesempleo": null,
+        "tasaInformalidad": null,
+        "saturacion": null
+      },
+      "costos": {
+        "publicaMxn": null,
+        "privadaMxn": null
+      },
+      "becas": [
+        "jovenes-escribiendo-el-futuro"
+      ],
+      "verificado": false,
+      "pendientes": [
+        "laboral.salarioEntradaMxn",
+        "laboral.salarioCincoAniosMxn",
+        "laboral.tasaDesempleo",
+        "laboral.tasaInformalidad",
+        "laboral.saturacion",
+        "costos.publicaMxn",
+        "costos.privadaMxn"
+      ],
+      "fuentes": [],
+      "actualizado": "2026-09-20"
+    },
+    {
+      "id": "educacion-primaria",
+      "nombre": "Licenciatura en Educación Primaria",
+      "nombresAlternativos": [
+        "Normal",
+        "Escuela Normal",
+        "Maestro de primaria",
+        "Docencia"
+      ],
+      "area": "educacion",
+      "nivel": "licenciatura",
+      "duracionAnios": 4,
+      "modalidades": [
+        "escolarizada"
+      ],
+      "martesTipico": "Llegas antes que los niños a dejar listo el salón. Das clase de español, matemáticas y lo que caiga, con treinta niños de distintos niveles y algunos que no desayunaron. Resuelves pleitos, revisas cuadernos y adaptas la actividad porque no funcionó como pensabas. En el recreo te toca guardia. Saliendo, atiendes a una mamá preocupada y llenas formatos. En la noche preparas la clase del día siguiente y calificas. El trabajo se lleva a casa.",
+      "mapaMaterias": {
+        "tipoPeriodo": "semestre",
+        "estado": "plantilla",
+        "fuentePlan": null,
+        "periodos": [
+          {
+            "numero": 1,
+            "materias": [
+              {
+                "nombre": "Psicología del desarrollo"
+              },
+              {
+                "nombre": "Historia de la educación"
+              },
+              {
+                "nombre": "Español y su enseñanza"
+              },
+              {
+                "nombre": "Matemáticas y su enseñanza",
+                "riesgo": "alta_reprobacion"
+              },
+              {
+                "nombre": "Observación en escuelas"
+              }
+            ]
+          },
+          {
+            "numero": 2,
+            "materias": [
+              {
+                "nombre": "Teoría pedagógica"
+              },
+              {
+                "nombre": "Didáctica"
+              },
+              {
+                "nombre": "Ciencias naturales y su enseñanza"
+              },
+              {
+                "nombre": "Gestión del grupo",
+                "riesgo": "filtro"
+              },
+              {
+                "nombre": "Práctica docente I"
+              }
+            ]
+          },
+          {
+            "numero": 3,
+            "materias": [
+              {
+                "nombre": "Evaluación del aprendizaje"
+              },
+              {
+                "nombre": "Educación inclusiva"
+              },
+              {
+                "nombre": "Historia y geografía y su enseñanza"
+              },
+              {
+                "nombre": "Tecnologías educativas"
+              },
+              {
+                "nombre": "Práctica docente II"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "materias": [
+              {
+                "nombre": "Planeación didáctica",
+                "riesgo": "filtro"
+              },
+              {
+                "nombre": "Educación socioemocional"
+              },
+              {
+                "nombre": "Artes y su enseñanza"
+              },
+              {
+                "nombre": "Educación física"
+              },
+              {
+                "nombre": "Práctica docente III"
+              }
+            ]
+          },
+          {
+            "numero": 5,
+            "materias": [
+              {
+                "nombre": "Atención a la diversidad"
+              },
+              {
+                "nombre": "Trabajo con familias"
+              },
+              {
+                "nombre": "Proyecto de intervención"
+              },
+              {
+                "nombre": "Ética profesional"
+              },
+              {
+                "nombre": "Práctica docente IV"
+              }
+            ]
+          },
+          {
+            "numero": 6,
+            "materias": [
+              {
+                "nombre": "Seminario de titulación"
+              },
+              {
+                "nombre": "Gestión escolar"
+              },
+              {
+                "nombre": "Normatividad educativa"
+              },
+              {
+                "nombre": "Investigación educativa"
+              },
+              {
+                "nombre": "Práctica intensiva",
+                "riesgo": "alta_desercion"
+              }
+            ]
+          },
+          {
+            "numero": 7,
+            "materias": [
+              {
+                "nombre": "Práctica profesional intensiva",
+                "riesgo": "alta_desercion"
+              }
+            ]
+          },
+          {
+            "numero": 8,
+            "materias": [
+              {
+                "nombre": "Titulación y proceso de admisión al servicio",
+                "riesgo": "alta_desercion"
+              }
+            ]
+          }
+        ]
+      },
+      "quienBatalla": {
+        "resumen": "Batalla quien no aguanta el desgaste de estar ocho horas con niños ni el papeleo. También quien no cuenta con que entrar al sistema depende de un proceso de admisión con plazas limitadas, y que las primeras plazas pueden caer lejos de casa. Aguanta quien de verdad disfruta enseñar y sabe poner orden sin gritar.",
+        "senales": [
+          "Pierdes la paciencia rápido",
+          "Te cuesta hablar frente a grupo",
+          "No estás dispuesto a mudarte por una plaza",
+          "Te desespera el papeleo"
+        ],
+        "queAyuda": [
+          "Dar clases particulares o talleres desde la escuela",
+          "Aprender manejo de grupo con maestros con años",
+          "Preparar bien el proceso de admisión",
+          "Cuidar la voz y el descanso: son tu herramienta"
+        ]
+      },
+      "laboral": {
+        "salarioEntradaMxn": null,
+        "salarioCincoAniosMxn": null,
+        "tasaDesempleo": null,
+        "tasaInformalidad": null,
+        "saturacion": null
+      },
+      "costos": {
+        "publicaMxn": null,
+        "privadaMxn": null
+      },
+      "becas": [
+        "jovenes-escribiendo-el-futuro"
+      ],
+      "verificado": false,
+      "pendientes": [
+        "laboral.salarioEntradaMxn",
+        "laboral.salarioCincoAniosMxn",
+        "laboral.tasaDesempleo",
+        "laboral.tasaInformalidad",
+        "laboral.saturacion",
+        "costos.publicaMxn",
+        "costos.privadaMxn"
+      ],
+      "fuentes": [],
+      "actualizado": "2026-09-20"
+    },
+    {
+      "id": "medicina-veterinaria",
+      "nombre": "Medicina Veterinaria y Zootecnia",
+      "nombresAlternativos": [
+        "Veterinaria",
+        "MVZ",
+        "Veterinario"
+      ],
+      "area": "naturales",
+      "nivel": "licenciatura",
+      "duracionAnios": 5,
+      "modalidades": [
+        "escolarizada"
+      ],
+      "martesTipico": "Si es clínica de ciudad: consultas de perros y gatos, vacunas, una cirugía de esterilización y dar una noticia difícil a una familia. Si es campo: manejas al rancho, revisas vacas, haces palpaciones, aplicas tratamientos y asesoras al productor sobre alimentación. En los dos casos te muerden, te patean y te ensucias. Hay mucho trato con dueños: convencer, explicar y cobrar. El trabajo empieza temprano y las urgencias no avisan.",
+      "mapaMaterias": {
+        "tipoPeriodo": "semestre",
+        "estado": "plantilla",
+        "fuentePlan": null,
+        "periodos": [
+          {
+            "numero": 1,
+            "materias": [
+              {
+                "nombre": "Anatomía veterinaria",
+                "riesgo": "alta_reprobacion"
+              },
+              {
+                "nombre": "Biología celular"
+              },
+              {
+                "nombre": "Química"
+              },
+              {
+                "nombre": "Bioestadística"
+              },
+              {
+                "nombre": "Introducción a la zootecnia"
+              }
+            ]
+          },
+          {
+            "numero": 2,
+            "materias": [
+              {
+                "nombre": "Fisiología animal",
+                "riesgo": "alta_reprobacion"
+              },
+              {
+                "nombre": "Histología"
+              },
+              {
+                "nombre": "Bioquímica",
+                "riesgo": "alta_reprobacion"
+              },
+              {
+                "nombre": "Genética"
+              },
+              {
+                "nombre": "Bienestar animal"
+              }
+            ]
+          },
+          {
+            "numero": 3,
+            "materias": [
+              {
+                "nombre": "Farmacología",
+                "riesgo": "alta_reprobacion"
+              },
+              {
+                "nombre": "Microbiología"
+              },
+              {
+                "nombre": "Nutrición animal",
+                "riesgo": "filtro"
+              },
+              {
+                "nombre": "Parasitología"
+              },
+              {
+                "nombre": "Reproducción"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "materias": [
+              {
+                "nombre": "Patología",
+                "riesgo": "alta_reprobacion"
+              },
+              {
+                "nombre": "Diagnóstico clínico"
+              },
+              {
+                "nombre": "Cirugía I"
+              },
+              {
+                "nombre": "Imagenología"
+              },
+              {
+                "nombre": "Producción bovina"
+              }
+            ]
+          },
+          {
+            "numero": 5,
+            "materias": [
+              {
+                "nombre": "Medicina de pequeñas especies"
+              },
+              {
+                "nombre": "Cirugía II"
+              },
+              {
+                "nombre": "Producción porcina y avícola"
+              },
+              {
+                "nombre": "Epidemiología"
+              },
+              {
+                "nombre": "Salud pública veterinaria"
+              }
+            ]
+          },
+          {
+            "numero": 6,
+            "materias": [
+              {
+                "nombre": "Clínica de grandes especies"
+              },
+              {
+                "nombre": "Inocuidad alimentaria"
+              },
+              {
+                "nombre": "Administración de clínica"
+              },
+              {
+                "nombre": "Seminario de titulación"
+              },
+              {
+                "nombre": "Prácticas"
+              }
+            ]
+          },
+          {
+            "numero": 7,
+            "materias": [
+              {
+                "nombre": "Prácticas profesionales",
+                "riesgo": "alta_desercion"
+              }
+            ]
+          },
+          {
+            "numero": 8,
+            "materias": [
+              {
+                "nombre": "Servicio social",
+                "riesgo": "alta_desercion"
+              }
+            ]
+          },
+          {
+            "numero": 9,
+            "materias": [
+              {
+                "nombre": "Titulación"
+              }
+            ]
+          }
+        ]
+      },
+      "quienBatalla": {
+        "resumen": "Batalla quien entró solo porque ama a los animales: hay que aguantar sacrificios, maltrato, dueños difíciles y materias duras como anatomía y farmacología. También el dinero: abrir clínica cuesta y los empleos de inicio pagan poco. Le va bien a quien tolera lo físico y aprende el lado de negocio o se va a producción animal.",
+        "senales": [
+          "No soportas ver sufrir o sacrificar animales",
+          "Te asusta el contacto con animales grandes",
+          "No quieres trabajar fines de semana ni urgencias",
+          "No te ves cobrando ni negociando"
+        ],
+        "queAyuda": [
+          "Acompañar a un veterinario de clínica y a uno de campo",
+          "Especializarte: pequeñas especies, producción, inocuidad",
+          "Aprender administración si quieres clínica propia",
+          "Prepararte para el desgaste emocional"
+        ]
+      },
+      "laboral": {
+        "salarioEntradaMxn": null,
+        "salarioCincoAniosMxn": null,
+        "tasaDesempleo": null,
+        "tasaInformalidad": null,
+        "saturacion": null
+      },
+      "costos": {
+        "publicaMxn": null,
+        "privadaMxn": null
+      },
+      "becas": [
+        "jovenes-escribiendo-el-futuro"
+      ],
+      "verificado": false,
+      "pendientes": [
+        "laboral.salarioEntradaMxn",
+        "laboral.salarioCincoAniosMxn",
+        "laboral.tasaDesempleo",
+        "laboral.tasaInformalidad",
+        "laboral.saturacion",
+        "costos.publicaMxn",
+        "costos.privadaMxn"
+      ],
+      "fuentes": [],
+      "actualizado": "2026-09-20"
+    },
+    {
+      "id": "agronomia",
+      "nombre": "Ingeniería Agrónoma",
+      "nombresAlternativos": [
+        "Agronomía",
+        "Ingeniero Agrónomo",
+        "Fitotecnia"
+      ],
+      "area": "naturales",
+      "nivel": "ingenieria",
+      "duracionAnios": 4,
+      "modalidades": [
+        "escolarizada",
+        "dual"
+      ],
+      "martesTipico": "Sales temprano a recorrer parcelas: revisas cómo va el cultivo, buscas plaga, checas humedad del suelo y tomas muestras. Hablas con el productor, que lleva treinta años haciéndolo a su manera, y le propones un cambio con números en la mano. Programas el riego y la siguiente aplicación. En la tarde haces reportes, cotizas insumos y revisas el clima. Es trabajo de sol, camioneta y temporadas: en cosecha no hay domingos.",
+      "mapaMaterias": {
+        "tipoPeriodo": "semestre",
+        "estado": "plantilla",
+        "fuentePlan": null,
+        "periodos": [
+          {
+            "numero": 1,
+            "materias": [
+              {
+                "nombre": "Botánica"
+              },
+              {
+                "nombre": "Química",
+                "riesgo": "alta_reprobacion"
+              },
+              {
+                "nombre": "Matemáticas"
+              },
+              {
+                "nombre": "Edafología",
+                "riesgo": "filtro"
+              },
+              {
+                "nombre": "Introducción a la agronomía"
+              }
+            ]
+          },
+          {
+            "numero": 2,
+            "materias": [
+              {
+                "nombre": "Fisiología vegetal",
+                "riesgo": "alta_reprobacion"
+              },
+              {
+                "nombre": "Bioquímica"
+              },
+              {
+                "nombre": "Estadística"
+              },
+              {
+                "nombre": "Climatología"
+              },
+              {
+                "nombre": "Maquinaria agrícola"
+              }
+            ]
+          },
+          {
+            "numero": 3,
+            "materias": [
+              {
+                "nombre": "Genética vegetal"
+              },
+              {
+                "nombre": "Fitopatología",
+                "riesgo": "filtro"
+              },
+              {
+                "nombre": "Entomología"
+              },
+              {
+                "nombre": "Riego y drenaje",
+                "riesgo": "alta_reprobacion"
+              },
+              {
+                "nombre": "Fertilidad de suelos"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "materias": [
+              {
+                "nombre": "Mejoramiento genético"
+              },
+              {
+                "nombre": "Manejo integrado de plagas"
+              },
+              {
+                "nombre": "Cultivos básicos"
+              },
+              {
+                "nombre": "Economía agrícola"
+              },
+              {
+                "nombre": "Topografía"
+              }
+            ]
+          },
+          {
+            "numero": 5,
+            "materias": [
+              {
+                "nombre": "Agricultura protegida"
+              },
+              {
+                "nombre": "Poscosecha"
+              },
+              {
+                "nombre": "Extensionismo rural"
+              },
+              {
+                "nombre": "Administración agropecuaria"
+              },
+              {
+                "nombre": "Proyecto productivo"
+              }
+            ]
+          },
+          {
+            "numero": 6,
+            "materias": [
+              {
+                "nombre": "Agricultura sustentable"
+              },
+              {
+                "nombre": "Comercialización"
+              },
+              {
+                "nombre": "Seminario de titulación"
+              },
+              {
+                "nombre": "Normatividad"
+              },
+              {
+                "nombre": "Residencia profesional"
+              }
+            ]
+          },
+          {
+            "numero": 7,
+            "materias": [
+              {
+                "nombre": "Residencia profesional",
+                "riesgo": "alta_desercion"
+              }
+            ]
+          },
+          {
+            "numero": 8,
+            "materias": [
+              {
+                "nombre": "Titulación"
+              }
+            ]
+          }
+        ]
+      },
+      "quienBatalla": {
+        "resumen": "Batalla quien quiere quedarse en la ciudad: el trabajo está en el campo, con calor, polvo y comunidades lejanas. También quien no sabe tratar con productores, que desconfían del recién egresado. Le va bien a quien sabe de negocio agrícola y aguanta las temporadas fuertes.",
+        "senales": [
+          "No quieres vivir fuera de la ciudad",
+          "Te cuesta ganarte la confianza de la gente mayor",
+          "Buscas horario fijo",
+          "Te molesta el trabajo físico y el sol"
+        ],
+        "queAyuda": [
+          "Prácticas en empresa agrícola o invernadero desde temprano",
+          "Aprender de agricultura protegida y riego tecnificado",
+          "Saber de costos y comercialización, no solo de cultivo",
+          "Aprender a escuchar al productor antes de proponerle"
+        ]
+      },
+      "laboral": {
+        "salarioEntradaMxn": null,
+        "salarioCincoAniosMxn": null,
+        "tasaDesempleo": null,
+        "tasaInformalidad": null,
+        "saturacion": null
+      },
+      "costos": {
+        "publicaMxn": null,
+        "privadaMxn": null
+      },
+      "becas": [
+        "jovenes-escribiendo-el-futuro"
+      ],
+      "verificado": false,
+      "pendientes": [
+        "laboral.salarioEntradaMxn",
+        "laboral.salarioCincoAniosMxn",
+        "laboral.tasaDesempleo",
+        "laboral.tasaInformalidad",
+        "laboral.saturacion",
+        "costos.publicaMxn",
+        "costos.privadaMxn"
+      ],
+      "fuentes": [],
+      "actualizado": "2026-09-20"
+    },
+    {
+      "id": "tsu-tecnologias-informacion",
+      "nombre": "TSU en Tecnologías de la Información",
+      "nombresAlternativos": [
+        "TSU en Desarrollo de Software",
+        "TSU en Sistemas",
+        "TI"
+      ],
+      "area": "ingenierias",
+      "nivel": "tsu",
+      "duracionAnios": 2,
+      "modalidades": [
+        "escolarizada",
+        "dual"
+      ],
+      "martesTipico": "Te asignan un módulo de un sistema: lo programas, lo pruebas y lo subes. Atiendes un reporte de un usuario que dice que 'no sirve' y tienes que averiguar qué hizo exactamente. Ajustas una consulta a la base de datos que está tardando. A veces te toca soporte: configurar equipos, revisar la red, respaldar información. Sales a los dos años con algo que ya se cobra, y muchos siguen estudiando la ingeniería mientras trabajan.",
+      "mapaMaterias": {
+        "tipoPeriodo": "cuatrimestre",
+        "estado": "plantilla",
+        "fuentePlan": null,
+        "periodos": [
+          {
+            "numero": 1,
+            "materias": [
+              {
+                "nombre": "Programación básica",
+                "riesgo": "alta_reprobacion"
+              },
+              {
+                "nombre": "Matemáticas para TI"
+              },
+              {
+                "nombre": "Inglés I"
+              },
+              {
+                "nombre": "Bases de datos"
+              },
+              {
+                "nombre": "Expresión oral y escrita"
+              }
+            ]
+          },
+          {
+            "numero": 2,
+            "materias": [
+              {
+                "nombre": "Programación orientada a objetos",
+                "riesgo": "alta_reprobacion"
+              },
+              {
+                "nombre": "Bases de datos avanzadas",
+                "riesgo": "filtro"
+              },
+              {
+                "nombre": "Inglés II"
+              },
+              {
+                "nombre": "Redes"
+              },
+              {
+                "nombre": "Desarrollo humano"
+              }
+            ]
+          },
+          {
+            "numero": 3,
+            "materias": [
+              {
+                "nombre": "Desarrollo web"
+              },
+              {
+                "nombre": "Sistemas operativos"
+              },
+              {
+                "nombre": "Inglés III"
+              },
+              {
+                "nombre": "Estructura de datos",
+                "riesgo": "filtro"
+              },
+              {
+                "nombre": "Metodologías de desarrollo"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "materias": [
+              {
+                "nombre": "Aplicaciones móviles"
+              },
+              {
+                "nombre": "Seguridad informática"
+              },
+              {
+                "nombre": "Inglés IV"
+              },
+              {
+                "nombre": "Integradora I"
+              },
+              {
+                "nombre": "Calidad de software"
+              }
+            ]
+          },
+          {
+            "numero": 5,
+            "materias": [
+              {
+                "nombre": "Servicios en la nube"
+              },
+              {
+                "nombre": "Integradora II"
+              },
+              {
+                "nombre": "Inglés V"
+              },
+              {
+                "nombre": "Gestión de proyectos"
+              },
+              {
+                "nombre": "Ética profesional"
+              }
+            ]
+          },
+          {
+            "numero": 6,
+            "materias": [
+              {
+                "nombre": "Estadía profesional en empresa",
+                "riesgo": "alta_desercion"
+              }
+            ]
+          }
+        ]
+      },
+      "quienBatalla": {
+        "resumen": "Batalla quien esperaba ir lento: el TSU va en cuatrimestres, a marcha forzada, y el que se atora en programación básica difícilmente alcanza. También quien no practica fuera de clase. La ventaja es que en dos años ya se puede trabajar, y varias empresas contratan desde la estadía.",
+        "senales": [
+          "Necesitas tiempo largo para asimilar temas nuevos",
+          "No tienes computadora en casa",
+          "Tu inglés es muy básico",
+          "No practicas programación por tu cuenta"
+        ],
+        "queAyuda": [
+          "Conseguir acceso a computadora aunque sea prestada o en el laboratorio",
+          "Practicar diario, aunque sean 30 minutos",
+          "Tomar en serio el inglés desde el primer cuatrimestre",
+          "Elegir bien la empresa de estadía: muchos se quedan ahí"
+        ]
+      },
+      "laboral": {
+        "salarioEntradaMxn": null,
+        "salarioCincoAniosMxn": null,
+        "tasaDesempleo": null,
+        "tasaInformalidad": null,
+        "saturacion": null
+      },
+      "costos": {
+        "publicaMxn": null,
+        "privadaMxn": null
+      },
+      "becas": [
+        "jovenes-escribiendo-el-futuro"
+      ],
+      "verificado": false,
+      "pendientes": [
+        "laboral.salarioEntradaMxn",
+        "laboral.salarioCincoAniosMxn",
+        "laboral.tasaDesempleo",
+        "laboral.tasaInformalidad",
+        "laboral.saturacion",
+        "costos.publicaMxn",
+        "costos.privadaMxn"
+      ],
+      "fuentes": [],
+      "actualizado": "2026-09-20"
+    },
+    {
+      "id": "tsu-mecatronica",
+      "nombre": "TSU en Mecatrónica",
+      "nombresAlternativos": [
+        "TSU en Automatización",
+        "TSU en Mantenimiento Industrial Mecatrónica"
+      ],
+      "area": "ingenierias",
+      "nivel": "tsu",
+      "duracionAnios": 2,
+      "modalidades": [
+        "escolarizada",
+        "dual"
+      ],
+      "martesTipico": "Arranca el turno y revisas las máquinas de la línea: sensores, neumática, conexiones. Si algo se para, diagnosticas rápido, porque cada minuto detenido cuesta. Cambias un actuador, ajustas un programa de PLC y pruebas. Llenas la bitácora de mantenimiento. Hay días tranquilos de mantenimiento preventivo y días donde no te sientas. Trabajo de planta, con casco, botas y a veces turno nocturno.",
+      "mapaMaterias": {
+        "tipoPeriodo": "cuatrimestre",
+        "estado": "plantilla",
+        "fuentePlan": null,
+        "periodos": [
+          {
+            "numero": 1,
+            "materias": [
+              {
+                "nombre": "Matemáticas",
+                "riesgo": "alta_reprobacion"
+              },
+              {
+                "nombre": "Dibujo técnico"
+              },
+              {
+                "nombre": "Electricidad básica",
+                "riesgo": "alta_reprobacion"
+              },
+              {
+                "nombre": "Inglés I"
+              },
+              {
+                "nombre": "Seguridad industrial"
+              }
+            ]
+          },
+          {
+            "numero": 2,
+            "materias": [
+              {
+                "nombre": "Electrónica analógica",
+                "riesgo": "alta_reprobacion"
+              },
+              {
+                "nombre": "Metrología"
+              },
+              {
+                "nombre": "Procesos de manufactura"
+              },
+              {
+                "nombre": "Inglés II"
+              },
+              {
+                "nombre": "Física aplicada"
+              }
+            ]
+          },
+          {
+            "numero": 3,
+            "materias": [
+              {
+                "nombre": "Electrónica digital"
+              },
+              {
+                "nombre": "Neumática e hidráulica",
+                "riesgo": "filtro"
+              },
+              {
+                "nombre": "Máquinas eléctricas"
+              },
+              {
+                "nombre": "Inglés III"
+              },
+              {
+                "nombre": "Programación"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "materias": [
+              {
+                "nombre": "Controladores lógicos programables",
+                "riesgo": "filtro"
+              },
+              {
+                "nombre": "Instrumentación"
+              },
+              {
+                "nombre": "Mantenimiento predictivo"
+              },
+              {
+                "nombre": "Inglés IV"
+              },
+              {
+                "nombre": "Integradora I"
+              }
+            ]
+          },
+          {
+            "numero": 5,
+            "materias": [
+              {
+                "nombre": "Robótica industrial"
+              },
+              {
+                "nombre": "Automatización"
+              },
+              {
+                "nombre": "Integradora II"
+              },
+              {
+                "nombre": "Inglés V"
+              },
+              {
+                "nombre": "Gestión de mantenimiento"
+              }
+            ]
+          },
+          {
+            "numero": 6,
+            "materias": [
+              {
+                "nombre": "Estadía profesional en empresa",
+                "riesgo": "alta_desercion"
+              }
+            ]
+          }
+        ]
+      },
+      "quienBatalla": {
+        "resumen": "Batalla quien no tiene habilidad manual o le teme a la electricidad y a las máquinas. El ritmo cuatrimestral no perdona atorarse en electricidad básica. En planta también pesa el turno nocturno y el ruido. Le va bien a quien le gusta desarmar cosas y no le importa ensuciarse.",
+        "senales": [
+          "Nunca has desarmado ni reparado nada",
+          "Te da miedo trabajar con corriente o maquinaria",
+          "No aguantas turnos rotativos",
+          "Vienes muy flojo en matemáticas"
+        ],
+        "queAyuda": [
+          "Practicar en el taller todo lo que puedas",
+          "Certificarte en PLC: es lo que más piden",
+          "Cuidar mucho las reglas de seguridad",
+          "Aprovechar la estadía para quedarte en la empresa"
+        ]
+      },
+      "laboral": {
+        "salarioEntradaMxn": null,
+        "salarioCincoAniosMxn": null,
+        "tasaDesempleo": null,
+        "tasaInformalidad": null,
+        "saturacion": null
+      },
+      "costos": {
+        "publicaMxn": null,
+        "privadaMxn": null
+      },
+      "becas": [
+        "jovenes-escribiendo-el-futuro"
+      ],
+      "verificado": false,
+      "pendientes": [
+        "laboral.salarioEntradaMxn",
+        "laboral.salarioCincoAniosMxn",
+        "laboral.tasaDesempleo",
+        "laboral.tasaInformalidad",
+        "laboral.saturacion",
+        "costos.publicaMxn",
+        "costos.privadaMxn"
+      ],
+      "fuentes": [],
+      "actualizado": "2026-09-20"
+    },
+    {
+      "id": "tsu-mantenimiento-industrial",
+      "nombre": "TSU en Mantenimiento Industrial",
+      "nombresAlternativos": [
+        "TSU en Mantenimiento",
+        "Mantenimiento de Planta"
+      ],
+      "area": "ingenierias",
+      "nivel": "tsu",
+      "duracionAnios": 2,
+      "modalidades": [
+        "escolarizada",
+        "dual"
+      ],
+      "martesTipico": "Revisas el plan de mantenimiento del día: lubricar, apretar, medir vibración y temperatura de motores. Detectas que un rodamiento suena mal y lo programas para cambio antes de que truene. Cuando algo se rompe sin aviso, te toca repararlo con la línea detenida y todo el mundo encima. Llevas registro de cada intervención y de refacciones. Es trabajo físico, de herramienta en mano, con reglas de seguridad estrictas.",
+      "mapaMaterias": {
+        "tipoPeriodo": "cuatrimestre",
+        "estado": "plantilla",
+        "fuentePlan": null,
+        "periodos": [
+          {
+            "numero": 1,
+            "materias": [
+              {
+                "nombre": "Matemáticas",
+                "riesgo": "alta_reprobacion"
+              },
+              {
+                "nombre": "Dibujo técnico"
+              },
+              {
+                "nombre": "Mecánica básica"
+              },
+              {
+                "nombre": "Inglés I"
+              },
+              {
+                "nombre": "Seguridad e higiene"
+              }
+            ]
+          },
+          {
+            "numero": 2,
+            "materias": [
+              {
+                "nombre": "Electricidad industrial",
+                "riesgo": "alta_reprobacion"
+              },
+              {
+                "nombre": "Metrología"
+              },
+              {
+                "nombre": "Materiales"
+              },
+              {
+                "nombre": "Inglés II"
+              },
+              {
+                "nombre": "Termodinámica"
+              }
+            ]
+          },
+          {
+            "numero": 3,
+            "materias": [
+              {
+                "nombre": "Máquinas y equipos",
+                "riesgo": "filtro"
+              },
+              {
+                "nombre": "Soldadura"
+              },
+              {
+                "nombre": "Lubricación"
+              },
+              {
+                "nombre": "Inglés III"
+              },
+              {
+                "nombre": "Hidráulica y neumática"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "materias": [
+              {
+                "nombre": "Mantenimiento preventivo",
+                "riesgo": "filtro"
+              },
+              {
+                "nombre": "Mantenimiento predictivo"
+              },
+              {
+                "nombre": "Refrigeración industrial"
+              },
+              {
+                "nombre": "Inglés IV"
+              },
+              {
+                "nombre": "Integradora I"
+              }
+            ]
+          },
+          {
+            "numero": 5,
+            "materias": [
+              {
+                "nombre": "Automatización básica"
+              },
+              {
+                "nombre": "Gestión del mantenimiento"
+              },
+              {
+                "nombre": "Integradora II"
+              },
+              {
+                "nombre": "Inglés V"
+              },
+              {
+                "nombre": "Administración de refacciones"
+              }
+            ]
+          },
+          {
+            "numero": 6,
+            "materias": [
+              {
+                "nombre": "Estadía profesional en empresa",
+                "riesgo": "alta_desercion"
+              }
+            ]
+          }
+        ]
+      },
+      "quienBatalla": {
+        "resumen": "Batalla quien no aguanta lo físico ni la presión de reparar con la planta parada. También quien es descuidado: aquí un error de seguridad cuesta un dedo o algo peor. Le va bien a quien tiene buena mano, orden y disposición a turnos; la demanda en zonas industriales es constante.",
+        "senales": [
+          "No te gusta el trabajo pesado o sucio",
+          "Eres distraído con las reglas de seguridad",
+          "No aguantas presión ni gritos",
+          "No te ves en turno de noche"
+        ],
+        "queAyuda": [
+          "Tomar en serio la seguridad desde el taller escolar",
+          "Aprender soldadura y electricidad, abren más puertas",
+          "Sumar certificaciones cortas",
+          "Hacer la estadía en una planta grande"
+        ]
+      },
+      "laboral": {
+        "salarioEntradaMxn": null,
+        "salarioCincoAniosMxn": null,
+        "tasaDesempleo": null,
+        "tasaInformalidad": null,
+        "saturacion": null
+      },
+      "costos": {
+        "publicaMxn": null,
+        "privadaMxn": null
+      },
+      "becas": [
+        "jovenes-escribiendo-el-futuro"
+      ],
+      "verificado": false,
+      "pendientes": [
+        "laboral.salarioEntradaMxn",
+        "laboral.salarioCincoAniosMxn",
+        "laboral.tasaDesempleo",
+        "laboral.tasaInformalidad",
+        "laboral.saturacion",
+        "costos.publicaMxn",
+        "costos.privadaMxn"
+      ],
+      "fuentes": [],
+      "actualizado": "2026-09-20"
+    },
+    {
+      "id": "tecnica-enfermeria-general",
+      "nombre": "Técnico en Enfermería General",
+      "nombresAlternativos": [
+        "Enfermería técnica",
+        "Auxiliar de enfermería",
+        "Enfermería de nivel técnico"
+      ],
+      "area": "salud",
+      "nivel": "tecnica",
+      "duracionAnios": 3,
+      "modalidades": [
+        "escolarizada"
+      ],
+      "martesTipico": "Turno en el hospital o la clínica: tomas signos vitales, preparas material, ayudas a bañar y mover pacientes, aplicas medicamentos indicados y acompañas en curaciones. Llevas el registro de cada cosa que haces. Trabajas bajo la supervisión de enfermería con licenciatura o del médico. Es entrada rápida al trabajo en salud y muchos siguen estudiando la licenciatura mientras ya están empleados.",
+      "mapaMaterias": {
+        "tipoPeriodo": "semestre",
+        "estado": "plantilla",
+        "fuentePlan": null,
+        "periodos": [
+          {
+            "numero": 1,
+            "materias": [
+              {
+                "nombre": "Anatomía y fisiología",
+                "riesgo": "alta_reprobacion"
+              },
+              {
+                "nombre": "Fundamentos de enfermería"
+              },
+              {
+                "nombre": "Primeros auxilios"
+              },
+              {
+                "nombre": "Salud pública"
+              },
+              {
+                "nombre": "Comunicación"
+              }
+            ]
+          },
+          {
+            "numero": 2,
+            "materias": [
+              {
+                "nombre": "Farmacología básica",
+                "riesgo": "alta_reprobacion"
+              },
+              {
+                "nombre": "Microbiología"
+              },
+              {
+                "nombre": "Técnicas de enfermería",
+                "riesgo": "filtro"
+              },
+              {
+                "nombre": "Nutrición"
+              },
+              {
+                "nombre": "Ética y legalidad"
+              }
+            ]
+          },
+          {
+            "numero": 3,
+            "materias": [
+              {
+                "nombre": "Enfermería del adulto"
+              },
+              {
+                "nombre": "Cálculo de dosis",
+                "riesgo": "filtro"
+              },
+              {
+                "nombre": "Materno infantil"
+              },
+              {
+                "nombre": "Urgencias básicas"
+              },
+              {
+                "nombre": "Práctica clínica I"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "materias": [
+              {
+                "nombre": "Enfermería quirúrgica"
+              },
+              {
+                "nombre": "Pediatría"
+              },
+              {
+                "nombre": "Salud mental"
+              },
+              {
+                "nombre": "Control de infecciones"
+              },
+              {
+                "nombre": "Práctica clínica II"
+              }
+            ]
+          },
+          {
+            "numero": 5,
+            "materias": [
+              {
+                "nombre": "Adulto mayor"
+              },
+              {
+                "nombre": "Enfermería comunitaria"
+              },
+              {
+                "nombre": "Administración de la atención"
+              },
+              {
+                "nombre": "Práctica clínica III"
+              },
+              {
+                "nombre": "Preparación laboral"
+              }
+            ]
+          },
+          {
+            "numero": 6,
+            "materias": [
+              {
+                "nombre": "Servicio social o prácticas profesionales",
+                "riesgo": "alta_desercion"
+              }
+            ]
+          }
+        ]
+      },
+      "quienBatalla": {
+        "resumen": "Batalla quien no tolera fluidos, olores o el dolor ajeno; eso no se puede esquivar. También quien busca que le reconozcan mando: aquí se trabaja bajo indicaciones. La ventaja es empezar a trabajar joven; la desventaja es que el techo de sueldo es más bajo que con licenciatura.",
+        "senales": [
+          "Te da asco o pánico la sangre y los fluidos",
+          "Te cuesta recibir órdenes",
+          "Quieres un sueldo alto rápido",
+          "Se te dificulta el cálculo de dosis"
+        ],
+        "queAyuda": [
+          "Practicar cálculo de dosis hasta dominarlo",
+          "Planear desde ya la licenciatura por revalidación",
+          "Cuidar espalda y calzado",
+          "Buscar plaza en hospital con capacitación continua"
+        ]
+      },
+      "laboral": {
+        "salarioEntradaMxn": null,
+        "salarioCincoAniosMxn": null,
+        "tasaDesempleo": null,
+        "tasaInformalidad": null,
+        "saturacion": null
+      },
+      "costos": {
+        "publicaMxn": null,
+        "privadaMxn": null
+      },
+      "becas": [],
+      "verificado": false,
+      "pendientes": [
+        "laboral.salarioEntradaMxn",
+        "laboral.salarioCincoAniosMxn",
+        "laboral.tasaDesempleo",
+        "laboral.tasaInformalidad",
+        "laboral.saturacion",
+        "costos.publicaMxn",
+        "costos.privadaMxn"
+      ],
+      "fuentes": [],
+      "actualizado": "2026-09-20"
+    },
+    {
+      "id": "tecnica-emergencias-medicas",
+      "nombre": "Técnico en Urgencias Médicas (paramédico)",
+      "nombresAlternativos": [
+        "TUM",
+        "Paramédico",
+        "Técnico en Emergencias Médicas",
+        "Urgencias Médicas"
+      ],
+      "area": "salud",
+      "nivel": "tecnica",
+      "duracionAnios": 2,
+      "modalidades": [
+        "escolarizada"
+      ],
+      "martesTipico": "Guardia de doce o veinticuatro horas. Suena el radio y sales a un choque: llegas, aseguras la escena, valoras al lesionado, inmovilizas, controlas sangrado y trasladas mientras vas reportando por radio al hospital. Entregas al paciente y llenas el formato. Entre llamadas, revisas y repones el equipo de la ambulancia y esperas. Es intenso a ratos y muerto a ratos, con adrenalina, malos horarios y escenas duras.",
+      "mapaMaterias": {
+        "tipoPeriodo": "semestre",
+        "estado": "plantilla",
+        "fuentePlan": null,
+        "periodos": [
+          {
+            "numero": 1,
+            "materias": [
+              {
+                "nombre": "Anatomía y fisiología",
+                "riesgo": "alta_reprobacion"
+              },
+              {
+                "nombre": "Soporte vital básico",
+                "riesgo": "filtro"
+              },
+              {
+                "nombre": "Trauma I"
+              },
+              {
+                "nombre": "Rescate básico"
+              },
+              {
+                "nombre": "Marco legal"
+              }
+            ]
+          },
+          {
+            "numero": 2,
+            "materias": [
+              {
+                "nombre": "Farmacología de urgencias",
+                "riesgo": "alta_reprobacion"
+              },
+              {
+                "nombre": "Soporte vital avanzado",
+                "riesgo": "filtro"
+              },
+              {
+                "nombre": "Trauma II"
+              },
+              {
+                "nombre": "Urgencias médicas"
+              },
+              {
+                "nombre": "Comunicación en emergencias"
+              }
+            ]
+          },
+          {
+            "numero": 3,
+            "materias": [
+              {
+                "nombre": "Urgencias obstétricas y pediátricas"
+              },
+              {
+                "nombre": "Manejo de vía aérea",
+                "riesgo": "filtro"
+              },
+              {
+                "nombre": "Extricación vehicular"
+              },
+              {
+                "nombre": "Incidentes con múltiples víctimas"
+              },
+              {
+                "nombre": "Prácticas en ambulancia"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "materias": [
+              {
+                "nombre": "Prácticas profesionales en servicio prehospitalario",
+                "riesgo": "alta_desercion"
+              }
+            ]
+          }
+        ]
+      },
+      "quienBatalla": {
+        "resumen": "Batalla quien no aguanta ver muerte, mutilación y familias desesperadas, y quien no puede con guardias de 24 horas y sueldos bajos, sobre todo en servicios municipales o voluntarios. Aguanta quien trabaja bien bajo presión, sigue protocolos al pie de la letra y tiene con quién hablar de lo que ve.",
+        "senales": [
+          "Te paralizas en situaciones de crisis",
+          "No soportas escenas de sangre o muerte",
+          "Necesitas horario fijo y sueldo estable",
+          "Te cuesta seguir protocolos al pie de la letra"
+        ],
+        "queAyuda": [
+          "Entrar de voluntario a una base antes de decidir",
+          "Mantener certificaciones vigentes (BLS, ACLS, PHTLS)",
+          "Cuidar tu salud mental: esto acumula",
+          "Buscar servicios con contrato, no solo voluntariado"
+        ]
+      },
+      "laboral": {
+        "salarioEntradaMxn": null,
+        "salarioCincoAniosMxn": null,
+        "tasaDesempleo": null,
+        "tasaInformalidad": null,
+        "saturacion": null
+      },
+      "costos": {
+        "publicaMxn": null,
+        "privadaMxn": null
+      },
+      "becas": [],
+      "verificado": false,
+      "pendientes": [
+        "laboral.salarioEntradaMxn",
+        "laboral.salarioCincoAniosMxn",
+        "laboral.tasaDesempleo",
+        "laboral.tasaInformalidad",
+        "laboral.saturacion",
+        "costos.publicaMxn",
+        "costos.privadaMxn"
+      ],
+      "fuentes": [],
+      "actualizado": "2026-09-20"
+    },
+    {
+      "id": "tecnica-gastronomia",
+      "nombre": "Técnico en Gastronomía",
+      "nombresAlternativos": [
+        "Cocina",
+        "Chef",
+        "Artes Culinarias",
+        "Gastronomía técnica"
+      ],
+      "area": "oficios",
+      "nivel": "tecnica",
+      "duracionAnios": 2,
+      "modalidades": [
+        "escolarizada",
+        "dual"
+      ],
+      "martesTipico": "Llegas antes de la comida a hacer mise en place: cortas, preparas fondos, checas lo que llegó del proveedor y lo que se echó a perder. Cuando abre el servicio son tres horas a mil por hora, con calor, gritos de organización y platos que salen cada minuto. Limpias tu estación, cuentas inventario y anotas mermas. Los buenos días son los fines de semana y las fiestas; ahí es cuando más se trabaja.",
+      "mapaMaterias": {
+        "tipoPeriodo": "semestre",
+        "estado": "plantilla",
+        "fuentePlan": null,
+        "periodos": [
+          {
+            "numero": 1,
+            "materias": [
+              {
+                "nombre": "Higiene e inocuidad",
+                "riesgo": "filtro"
+              },
+              {
+                "nombre": "Técnicas culinarias básicas",
+                "riesgo": "alta_reprobacion"
+              },
+              {
+                "nombre": "Cocina mexicana"
+              },
+              {
+                "nombre": "Costos de menú",
+                "riesgo": "filtro"
+              },
+              {
+                "nombre": "Inglés"
+              }
+            ]
+          },
+          {
+            "numero": 2,
+            "materias": [
+              {
+                "nombre": "Cocina internacional"
+              },
+              {
+                "nombre": "Panadería y repostería"
+              },
+              {
+                "nombre": "Servicio y atención"
+              },
+              {
+                "nombre": "Nutrición aplicada"
+              },
+              {
+                "nombre": "Compras y almacén"
+              }
+            ]
+          },
+          {
+            "numero": 3,
+            "materias": [
+              {
+                "nombre": "Cocina de autor"
+              },
+              {
+                "nombre": "Bar y bebidas"
+              },
+              {
+                "nombre": "Administración de restaurante",
+                "riesgo": "filtro"
+              },
+              {
+                "nombre": "Diseño de menú"
+              },
+              {
+                "nombre": "Prácticas en cocina"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "materias": [
+              {
+                "nombre": "Prácticas profesionales en restaurante",
+                "riesgo": "alta_desercion"
+              }
+            ]
+          }
+        ]
+      },
+      "quienBatalla": {
+        "resumen": "Batalla quien la escogió por los programas de cocina de la tele: la realidad es calor, quemaduras, horarios de noche, fines de semana y jefes exigentes. Los sueldos de inicio son bajos y el avance viene con años. Aguanta quien le gusta el ritmo de cocina y sabe de costos, no solo de sabor.",
+        "senales": [
+          "Quieres fines de semana libres",
+          "Te desespera que te griten en servicio",
+          "No aguantas estar de pie horas",
+          "No te interesan los números ni el costo del plato"
+        ],
+        "queAyuda": [
+          "Trabajar en cocina real desde el primer semestre",
+          "Aprender costos y control de merma",
+          "Cuidar manos, espalda y descanso",
+          "Ahorrar para poner algo propio: ahí está el dinero"
+        ]
+      },
+      "laboral": {
+        "salarioEntradaMxn": null,
+        "salarioCincoAniosMxn": null,
+        "tasaDesempleo": null,
+        "tasaInformalidad": null,
+        "saturacion": null
+      },
+      "costos": {
+        "publicaMxn": null,
+        "privadaMxn": null
+      },
+      "becas": [],
+      "verificado": false,
+      "pendientes": [
+        "laboral.salarioEntradaMxn",
+        "laboral.salarioCincoAniosMxn",
+        "laboral.tasaDesempleo",
+        "laboral.tasaInformalidad",
+        "laboral.saturacion",
+        "costos.publicaMxn",
+        "costos.privadaMxn"
+      ],
+      "fuentes": [],
+      "actualizado": "2026-09-20"
+    },
+    {
+      "id": "tecnica-refrigeracion-hvac",
+      "nombre": "Técnico en Refrigeración y Aire Acondicionado",
+      "nombresAlternativos": [
+        "HVAC",
+        "Refrigeración",
+        "Clima y refrigeración",
+        "Aire acondicionado"
+      ],
+      "area": "oficios",
+      "nivel": "tecnica",
+      "duracionAnios": 2,
+      "modalidades": [
+        "escolarizada",
+        "mixta"
+      ],
+      "martesTipico": "Tienes tres servicios agendados: un minisplit que no enfría en una casa, la cámara de refrigeración de una carnicería y mantenimiento en una oficina. Mides presiones, buscas fuga, recuperas y recargas refrigerante, limpias y cambias piezas. Cobras al terminar. En temporada de calor no te das abasto y puedes cobrar más; en invierno baja y conviene tener clientes de mantenimiento fijo.",
+      "mapaMaterias": {
+        "tipoPeriodo": "semestre",
+        "estado": "plantilla",
+        "fuentePlan": null,
+        "periodos": [
+          {
+            "numero": 1,
+            "materias": [
+              {
+                "nombre": "Electricidad básica",
+                "riesgo": "alta_reprobacion"
+              },
+              {
+                "nombre": "Herramientas y seguridad",
+                "riesgo": "filtro"
+              },
+              {
+                "nombre": "Termodinámica aplicada"
+              },
+              {
+                "nombre": "Soldadura de tubería de cobre",
+                "riesgo": "filtro"
+              },
+              {
+                "nombre": "Matemáticas aplicadas"
+              }
+            ]
+          },
+          {
+            "numero": 2,
+            "materias": [
+              {
+                "nombre": "Sistemas de refrigeración"
+              },
+              {
+                "nombre": "Diagnóstico de fallas",
+                "riesgo": "filtro"
+              },
+              {
+                "nombre": "Control eléctrico"
+              },
+              {
+                "nombre": "Normatividad de refrigerantes"
+              },
+              {
+                "nombre": "Atención al cliente"
+              }
+            ]
+          },
+          {
+            "numero": 3,
+            "materias": [
+              {
+                "nombre": "Aire acondicionado residencial"
+              },
+              {
+                "nombre": "Refrigeración comercial"
+              },
+              {
+                "nombre": "Sistemas centrales"
+              },
+              {
+                "nombre": "Costos y cotización"
+              },
+              {
+                "nombre": "Prácticas"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "materias": [
+              {
+                "nombre": "Prácticas profesionales o emprendimiento",
+                "riesgo": "alta_desercion"
+              }
+            ]
+          }
+        ]
+      },
+      "quienBatalla": {
+        "resumen": "Batalla quien le teme a la electricidad, a las alturas o al calor: buena parte del trabajo es en azoteas en temporada de calor. También quien no sabe cobrar ni conseguir clientes, porque mucho de este oficio es por cuenta propia. Le va bien a quien es formal con las citas y cuida su reputación.",
+        "senales": [
+          "Te dan miedo las alturas o la corriente",
+          "No aguantas el calor",
+          "No te ves buscando clientes",
+          "Eres impuntual o desorganizado"
+        ],
+        "queAyuda": [
+          "Juntar herramienta poco a poco desde estudiante",
+          "Conseguir clientes de mantenimiento fijo, no solo emergencias",
+          "Certificarte en manejo de refrigerantes",
+          "Aprender a cotizar y a cobrar anticipo"
+        ]
+      },
+      "laboral": {
+        "salarioEntradaMxn": null,
+        "salarioCincoAniosMxn": null,
+        "tasaDesempleo": null,
+        "tasaInformalidad": null,
+        "saturacion": null
+      },
+      "costos": {
+        "publicaMxn": null,
+        "privadaMxn": null
+      },
+      "becas": [],
+      "verificado": false,
+      "pendientes": [
+        "laboral.salarioEntradaMxn",
+        "laboral.salarioCincoAniosMxn",
+        "laboral.tasaDesempleo",
+        "laboral.tasaInformalidad",
+        "laboral.saturacion",
+        "costos.publicaMxn",
+        "costos.privadaMxn"
+      ],
+      "fuentes": [],
+      "actualizado": "2026-09-20"
+    },
+    {
+      "id": "certificacion-electricista",
+      "nombre": "Electricista (certificación de competencia)",
+      "nombresAlternativos": [
+        "Electricista residencial",
+        "Instalaciones eléctricas",
+        "Electricidad"
+      ],
+      "area": "oficios",
+      "nivel": "certificacion",
+      "duracionAnios": 1,
+      "modalidades": [
+        "escolarizada",
+        "mixta"
+      ],
+      "martesTipico": "Vas a una casa a resolver por qué se bota la pastilla: revisas el tablero, mides, encuentras un corto en una línea y lo reparas. Luego vas a una obra a meter tubería y cableado de un piso nuevo, siguiendo el plano y la norma. Cotizas un trabajo más grande para la semana que entra. Cobras por servicio u obra. Es trabajo por tu cuenta, con clientes que llegan por recomendación.",
+      "mapaMaterias": {
+        "tipoPeriodo": "modulo",
+        "estado": "plantilla",
+        "fuentePlan": null,
+        "periodos": [
+          {
+            "numero": 1,
+            "materias": [
+              {
+                "nombre": "Seguridad eléctrica",
+                "riesgo": "filtro"
+              },
+              {
+                "nombre": "Herramientas y medición"
+              },
+              {
+                "nombre": "Circuitos básicos",
+                "riesgo": "alta_reprobacion"
+              },
+              {
+                "nombre": "Lectura de planos"
+              }
+            ]
+          },
+          {
+            "numero": 2,
+            "materias": [
+              {
+                "nombre": "Instalaciones residenciales",
+                "riesgo": "filtro"
+              },
+              {
+                "nombre": "Tableros y protecciones"
+              },
+              {
+                "nombre": "Norma de instalaciones eléctricas",
+                "riesgo": "filtro"
+              },
+              {
+                "nombre": "Canalizaciones"
+              }
+            ]
+          },
+          {
+            "numero": 3,
+            "materias": [
+              {
+                "nombre": "Instalaciones comerciales"
+              },
+              {
+                "nombre": "Motores y control básico"
+              },
+              {
+                "nombre": "Diagnóstico de fallas",
+                "riesgo": "filtro"
+              },
+              {
+                "nombre": "Cotización y trato con el cliente"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "materias": [
+              {
+                "nombre": "Evaluación de competencia y práctica supervisada",
+                "riesgo": "alta_desercion"
+              }
+            ]
+          }
+        ]
+      },
+      "quienBatalla": {
+        "resumen": "Batalla quien es descuidado: aquí un error se paga con una descarga o un incendio. También quien no sabe tratar clientes ni cobrar, porque casi todo es por cuenta propia. Le va bien a quien respeta la norma, llega a la hora y deja el trabajo limpio; eso es lo que genera recomendaciones.",
+        "senales": [
+          "Eres distraído o te saltas pasos",
+          "Te da flojera estudiar la norma",
+          "No te ves cotizando ni cobrando",
+          "No tienes con qué comprar herramienta"
+        ],
+        "queAyuda": [
+          "Trabajar de ayudante con alguien con experiencia",
+          "Certificar tu competencia para poder cobrar mejor",
+          "Comprar herramienta y multímetro decente poco a poco",
+          "Cuidar reputación: este oficio vive de recomendaciones"
+        ]
+      },
+      "laboral": {
+        "salarioEntradaMxn": null,
+        "salarioCincoAniosMxn": null,
+        "tasaDesempleo": null,
+        "tasaInformalidad": null,
+        "saturacion": null
+      },
+      "costos": {
+        "publicaMxn": null,
+        "privadaMxn": null
+      },
+      "becas": [],
+      "verificado": false,
+      "pendientes": [
+        "laboral.salarioEntradaMxn",
+        "laboral.salarioCincoAniosMxn",
+        "laboral.tasaDesempleo",
+        "laboral.tasaInformalidad",
+        "laboral.saturacion",
+        "costos.publicaMxn",
+        "costos.privadaMxn"
+      ],
+      "fuentes": [],
+      "actualizado": "2026-09-20"
+    },
+    {
+      "id": "certificacion-soldadura",
+      "nombre": "Soldador industrial (certificación)",
+      "nombresAlternativos": [
+        "Soldadura",
+        "Soldador",
+        "Soldadura industrial"
+      ],
+      "area": "oficios",
+      "nivel": "certificacion",
+      "duracionAnios": 1,
+      "modalidades": [
+        "escolarizada",
+        "dual"
+      ],
+      "martesTipico": "Te dan el plano y la pieza: preparas el material, ajustas la máquina según el proceso y el espesor y sueldas. Revisas tu propio cordón y, si el trabajo lo exige, pasa inspección. Usas careta, guantes y extracción todo el día, con calor y humo. En obra puedes trabajar en altura o en espacios apretados. Se paga por hora, por pieza o por proyecto, y quien tiene certificación vigente cobra bastante más.",
+      "mapaMaterias": {
+        "tipoPeriodo": "modulo",
+        "estado": "plantilla",
+        "fuentePlan": null,
+        "periodos": [
+          {
+            "numero": 1,
+            "materias": [
+              {
+                "nombre": "Seguridad en soldadura",
+                "riesgo": "filtro"
+              },
+              {
+                "nombre": "Lectura de planos y símbolos",
+                "riesgo": "alta_reprobacion"
+              },
+              {
+                "nombre": "Metales y preparación"
+              },
+              {
+                "nombre": "Corte y esmerilado"
+              }
+            ]
+          },
+          {
+            "numero": 2,
+            "materias": [
+              {
+                "nombre": "Proceso SMAW (electrodo)",
+                "riesgo": "filtro"
+              },
+              {
+                "nombre": "Proceso GMAW (MIG)"
+              },
+              {
+                "nombre": "Posiciones de soldadura",
+                "riesgo": "filtro"
+              },
+              {
+                "nombre": "Control de calidad visual"
+              }
+            ]
+          },
+          {
+            "numero": 3,
+            "materias": [
+              {
+                "nombre": "Proceso GTAW (TIG)",
+                "riesgo": "filtro"
+              },
+              {
+                "nombre": "Soldadura de tubería"
+              },
+              {
+                "nombre": "Defectos y su corrección"
+              },
+              {
+                "nombre": "Preparación para prueba de certificación"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "materias": [
+              {
+                "nombre": "Práctica supervisada y evaluación de certificación",
+                "riesgo": "alta_desercion"
+              }
+            ]
+          }
+        ]
+      },
+      "quienBatalla": {
+        "resumen": "Batalla quien no tiene pulso ni paciencia: dominar un cordón parejo toma meses de práctica. También quien no cuida su salud: humos, chispas y vista. Le va bien a quien practica mucho, se certifica en varios procesos y está dispuesto a moverse a donde hay obra o planta.",
+        "senales": [
+          "Te desespera repetir lo mismo para mejorar",
+          "No usas el equipo de protección",
+          "No quieres mudarte por trabajo",
+          "Tienes problemas de vista o pulso sin atender"
+        ],
+        "queAyuda": [
+          "Practicar horas extra en el taller",
+          "Certificarte en varios procesos y posiciones",
+          "Usar siempre careta, guantes y extracción",
+          "Guardar fotos de tus trabajos: sirven de portafolio"
+        ]
+      },
+      "laboral": {
+        "salarioEntradaMxn": null,
+        "salarioCincoAniosMxn": null,
+        "tasaDesempleo": null,
+        "tasaInformalidad": null,
+        "saturacion": null
+      },
+      "costos": {
+        "publicaMxn": null,
+        "privadaMxn": null
+      },
+      "becas": [],
+      "verificado": false,
+      "pendientes": [
+        "laboral.salarioEntradaMxn",
+        "laboral.salarioCincoAniosMxn",
+        "laboral.tasaDesempleo",
+        "laboral.tasaInformalidad",
+        "laboral.saturacion",
+        "costos.publicaMxn",
+        "costos.privadaMxn"
+      ],
+      "fuentes": [],
+      "actualizado": "2026-09-20"
+    },
+    {
+      "id": "certificacion-desarrollo-web",
+      "nombre": "Desarrollo web (certificación corta)",
+      "nombresAlternativos": [
+        "Programación web",
+        "Bootcamp de programación",
+        "Desarrollador web junior",
+        "Frontend"
+      ],
+      "area": "ingenierias",
+      "nivel": "certificacion",
+      "duracionAnios": 1,
+      "modalidades": [
+        "en_linea",
+        "mixta",
+        "abierta"
+      ],
+      "martesTipico": "Tomas la tarea del día: maquetar una pantalla, conectar un formulario al servidor o arreglar un error que reportó un usuario. Pruebas en el celular porque ahí se ve mal. Preguntas en el chat del equipo y ayudas a alguien más. Al final subes tu cambio para revisión. Si trabajas por tu cuenta, además persigues al cliente que no manda los textos y cobras el anticipo.",
+      "mapaMaterias": {
+        "tipoPeriodo": "modulo",
+        "estado": "plantilla",
+        "fuentePlan": null,
+        "periodos": [
+          {
+            "numero": 1,
+            "materias": [
+              {
+                "nombre": "HTML y CSS"
+              },
+              {
+                "nombre": "Fundamentos de programación en JavaScript",
+                "riesgo": "alta_reprobacion"
+              },
+              {
+                "nombre": "Control de versiones con Git",
+                "riesgo": "filtro"
+              },
+              {
+                "nombre": "Inglés técnico"
+              }
+            ]
+          },
+          {
+            "numero": 2,
+            "materias": [
+              {
+                "nombre": "JavaScript avanzado",
+                "riesgo": "alta_reprobacion"
+              },
+              {
+                "nombre": "Framework de interfaz (React u otro)",
+                "riesgo": "filtro"
+              },
+              {
+                "nombre": "Consumo de APIs"
+              },
+              {
+                "nombre": "Diseño responsivo"
+              }
+            ]
+          },
+          {
+            "numero": 3,
+            "materias": [
+              {
+                "nombre": "Base de datos y backend básico",
+                "riesgo": "filtro"
+              },
+              {
+                "nombre": "Autenticación y seguridad"
+              },
+              {
+                "nombre": "Despliegue en la nube"
+              },
+              {
+                "nombre": "Proyecto de portafolio",
+                "riesgo": "filtro"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "materias": [
+              {
+                "nombre": "Proyecto final y búsqueda de empleo",
+                "riesgo": "alta_desercion"
+              }
+            ]
+          }
+        ]
+      },
+      "quienBatalla": {
+        "resumen": "Batalla quien cree que en seis meses ya es ingeniero: la certificación abre la puerta, pero el primer empleo exige portafolio y saber resolver solo. Sin título formal, hay que demostrar con proyectos. También batalla quien no tiene disciplina, porque casi todo es a tu ritmo y en línea.",
+        "senales": [
+          "No tienes computadora ni internet estable",
+          "Te cuesta estudiar sin que alguien te empuje",
+          "Tu inglés de lectura es muy básico",
+          "Esperas que el certificado solo te consiga trabajo"
+        ],
+        "queAyuda": [
+          "Terminar tres proyectos completos y publicarlos",
+          "Colaborar en algún proyecto abierto o de un conocido",
+          "Practicar entrevistas técnicas",
+          "Combinarlo después con TSU o ingeniería si quieres crecer"
+        ]
+      },
+      "laboral": {
+        "salarioEntradaMxn": null,
+        "salarioCincoAniosMxn": null,
+        "tasaDesempleo": null,
+        "tasaInformalidad": null,
+        "saturacion": null
+      },
+      "costos": {
+        "publicaMxn": null,
+        "privadaMxn": null
+      },
+      "becas": [],
+      "verificado": false,
+      "pendientes": [
+        "laboral.salarioEntradaMxn",
+        "laboral.salarioCincoAniosMxn",
+        "laboral.tasaDesempleo",
+        "laboral.tasaInformalidad",
+        "laboral.saturacion",
+        "costos.publicaMxn",
+        "costos.privadaMxn"
+      ],
+      "fuentes": [],
+      "actualizado": "2026-09-20"
+    }
+  ]
+}

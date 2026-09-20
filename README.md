@@ -48,6 +48,29 @@ scripts/
   verificar-peso.mjs     falla el build si la carga inicial pasa de 200 KB gzip
 ```
 
+## Datos del catálogo
+
+Fuente de verdad: `src/data/*.json` (se edita a mano). `npm run datos` valida y publica una copia
+minificada en `public/datos/`, que es lo que baja el celular y lo que precachea el service worker.
+
+**Regla no negociable:** ningún dato duro se publica sin fuente citada. No es un acuerdo, es el tipo:
+todo dato duro es `Dato<T> = { valor, fuentes: [Fuente, ...] } | null`. Si no hay fuente, el campo va
+en `null` y la UI muestra "Dato no disponible". Nunca se estima.
+
+- `npm run validar-datos` falla el build si aparece un valor sin fuente, una beca sin respaldo,
+  un mapa de materias marcado como verificado sin plan de estudios citado, o un `martesTipico`
+  de más de 120 palabras.
+- `verificado` y `pendientes` no se escriben a mano: los recalcula el validador (`npm run datos`).
+- Fuentes permitidas: microdatos ENOE (INEGI), ANUIES, SEP, becas de gob.mx y planes de estudio
+  publicados. **IMCO Compara Carreras solo se enlaza y se cita** (`tipo: "referencia"`); el validador
+  rechaza cualquier otro uso de ese dominio.
+- Los mapas de materias marcados `plantilla` son materias típicas de la carrera en México, no el plan
+  de una universidad concreta. Para pasarlos a `verificado` hay que citar el plan publicado.
+
+Estado de la semilla: 30 carreras (14 licenciaturas, 6 ingenierías, 3 TSU, 4 técnicas, 3
+certificaciones). Los campos descriptivos están llenos; los 7 datos duros por carrera están en `null`
+a la espera de ser procesados desde ENOE/ANUIES.
+
 ## Reglas del proyecto
 
 - Ningún componente toca `localStorage`: todo pasa por `src/lib/storage.ts` (API asíncrona,

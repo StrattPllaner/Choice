@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
 
-/** Pendiente: ficha de la carrera (usa obtenerCarrera(id)). */
+/** Pendiente: ficha completa (usa cargarCarrera(id) y estadoDeDatos de src/lib/carreras.ts). */
 export default function CarreraDetalle() {
   const { id } = useParams();
   return (

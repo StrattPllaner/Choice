@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "actualizado": "2026-09-20",
+  "becas": [
+    {
+      "id": "jovenes-escribiendo-el-futuro",
+      "nombre": "Beca Jóvenes Escribiendo el Futuro",
+      "institucion": "Coordinación Nacional de Becas para el Bienestar Benito Juárez",
+      "montoMxn": {
+        "valor": { "min": 5800, "max": 5800, "periodicidad": "semestral" },
+        "fuentes": [
+          {
+            "nombre": "gob.mx · Conoce todo sobre la Beca Jóvenes Escribiendo el Futuro",
+            "url": "https://www.gob.mx/becasbenitojuarez/articulos/conoce-todo-sobre-la-beca-jovenes-escribiendo-el-futuro",
+            "anio": 2026,
+            "tipo": "gobmx_becas",
+            "nota": "5,800 pesos bimestrales durante los 10 meses del ciclo escolar (no julio ni agosto), por un máximo de 45 meses. Página actualizada en agosto de 2026, Reglas de Operación 2026."
+          }
+        ]
+      },
+      "aplicaNiveles": ["licenciatura", "ingenieria", "tsu"],
+      "soloPublicas": true,
+      "requisitosResumen": "Para estudiantes de licenciatura, TSU o equivalente que vienen de primaria o secundaria prioritaria y están inscritos en las instituciones que marca el programa (Universidades Interculturales, Escuelas Normales Indígenas, Universidades para el Bienestar Benito Juárez García, entre otras). Hay que solicitarla en cada convocatoria y cumplir las Reglas de Operación vigentes.",
+      "url": "https://www.gob.mx/becasbenitojuarez/articulos/conoce-todo-sobre-la-beca-jovenes-escribiendo-el-futuro",
+      "fuentes": [
+        {
+          "nombre": "gob.mx · Conoce todo sobre la Beca Jóvenes Escribiendo el Futuro",
+          "url": "https://www.gob.mx/becasbenitojuarez/articulos/conoce-todo-sobre-la-beca-jovenes-escribiendo-el-futuro",
+          "anio": 2026,
+          "tipo": "gobmx_becas",
+          "nota": "Monto, nivel educativo y requisitos tomados de la página oficial."
+        }
+      ]
+    }
+  ]
+}

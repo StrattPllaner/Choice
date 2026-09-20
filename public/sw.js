@@ -5,7 +5,7 @@
    - /datos/*    → caché primero con revalidación (lectura completa offline)
    - lo demás    → red con respaldo de caché                                        */
 
-const VERSION = 'v1';
+const VERSION = 'v2';
 const CACHE_SHELL = `nombreapp-shell-${VERSION}`;
 const CACHE_DATOS = `nombreapp-datos-${VERSION}`;
 const CACHES_VIGENTES = [CACHE_SHELL, CACHE_DATOS];
@@ -23,7 +23,7 @@ const SHELL = [
 ];
 
 // los datos de carreras se precargan en la instalación: la app sirve para leer sin internet
-const DATOS = [ruta('datos/carreras.json'), ruta('datos/areas.json')];
+const DATOS = [ruta('datos/carreras.json'), ruta('datos/areas.json'), ruta('datos/becas.json')];
 
 self.addEventListener('install', (evento) => {
   evento.waitUntil(

@@ -3,3 +3,4 @@ dist
 .DS_Store
 *.local
 public/iconos/*.png
+public/datos/*.json
