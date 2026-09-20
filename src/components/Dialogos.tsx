@@ -53,7 +53,7 @@ export function HojaInferior({ abierto, titulo, descripcion, onCerrar, children,
         aria-modal="true"
         aria-label={titulo}
         tabIndex={-1}
-        className="relative w-full max-w-contenido rounded-t-hoja bg-superficie p-6 shadow-3"
+        className="relative w-full max-w-dialogo rounded-t-hoja bg-superficie p-6 shadow-3"
         style={{ animation: 'subir-hoja var(--dur-entrada) var(--curva-entrada) both' }}
       >
         <div aria-hidden="true" className="mx-auto mb-4 h-1 w-10 rounded-lleno bg-borde-fuerte" />
@@ -85,7 +85,7 @@ export function Modal({ abierto, titulo, descripcion, onCerrar, children, pie }:
         aria-modal="true"
         aria-label={titulo}
         tabIndex={-1}
-        className="relative w-full max-w-contenido rounded-hoja bg-superficie p-6 shadow-3"
+        className="relative w-full max-w-dialogo rounded-hoja bg-superficie p-6 shadow-3"
         style={{ animation: 'entrar var(--dur-entrada) var(--curva-entrada) both' }}
       >
         <h2 className="text-lg">{titulo}</h2>

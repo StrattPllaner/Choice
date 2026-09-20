@@ -137,7 +137,12 @@
   --curva-salida: cubic-bezier(0.4, 0, 1, 1);
   --escalonado: 40ms; /* separación entre elementos de una lista */
 
-  --ancho-contenido: 30rem; /* diseñado para 360px, centrado en pantallas grandes */
+  /* Anchos. El diseño nace en 360px y crece: en pantalla grande el contenido se
+     expande en rejilla en vez de quedarse en una columna con los costados muertos.
+     La medida de lectura sí se limita, porque una línea de 1200px no se lee. */
+  --ancho-contenido: 100%;
+  --ancho-lectura: 68ch;
+  --ancho-dialogo: 32rem;
 
   color-scheme: light;
 }

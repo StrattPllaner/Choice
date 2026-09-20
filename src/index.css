@@ -75,10 +75,69 @@
     box-shadow: var(--sombra-1);
   }
 
+  /* Contenedor fluido: ocupa el ancho disponible y solo se frena para que no se
+     vuelva ilegible en monitores muy anchos. Los costados crecen con la pantalla. */
   .contenedor-app {
     @apply mx-auto w-full;
-    max-width: var(--ancho-contenido);
+    max-width: 34rem;
     padding-inline: var(--esp-4);
+  }
+  @media (min-width: 640px) {
+    .contenedor-app {
+      max-width: 40rem;
+      padding-inline: var(--esp-6);
+    }
+  }
+  @media (min-width: 900px) {
+    .contenedor-app {
+      max-width: 60rem;
+      padding-inline: var(--esp-8);
+    }
+  }
+  @media (min-width: 1280px) {
+    .contenedor-app {
+      max-width: 76rem;
+    }
+  }
+  @media (min-width: 1700px) {
+    .contenedor-app {
+      max-width: 88rem;
+    }
+  }
+
+  /* Bloques de prosa: el contenedor crece, la línea de texto no. */
+  .medida {
+    max-width: var(--ancho-lectura);
+  }
+
+  /* Rejilla de tarjetas: una columna en celular, más conforme hay espacio. */
+  .rejilla {
+    display: grid;
+    gap: var(--esp-3);
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 17rem), 1fr));
+  }
+
+  .rejilla-ancha {
+    display: grid;
+    gap: var(--esp-4);
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 22rem), 1fr));
+  }
+
+  /* Ficha de carrera y pantallas con columna de apoyo. */
+  .columnas-ficha {
+    display: grid;
+    gap: var(--esp-6);
+  }
+  @media (min-width: 900px) {
+    .columnas-ficha {
+      grid-template-columns: minmax(0, 1fr) 21rem;
+      align-items: start;
+      gap: var(--esp-8);
+    }
+    .columna-apoyo {
+      position: sticky;
+      top: var(--esp-16);
+    }
   }
 
   .salta-al-contenido {

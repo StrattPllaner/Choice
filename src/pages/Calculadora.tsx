@@ -232,7 +232,7 @@ export default function Calculadora() {
     <div className="contenedor-app space-y-6">
       <header className="space-y-2">
         <h1 className="text-xl">¿Cuánto cuesta de verdad y en cuánto se recupera?</h1>
-        <p className="text-tinta-suave">
+        <p className="medida text-tinta-suave">
           Compara dos rutas: cuánto te cuesta cada una, cuánto dejas de ganar mientras estudias y cómo
           van las dos a los 5 y a los 10 años.
         </p>
@@ -250,7 +250,7 @@ export default function Calculadora() {
         </p>
       </aside>
 
-      <div>
+      <div className="max-w-dialogo">
         <label htmlFor="sin-carrera" className="block text-chico font-semibold">
           Si te pusieras a trabajar ya, ¿cuánto ganarías al mes?
         </label>
@@ -269,8 +269,10 @@ export default function Calculadora() {
         </p>
       </div>
 
-      <ControlRuta titulo="Ruta 1" carreras={carreras} entradas={a} onCambio={setA} />
-      <ControlRuta titulo="Ruta 2 (opcional)" carreras={carreras} entradas={b} onCambio={setB} />
+      <div className="rejilla-ancha items-start">
+        <ControlRuta titulo="Ruta 1" carreras={carreras} entradas={a} onCambio={setA} />
+        <ControlRuta titulo="Ruta 2 (opcional)" carreras={carreras} entradas={b} onCambio={setB} />
+      </div>
 
       {comparacion ? (
         <>
@@ -279,6 +281,7 @@ export default function Calculadora() {
               Qué sale con esos números
             </h2>
 
+            <div className="rejilla-ancha items-start">
             {comparacion.rutas.map((resultado) => (
               <div key={resultado.ruta.id} className="tarjeta space-y-2 text-chico">
                 <p className="text-base font-semibold">{resultado.ruta.nombre}</p>
@@ -316,6 +319,7 @@ export default function Calculadora() {
                 )}
               </div>
             ))}
+            </div>
           </section>
 
           <section aria-labelledby="grafica" className="space-y-3">
@@ -323,7 +327,7 @@ export default function Calculadora() {
               Cómo van a los 5 y a los 10 años
             </h2>
             <Grafica comparacion={comparacion} />
-            <ul className="space-y-1 text-chico">
+            <ul className="rejilla text-chico">
               {comparacion.cortes.map((corte) => (
                 <li key={corte.anio} className="tarjeta">
                   <p className="font-semibold">Al año {corte.anio}</p>

@@ -53,7 +53,7 @@ export function Grafica({ comparacion }: { comparacion: Comparacion }) {
     .join('. ');
 
   return (
-    <figure className="space-y-3">
+    <figure className="max-w-3xl space-y-3">
       <svg
         viewBox={`0 0 ${ANCHO} ${ALTO}`}
         className="h-auto w-full"

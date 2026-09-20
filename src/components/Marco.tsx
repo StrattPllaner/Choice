@@ -36,7 +36,7 @@ export function Marco() {
         </p>
       )}
 
-      <main id="contenido" tabIndex={-1} className="entra-pantalla flex-1 py-5" key={location.pathname}>
+      <main id="contenido" tabIndex={-1} className="entra-pantalla flex-1 py-5 md:py-8" key={location.pathname}>
         <Suspense fallback={<EsqueletoPantalla />}>
           <Outlet />
         </Suspense>

@@ -193,7 +193,7 @@ export default function Comparar() {
           >
             <div className="flex gap-3">
               {elegidas.map((carrera) => (
-                <div key={carrera.id} className="w-56 shrink-0">
+                <div key={carrera.id} className="w-56 shrink-0 sm:w-64 lg:w-72">
                   <p className="text-chico font-semibold">{carrera.nombre}</p>
                   <p className="text-micro text-tinta-suave">{ETIQUETA_NIVEL[carrera.nivel]}</p>
                 </div>

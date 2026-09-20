@@ -60,7 +60,7 @@ export default function Explorar() {
     <div className="contenedor-app space-y-4">
       <h1 className="text-xl">Explorar carreras</h1>
 
-      <div>
+      <div className="max-w-lectura">
         <label htmlFor="buscar" className="block text-chico font-semibold">
           Busca por nombre
         </label>
@@ -118,7 +118,7 @@ export default function Explorar() {
           <p role="status" className="text-chico text-tinta-suave">
             {resultado.length} de {carreras.length} carreras
           </p>
-          <ul className="space-y-3">
+          <ul className="rejilla">
             {resultado.map((carrera) => (
               <li key={carrera.id} className="entra">
                 <Link to={`/carrera/${carrera.id}`} className="tarjeta block">

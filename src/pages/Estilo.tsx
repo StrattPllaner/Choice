@@ -89,6 +89,7 @@ export default function Estilo() {
 
       <section aria-labelledby="color" className="space-y-4">
         <h2 id="color" className="text-lg">Color</h2>
+        <div className="rejilla-ancha items-start">
         {COLORES.map((grupo) => (
           <div key={grupo.grupo} className="space-y-2">
             <h3 className="text-chico font-medium text-tinta-suave">{grupo.grupo}</h3>
@@ -117,6 +118,7 @@ export default function Estilo() {
             </ul>
           </div>
         ))}
+        </div>
       </section>
 
       <section aria-labelledby="tipo" className="space-y-3">
@@ -125,7 +127,7 @@ export default function Estilo() {
           Nunito 700 para títulos, Inter 400–600 para cuerpo. Autoalojadas, subconjunto español,
           35 KB en total. Escala de razón 1.2 desde 16px.
         </p>
-        <ul className="space-y-3">
+        <ul className="rejilla-ancha">
           {ESCALA.map((paso) => (
             <li key={paso.clase} className="border-b border-borde pb-3">
               <p className={paso.clase}>Elegir carrera sin adivinar</p>

@@ -15,7 +15,7 @@ export function NavInferior() {
       aria-label="Secciones de la app"
       className="sticky bottom-0 z-40 border-t border-borde bg-superficie pb-[env(safe-area-inset-bottom)]"
     >
-      <ul className="mx-auto flex max-w-contenido">
+      <ul className="contenedor-app flex px-0">
         {enlaces.map(({ a, etiqueta, Icono }) => (
           <li key={a} className="flex-1">
             <NavLink

@@ -40,7 +40,7 @@ export function MapaAfinidad({
       <header className="space-y-2">
         <p className="text-chico font-medium text-primario">Tu mapa · versión {version.version}</p>
         <h1 className="text-xl">Esto es lo que tus respuestas sugieren explorar primero</h1>
-        <p className="text-tinta-suave">
+        <p className="medida text-tinta-suave">
           No es una recomendación de carrera ni una predicción. Son áreas por donde te conviene empezar
           a ver, y siempre son varias: casi nadie encaja en una sola.
         </p>
@@ -58,7 +58,7 @@ export function MapaAfinidad({
         <h2 id="titulo-sugeridas" className="text-lg">
           Empieza por estas {resultado.sugeridas.length} áreas
         </h2>
-        <ul className="space-y-2">
+        <ul className="rejilla">
           {resultado.sugeridas.map((area) => (
             <li key={area}>
               <Link to={`/explorar?area=${area}`} className="tarjeta block">

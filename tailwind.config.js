@@ -91,7 +91,7 @@ export default {
         entrada: 'var(--curva-entrada)',
         salida: 'var(--curva-salida)',
       },
-      maxWidth: { contenido: 'var(--ancho-contenido)' },
+      maxWidth: { contenido: 'var(--ancho-contenido)', lectura: 'var(--ancho-lectura)', dialogo: 'var(--ancho-dialogo)' },
       screens: { xs: '360px' },
     },
   },

@@ -241,6 +241,7 @@ export default function Panel() {
         </div>
       )}
 
+      <div className="rejilla-ancha">
       <Tarjeta titulo="Alumnos con su perfil completo">
         {datos.cobertura && datos.cobertura.publicable ? (
           <p className="text-xl font-semibold tabular-nums">
@@ -331,7 +332,9 @@ export default function Panel() {
         </p>
       </Tarjeta>
 
-      <div className="space-y-2 print:hidden">
+      </div>
+
+      <div className="max-w-dialogo space-y-2 print:hidden">
         <Boton anchoCompleto disabled={Boolean(bloqueoSuave && !licencia?.en_gracia)} onClick={exportarCsv}>
           Descargar CSV
         </Boton>

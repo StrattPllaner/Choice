@@ -34,7 +34,7 @@ export default function EstadosPagina() {
         titulo="Cargando"
         nota="Tienen la forma del contenido real. Si la carga tarda menos de 200ms no se muestran, para que no parpadee."
       >
-        <div className="space-y-6">
+        <div className="rejilla-ancha">
           <EsqueletoLista filas={2} />
           <EsqueletoFicha />
           <EsqueletoMapa />
@@ -43,7 +43,7 @@ export default function EstadosPagina() {
       </Bloque>
 
       <Bloque titulo="Vacíos" nota="Uno por pantalla, con su propia ilustración y una acción concreta.">
-        <div className="divide-y divide-borde">
+        <div className="rejilla-ancha">
           <VacioGuardadas />
           <VacioBusqueda consulta="ingeniera espacial" onLimpiar={() => {}} />
           <VacioMapa />
@@ -53,7 +53,7 @@ export default function EstadosPagina() {
       </Bloque>
 
       <Bloque titulo="Errores" nota="Sin códigos técnicos y siempre con reintentar.">
-        <div className="divide-y divide-borde">
+        <div className="rejilla-ancha">
           <EstadoError tipo="conexion" onReintentar={() => {}} />
           <EstadoError tipo="servidor" onReintentar={() => {}} />
           <EstadoError tipo="no-encontrado" onReintentar={() => {}} />

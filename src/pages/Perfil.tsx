@@ -48,7 +48,7 @@ export default function Perfil() {
         {guardadas.length === 0 ? (
           <VacioGuardadas />
         ) : (
-          <ul className="space-y-2">
+          <ul className="rejilla">
             {guardadas.map((carrera) => (
               <li key={carrera.id} className="entra">
                 <Link to={`/carrera/${carrera.id}`} className="tarjeta block">
@@ -61,6 +61,7 @@ export default function Perfil() {
         )}
       </section>
 
+      <div className="rejilla-ancha">
       <div className="tarjeta space-y-2">
         <label htmlFor="nombre" className="block text-chico font-semibold">
           ¿Cómo te llamamos?
@@ -129,6 +130,7 @@ export default function Perfil() {
       </div>
 
       <SelectorTema />
+      </div>
 
       <nav aria-label="Privacidad y avance" className="tarjeta space-y-2 text-chico">
         <Link to="/impacto" className="block text-primario underline">Mi avance (mediciones)</Link>

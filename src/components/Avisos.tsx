@@ -50,7 +50,7 @@ export function ProveedorAvisos({ children }: { children: ReactNode }) {
         {avisos.map((aviso) => (
           <div
             key={aviso.id}
-            className={`entra pointer-events-auto flex w-full max-w-contenido items-center justify-between gap-3 rounded-chico border px-4 py-3 text-chico shadow-2 ${TONOS[aviso.tono]}`}
+            className={`entra pointer-events-auto flex w-full max-w-dialogo items-center justify-between gap-3 rounded-chico border px-4 py-3 text-chico shadow-2 ${TONOS[aviso.tono]}`}
           >
             <span>{aviso.texto}</span>
             {aviso.accion && (

@@ -104,8 +104,8 @@ export default function CarreraDetalle() {
   const enSugeridas = perfil?.resultado.sugeridas.includes(carrera.area) ?? false;
 
   return (
-    <article className="contenedor-app space-y-7 pb-4">
-      <header className="space-y-2">
+    <article className="contenedor-app pb-4">
+      <header className="medida space-y-2">
         <p className="text-chico text-tinta-suave">
           {area?.nombre ?? carrera.area} · {ETIQUETA_NIVEL[carrera.nivel]}
         </p>
@@ -119,14 +119,21 @@ export default function CarreraDetalle() {
         )}
       </header>
 
-      <AccionesCarrera carrera={carrera} />
+      <div className="mt-4 max-w-dialogo">
+        <AccionesCarrera carrera={carrera} />
+      </div>
+
+      {/* En pantalla ancha, lo que se lee va a la izquierda y los datos de decisión
+          (dónde, cuánto cuesta, becas) quedan a la derecha, fijos al hacer scroll. */}
+      <div className="columnas-ficha mt-7">
+        <div className="min-w-0 space-y-7">
 
       {/* 1 ── Un martes cualquiera */}
       <section aria-labelledby="s1" className="space-y-2">
         <h2 id="s1" className="text-lg">
           Un martes cualquiera en este trabajo
         </h2>
-        <p className="tarjeta text-base leading-relaxed">{carrera.martesTipico}</p>
+        <p className="tarjeta medida text-base leading-relaxed">{carrera.martesTipico}</p>
       </section>
 
       {/* 2 ── Qué estudias */}
@@ -249,6 +256,10 @@ export default function CarreraDetalle() {
         </div>
       </section>
 
+        </div>
+
+        <aside className="columna-apoyo space-y-7">
+
       {/* 6 ── Dónde se estudia y cuánto cuesta */}
       <section aria-labelledby="s6" className="space-y-3">
         <h2 id="s6" className="text-lg">
@@ -342,6 +353,9 @@ export default function CarreraDetalle() {
         <p>Ficha actualizada el {new Date(carrera.actualizado).toLocaleDateString('es-MX')}.</p>
         <ListaFuentes fuentes={carrera.fuentes} />
       </footer>
+
+        </aside>
+      </div>
     </article>
   );
 }
