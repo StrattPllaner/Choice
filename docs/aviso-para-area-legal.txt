@@ -1,0 +1,82 @@
+NOMBREAPP - QUÉ DATOS RECOGEMOS Y CÓMO LOS TRATAMOS
+Documento para el área legal o jurídica de la escuela. Versión 1.0 - 20 de septiembre de 2026.
+Contacto: [PENDIENTE: razón social, domicilio y correo del responsable]
+
+1. QUÉ ES
+NOMBREAPP es una aplicación web de exploración vocacional para estudiantes de bachillerato.
+Funciona sin conexión y puede usarse sin entregar ningún dato personal: el catálogo de carreras
+es público y no requiere cuenta.
+
+2. QUÉ DATOS SE RECABAN
+Del alumno:
+  - Código de alumno asignado por la escuela (identificador). NO se recaba nombre completo,
+    CURP, RFC, domicilio, teléfono, correo personal, fotografía ni calificaciones.
+  - Grado escolar y entidad federativa (opcionales, los captura el alumno).
+  - Respuestas al cuestionario de exploración vocacional (22 reactivos de preferencias).
+  - Respuestas al instrumento de medición de impacto (10 reactivos de conocimiento y seguridad).
+    De las preguntas abiertas se almacena únicamente el conteo de respuestas, nunca el texto.
+  - Carreras guardadas y carreras consultadas dentro de la app.
+De quien autoriza (padre, madre o tutor):
+  - Nombre y parentesco, fecha y forma del consentimiento. Es el mínimo necesario para acreditar
+    el consentimiento conforme al artículo 8 de la LFPDPPP y su Reglamento.
+No se recaban datos personales sensibles (salud, origen étnico, religión, preferencia sexual,
+opiniones políticas). No se usa publicidad, rastreo de terceros, cookies de terceros ni analítica
+externa.
+
+3. PARA QUÉ SE USAN
+Finalidades necesarias: conservar el perfil y las carreras del alumno para que estén disponibles
+al volver a entrar; mostrarle su propio cambio en el tiempo; y generar indicadores agregados del
+plantel para la escuela.
+Finalidades secundarias (el titular puede negarse sin perder el servicio): mejora del contenido
+del catálogo y reportes agregados y anonimizados del proyecto social.
+
+4. BASE DEL TRATAMIENTO
+Consentimiento expreso del padre, madre o tutor, recabado dentro de la aplicación o en formato
+impreso entregado a la escuela, antes de que se guarde cualquier dato. Mientras no exista ese
+consentimiento, la aplicación opera sin persistir información: no se escribe nada en el
+dispositivo ni en el servidor. Esta restricción está implementada en la capa de almacenamiento
+del cliente y, de forma independiente, en las políticas de seguridad a nivel de renglón de la
+base de datos.
+
+5. QUIÉN PUEDE VER QUÉ
+  - Alumno: únicamente sus propios datos.
+  - Orientación y dirección del plantel: exclusivamente indicadores agregados del plantel, y
+    solo cuando el grupo tiene 10 o más respuestas. Por debajo de ese umbral no se muestra
+    ningún número, para evitar reidentificación. Las cuentas de orientación y dirección no
+    tienen permiso de lectura sobre las tablas con datos de alumnos: el único acceso disponible
+    son funciones que devuelven agregados.
+  - Personal del proveedor: acceso administrativo a la infraestructura, bajo control de acceso y
+    bitácora. Se registra qué rol consultó qué recurso y cuándo.
+
+6. DÓNDE SE GUARDAN
+  - En el dispositivo del alumno (almacenamiento local del navegador), para el funcionamiento
+    sin conexión.
+  - En una base de datos PostgreSQL administrada por Supabase, con cifrado en tránsito (TLS) y
+    en reposo, y políticas de seguridad a nivel de renglón. Región del servidor: [PENDIENTE:
+    región contratada]. Al tratarse de un encargado ubicado fuera de México, la remisión se
+    documenta en el contrato de prestación de servicios conforme al artículo 36 de la LFPDPPP.
+  - No hay transferencias a terceros con fines comerciales. No se venden ni se comparten datos.
+
+7. CUÁNTO TIEMPO
+Mientras esté vigente la licencia del plantel y hasta 12 meses después, plazo tras el cual se
+eliminan. Si el titular solicita la cancelación, la eliminación es inmediata y real: se borran
+los renglones de la base de datos. No se emplea baja lógica ni se conservan copias marcadas como
+inactivas. Se conserva únicamente el registro de que hubo consentimiento y de que fue revocado,
+con su fecha, por ser el medio para acreditar el cumplimiento.
+
+8. DERECHOS ARCO
+El titular (o quien ejerce la patria potestad) puede acceder, rectificar, cancelar u oponerse
+desde la pantalla "Mis datos" dentro de la propia aplicación, sin trámite ni espera: ahí puede
+consultar todo lo almacenado, descargarlo en un archivo, corregirlo o eliminarlo. También puede
+solicitarlo por escrito a [PENDIENTE: correo del responsable], con respuesta en un máximo de 20
+días hábiles conforme al artículo 32 de la LFPDPPP.
+
+9. SEGURIDAD
+Acceso autenticado por rol; políticas de seguridad a nivel de renglón que impiden, por diseño,
+que una cuenta consulte datos de otro usuario; umbral de 10 respuestas para cualquier agregado
+visible a la escuela; bitácora de accesos por rol; cifrado en tránsito y en reposo.
+
+10. CAMBIOS
+Cualquier cambio relevante al aviso se notifica dentro de la aplicación y se solicita nuevamente
+el consentimiento antes de continuar el tratamiento. Cada consentimiento queda registrado con la
+versión del aviso que se mostró.

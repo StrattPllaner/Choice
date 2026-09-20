@@ -18,6 +18,9 @@
   --c-aviso: 180 83 9;
   --c-error: 185 28 28;
   --c-foco: 29 78 216;
+  --c-serie-a: 29 78 216;   /* #1d4ed8 */
+  --c-serie-b: 180 83 9;    /* #b45309 */
+  --c-referencia: 107 114 128;
 
   --sombra-1: 0 1px 2px rgb(17 24 39 / 0.06), 0 1px 3px rgb(17 24 39 / 0.08);
   color-scheme: light;
@@ -40,6 +43,9 @@
     --c-aviso: 251 191 36;
     --c-error: 248 113 113;
     --c-foco: 147 197 253;
+    --c-serie-a: 79 146 247;  /* #4f92f7 */
+    --c-serie-b: 194 116 10;  /* #c2740a */
+    --c-referencia: 156 163 175;
     --sombra-1: 0 1px 2px rgb(0 0 0 / 0.5);
     color-scheme: dark;
   }
@@ -60,6 +66,9 @@
   --c-aviso: 251 191 36;
   --c-error: 248 113 113;
   --c-foco: 147 197 253;
+  --c-serie-a: 79 146 247;  /* #4f92f7 */
+  --c-serie-b: 194 116 10;  /* #c2740a */
+  --c-referencia: 156 163 175;
   --sombra-1: 0 1px 2px rgb(0 0 0 / 0.5);
   color-scheme: dark;
 }
@@ -125,5 +134,34 @@
   }
   .salta-al-contenido:focus {
     @apply not-sr-only fixed left-4 top-4 z-50 rounded-lg bg-marca px-4 py-3 text-sobre-marca;
+  }
+}
+
+/* Impresión: de aquí sale el PDF del panel para juntas de consejo, sin librerías. */
+@media print {
+  :root {
+    --c-fondo: 255 255 255;
+    --c-superficie: 255 255 255;
+    --c-superficie-2: 245 245 245;
+    --c-texto: 0 0 0;
+    --c-texto-suave: 70 70 70;
+    --c-borde: 180 180 180;
+  }
+  header,
+  nav,
+  .salta-al-contenido {
+    display: none !important;
+  }
+  .tarjeta {
+    box-shadow: none;
+    break-inside: avoid;
+  }
+  .contenedor-app {
+    max-width: none;
+  }
+  a[href^='http']::after {
+    content: ' (' attr(href) ')';
+    font-size: 0.75em;
+    color: #444;
   }
 }

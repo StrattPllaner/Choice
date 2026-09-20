@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { BotonEnlace } from '@/components/Boton';
 import { usarSesion } from '@/features/sesion/usarSesion';
 
@@ -28,6 +29,12 @@ export default function Inicio() {
         <BotonEnlace a="/explorar" variante="secundario" anchoCompleto>
           Ver carreras
         </BotonEnlace>
+        <BotonEnlace a="/comparar" variante="secundario" anchoCompleto>
+          Comparar dos carreras
+        </BotonEnlace>
+        <BotonEnlace a="/calculadora" variante="secundario" anchoCompleto>
+          ¿Cuánto cuesta y en cuánto se recupera?
+        </BotonEnlace>
       </div>
 
       <section aria-labelledby="titulo-ayuda" className="tarjeta">
@@ -36,6 +43,15 @@ export default function Inicio() {
         </h2>
         <p className="mt-1 text-sm text-texto-suave">
           No pedimos correo ni contraseña. Nadie de tu escuela ve lo que contestas.
+        </p>
+        <p className="mt-2 text-sm">
+          <Link to="/privacidad" className="text-marca underline">
+            Aviso de privacidad
+          </Link>{' '}
+          ·{' '}
+          <Link to="/mis-datos" className="text-marca underline">
+            Mis datos
+          </Link>
         </p>
       </section>
     </div>

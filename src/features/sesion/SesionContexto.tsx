@@ -1,4 +1,5 @@
 import { createContext, useCallback, useEffect, useMemo, useState, type ReactNode } from 'react';
+import { usarPrivacidad } from '@/features/privacidad/ProveedorPrivacidad';
 import {
   alternarFavorita,
   guardarSesion,
@@ -20,10 +21,13 @@ interface ValorSesion {
 export const SesionContexto = createContext<ValorSesion | null>(null);
 
 export function ProveedorSesion({ children }: { children: ReactNode }) {
+  const { listo, consentido } = usarPrivacidad();
   const [sesion, setSesion] = useState<SesionAlumno | null>(null);
   const [cargando, setCargando] = useState(true);
 
+  // se espera a saber si hay consentimiento: si no, la sesión vive solo en memoria
   useEffect(() => {
+    if (!listo) return;
     let vigente = true;
     leerSesion().then((s) => {
       if (!vigente) return;
@@ -33,7 +37,7 @@ export function ProveedorSesion({ children }: { children: ReactNode }) {
     return () => {
       vigente = false;
     };
-  }, []);
+  }, [listo, consentido]);
 
   // escritura optimista: la UI no espera al disco
   const persistir = useCallback((siguiente: SesionAlumno) => {

@@ -130,6 +130,13 @@ export default function Perfil() {
 
       <SelectorTema />
 
+      <nav aria-label="Privacidad y avance" className="tarjeta space-y-2 text-sm">
+        <Link to="/impacto" className="block text-marca underline">Mi avance (mediciones)</Link>
+        <Link to="/mis-datos" className="block text-marca underline">Mis datos: ver, corregir o borrar</Link>
+        <Link to="/privacidad" className="block text-marca underline">Aviso de privacidad</Link>
+        <Link to="/panel" className="block text-texto-suave underline">Panel de la escuela (orientación y dirección)</Link>
+      </nav>
+
       {!almacenaEnDispositivo && (
         <p className="tarjeta text-sm text-texto-suave">
           Tu navegador no está guardando datos, así que la app va a olvidar tus respuestas al cerrarla.

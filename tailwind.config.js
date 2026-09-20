@@ -20,6 +20,9 @@ export default {
         aviso: 'rgb(var(--c-aviso) / <alpha-value>)',
         error: 'rgb(var(--c-error) / <alpha-value>)',
         foco: 'rgb(var(--c-foco) / <alpha-value>)',
+        'serie-a': 'rgb(var(--c-serie-a) / <alpha-value>)',
+        'serie-b': 'rgb(var(--c-serie-b) / <alpha-value>)',
+        referencia: 'rgb(var(--c-referencia) / <alpha-value>)',
       },
       fontFamily: {
         // pila del sistema: 0 KB de fuentes, 0 peticiones, 0 FOUT en 3G

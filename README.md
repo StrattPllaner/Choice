@@ -91,6 +91,49 @@ Open Graph, que redirige a la ficha en la app. WhatsApp no ejecuta JavaScript, a
 páginas un enlace a una SPA con hash nunca tendría vista previa. El service worker las excluye del
 fallback del shell para no romperlas.
 
+## Calculadora de retorno de inversión
+
+`src/features/roi/calculo.ts` (aritmética pura, con los supuestos escritos) + `Grafica.tsx`
+(SVG inline, sin librería). Compara dos rutas a 5 y 10 años contra la línea de "ponerse a
+trabajar desde ya". Los montos los pone el usuario o vienen de una ficha con fuente: la
+calculadora nunca inventa un sueldo, y lo dice cuando el número es supuesto del usuario.
+
+## Comparador
+
+`/comparar?c=id1,id2,id3`. Tarjetas con scroll horizontal sincronizado (en celular una tabla
+no se lee), resaltado por dimensión sin declarar ganadora, y sugerencias que siempre incluyen
+una ruta técnica o TSU.
+
+## Medición de impacto
+
+Instrumento de 10 reactivos (`src/features/impacto/`), se aplica al inicio y se repite. De las
+preguntas abiertas se guarda **solo el conteo**, nunca el texto. Agregados y CSV en `calculo.ts`;
+ningún grupo con menos de 10 respuestas se publica.
+
+## Backend y panel institucional
+
+`supabase/migrations/` (esquema, RLS, funciones agregadas, borrado real). Orientación y dirección
+**no tienen políticas de lectura** sobre las tablas de alumnos: su único acceso son funciones
+`security definer` que aplican k-anonimato (mínimo 10). El panel vive en `/panel`.
+
+Configuración: copia `.env.example` a `.env` con `VITE_SUPABASE_URL` y `VITE_SUPABASE_ANON_KEY`,
+y aplica las migraciones. Sin esas variables la app corre 100% local y el panel lo dice.
+
+El SDK de Supabase se carga con `import()` dinámico: no entra en el bundle inicial del alumno.
+
+## Privacidad (LFPDPPP)
+
+- Aviso completo en `/privacidad`; documento para el área legal de la escuela en
+  [`docs/aviso-para-area-legal.txt`](docs/aviso-para-area-legal.txt).
+- **La puerta de consentimiento está en la capa de almacenamiento**
+  (`AlmacenConConsentimiento` en `src/lib/storage.ts`): sin permiso del tutor, nada se escribe
+  en disco. Ningún componente puede saltárselo.
+- Minimización: identificación por código de alumno. Sin nombre completo, CURP, dirección,
+  teléfono ni correo personal.
+- ARCO en `/mis-datos`: ver, corregir, descargar y borrar. El borrado es real, también en la
+  base (`borrar_mis_datos()`), sin baja lógica.
+- Registro de accesos por rol, visible para el propio alumno.
+
 ## Reglas del proyecto
 
 - Ningún componente toca `localStorage`: todo pasa por `src/lib/storage.ts` (API asíncrona,

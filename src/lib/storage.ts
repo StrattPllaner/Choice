@@ -134,7 +134,84 @@ export class AlmacenMemoria implements Almacen {
   }
 }
 
-export const almacen: Almacen =
+/** Observador de cambios: lo usa la sincronización para encolar sin que la capa de
+ *  almacenamiento tenga que conocerla (si no, se hacen un nudo importándose entre sí). */
+type Observador = (clave: string, operacion: 'guardar' | 'borrar') => void;
+let observador: Observador | null = null;
+export const observarCambios = (fn: Observador | null) => {
+  observador = fn;
+};
+
+/** Claves que pueden guardarse SIN consentimiento del tutor: el registro del propio
+ *  consentimiento y una preferencia de interfaz que no es dato personal. */
+export const CLAVES_SIN_CONSENTIMIENTO = ['consentimiento', 'tema'];
+
+/** Puerta de consentimiento.
+ *
+ *  Los usuarios son menores de edad: mientras no haya consentimiento del padre o tutor,
+ *  NADA se escribe en disco. La app sigue funcionando (todo va a memoria y se pierde al
+ *  cerrar), pero no se persiste un solo dato. Está implementado aquí, en la capa de
+ *  almacenamiento, no en la interfaz: así ningún componente puede saltárselo por descuido.
+ */
+export class AlmacenConConsentimiento implements Almacen {
+  #persistente: Almacen;
+  #memoria = new AlmacenMemoria();
+  #consentido = false;
+
+  constructor(persistente: Almacen) {
+    this.#persistente = persistente;
+  }
+
+  get consentido() {
+    return this.#consentido;
+  }
+
+  /** La llama la app al arrancar si encuentra un consentimiento vigente. */
+  activarConsentimiento() {
+    this.#consentido = true;
+  }
+
+  /** Al revocar, lo que estaba en disco se borra de verdad (ARCO: cancelación). */
+  async revocarConsentimiento() {
+    this.#consentido = false;
+    for (const clave of await this.#persistente.claves()) {
+      if (clave !== 'consentimiento') await this.#persistente.borrar(clave);
+    }
+    await this.#memoria.limpiar();
+  }
+
+  #destino(clave: string): Almacen {
+    if (this.#consentido || CLAVES_SIN_CONSENTIMIENTO.includes(clave)) return this.#persistente;
+    return this.#memoria;
+  }
+
+  leer<T>(clave: string) {
+    return this.#destino(clave).leer<T>(clave);
+  }
+  guardar<T>(clave: string, valor: T) {
+    observador?.(clave, 'guardar');
+    return this.#destino(clave).guardar(clave, valor);
+  }
+  borrar(clave: string) {
+    observador?.(clave, 'borrar');
+    // se borra en los dos lados: nunca debe quedar un rastro por el camino
+    return Promise.all([this.#persistente.borrar(clave), this.#memoria.borrar(clave)]).then(() => undefined);
+  }
+  async limpiar() {
+    await Promise.all([this.#persistente.limpiar(), this.#memoria.limpiar()]);
+  }
+  async claves() {
+    const [persistentes, enMemoria] = await Promise.all([this.#persistente.claves(), this.#memoria.claves()]);
+    return [...new Set([...persistentes, ...enMemoria])];
+  }
+  suscribir(clave: string, escucha: (valor: unknown) => void) {
+    return this.#destino(clave).suscribir(clave, escucha);
+  }
+}
+
+const base: Almacen =
   typeof window !== 'undefined' && hayLocalStorage() ? new AlmacenLocal() : new AlmacenMemoria();
 
-export const almacenaEnDispositivo = almacen instanceof AlmacenLocal;
+export const almacen = new AlmacenConConsentimiento(base);
+
+export const almacenaEnDispositivo = base instanceof AlmacenLocal;
