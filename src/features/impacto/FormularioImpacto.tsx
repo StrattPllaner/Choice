@@ -26,7 +26,7 @@ function Reactivo({
         <label htmlFor={reactivo.id} className="block text-base font-semibold">
           {reactivo.texto}
         </label>
-        {reactivo.ayuda && <p className="text-xs text-texto-suave">{reactivo.ayuda}</p>}
+        {reactivo.ayuda && <p className="text-micro text-tinta-suave">{reactivo.ayuda}</p>}
         <textarea
           id={reactivo.id}
           rows={4}
@@ -38,7 +38,7 @@ function Reactivo({
           }}
           className="w-full rounded-xl2 border border-borde bg-superficie-2 p-3 text-base"
         />
-        <p className="text-sm text-texto-suave">Llevas {valor ?? 0}.</p>
+        <p className="text-chico text-tinta-suave">Llevas {valor ?? 0}.</p>
       </div>
     );
   }
@@ -46,7 +46,7 @@ function Reactivo({
   return (
     <fieldset className="space-y-2">
       <legend className="text-base font-semibold">{reactivo.texto}</legend>
-      {reactivo.ayuda && <p className="text-xs text-texto-suave">{reactivo.ayuda}</p>}
+      {reactivo.ayuda && <p className="text-micro text-tinta-suave">{reactivo.ayuda}</p>}
       <div className="flex flex-col gap-2">
         {reactivo.opciones?.map((opcion) => (
           <button
@@ -56,7 +56,7 @@ function Reactivo({
             onClick={() => onCambio(opcion.valor)}
             className={[
               'toque w-full justify-start rounded-xl2 border px-4 py-3 text-left text-base',
-              valor === opcion.valor ? 'border-marca bg-marca-suave text-marca' : 'border-borde',
+              valor === opcion.valor ? 'border-primario bg-primario-suave text-primario' : 'border-borde',
             ].join(' ')}
           >
             {opcion.etiqueta}
@@ -82,7 +82,7 @@ export function FormularioImpacto({
 
   return (
     <div className="contenedor-app space-y-5">
-      <p className="text-sm font-medium text-marca">
+      <p className="text-chico font-medium text-primario">
         {momento === 'inicial' ? 'Primera medición' : 'Segunda medición'}
       </p>
       <BarraProgreso actual={indice + 1} total={TOTAL_REACTIVOS_IMPACTO} etiqueta="Avance de la medición" />
@@ -109,7 +109,7 @@ export function FormularioImpacto({
         </Boton>
       </div>
 
-      <p className="text-xs text-texto-suave">
+      <p className="text-micro text-tinta-suave">
         De las preguntas abiertas solo guardamos cuántas cosas escribiste, no lo que escribiste. Tu escuela
         ve resultados del grupo, nunca los tuyos.
       </p>

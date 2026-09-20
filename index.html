@@ -29,6 +29,9 @@
         try {
           var t = localStorage.getItem('nombreapp:v1:tema');
           if (t) document.documentElement.dataset.tema = JSON.parse(t);
+          // ?tema=claro | ?tema=oscuro fuerza el tema; sirve para revisar capturas
+          var forzado = /[?&#]tema=(claro|oscuro)/.exec(location.href);
+          if (forzado) document.documentElement.dataset.tema = forzado[1];
         } catch (e) {}
       })();
     </script>

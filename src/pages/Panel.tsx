@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
 import { Boton } from '@/components/Boton';
-import { Cargando } from '@/components/Cargando';
+import { EsqueletoPanel } from '@/components/Esqueleto';
+import { EstadoError } from '@/components/Estados';
 import {
   MINIMO_GRUPO,
   cargarAreas,
@@ -52,11 +53,11 @@ function Acceso({ onEntrar }: { onEntrar: () => void }) {
 
   return (
     <div className="contenedor-app space-y-4">
-      <h1 className="text-2xl">Panel de la escuela</h1>
-      <p className="text-texto-suave">Acceso para orientación y dirección.</p>
+      <h1 className="text-xl">Panel de la escuela</h1>
+      <p className="text-tinta-suave">Acceso para orientación y dirección.</p>
       <div className="tarjeta space-y-3">
         <div>
-          <label htmlFor="correo" className="block text-sm font-semibold">Correo institucional</label>
+          <label htmlFor="correo" className="block text-chico font-semibold">Correo institucional</label>
           <input
             id="correo"
             type="email"
@@ -67,7 +68,7 @@ function Acceso({ onEntrar }: { onEntrar: () => void }) {
           />
         </div>
         <div>
-          <label htmlFor="clave" className="block text-sm font-semibold">Contraseña</label>
+          <label htmlFor="clave" className="block text-chico font-semibold">Contraseña</label>
           <input
             id="clave"
             type="password"
@@ -80,9 +81,9 @@ function Acceso({ onEntrar }: { onEntrar: () => void }) {
         <Boton anchoCompleto disabled={entrando} onClick={entrar}>
           {entrando ? 'Entrando…' : 'Entrar'}
         </Boton>
-        {error && <p role="alert" className="text-sm text-error">{error}</p>}
+        {error && <p role="alert" className="text-chico text-error">{error}</p>}
       </div>
-      <p className="text-xs text-texto-suave">
+      <p className="text-micro text-tinta-suave">
         Este panel solo muestra resultados del grupo. No existe ninguna pantalla, consulta ni exportación
         que devuelva la respuesta de un alumno en particular.
       </p>
@@ -100,7 +101,7 @@ function Tarjeta({ titulo, children }: { titulo: string; children: React.ReactNo
 }
 
 const SinDatosSuficientes = ({ n }: { n: number }) => (
-  <p className="text-sm text-texto-suave">
+  <p className="text-chico text-tinta-suave">
     No se muestra: hay {n} respuestas y el mínimo para publicar es {MINIMO_GRUPO}. Con menos, un promedio
     permitiría identificar a un alumno.
   </p>
@@ -143,8 +144,8 @@ export default function Panel() {
   if (!supabaseConfigurado) {
     return (
       <div className="contenedor-app space-y-3">
-        <h1 className="text-2xl">Panel de la escuela</h1>
-        <p className="tarjeta text-sm text-texto-suave">
+        <h1 className="text-xl">Panel de la escuela</h1>
+        <p className="tarjeta text-chico text-tinta-suave">
           Esta instalación corre en modo local, sin backend. El panel necesita las variables
           <code className="mx-1">VITE_SUPABASE_URL</code> y <code className="mx-1">VITE_SUPABASE_ANON_KEY</code>
           y las migraciones de <code>supabase/migrations</code> aplicadas.
@@ -153,23 +154,23 @@ export default function Panel() {
     );
   }
 
-  if (perfil === undefined) return <Cargando etiqueta="Abriendo el panel…" />;
+  if (perfil === undefined) return <div className="contenedor-app"><EsqueletoPanel /></div>;
   if (perfil === null) return <Acceso onEntrar={() => void cargar()} />;
   if (perfil.rol === 'alumno') {
     return (
       <div className="contenedor-app">
-        <p className="tarjeta text-sm">Tu cuenta es de alumno: este panel es para orientación y dirección.</p>
+        <p className="tarjeta text-chico">Tu cuenta es de alumno: este panel es para orientación y dirección.</p>
       </div>
     );
   }
   if (error) {
     return (
       <div className="contenedor-app">
-        <p role="alert" className="tarjeta text-sm text-error">{error}</p>
+        <EstadoError tipo={navigator.onLine ? 'servidor' : 'conexion'} onReintentar={() => void cargar()} />
       </div>
     );
   }
-  if (!datos) return <Cargando etiqueta="Cargando agregados…" />;
+  if (!datos) return <div className="contenedor-app"><EsqueletoPanel /></div>;
 
   const { licencia } = datos;
   const bloqueoSuave = licencia && !licencia.vigente;
@@ -204,8 +205,8 @@ export default function Panel() {
   return (
     <div className="contenedor-app space-y-5 pb-6">
       <header className="space-y-1">
-        <h1 className="text-2xl">Panel de la escuela</h1>
-        <p className="text-sm text-texto-suave">
+        <h1 className="text-xl">Panel de la escuela</h1>
+        <p className="text-chico text-tinta-suave">
           Datos agregados del plantel. Nunca información de un alumno identificable.
         </p>
       </header>
@@ -213,8 +214,8 @@ export default function Panel() {
       {licencia && (
         <div
           className={[
-            'rounded-xl2 border-l-4 p-3 text-sm',
-            licencia.vigente ? 'border-exito bg-exito/10' : 'border-aviso bg-aviso/10',
+            'rounded-xl2 border-l-4 p-3 text-chico',
+            licencia.vigente ? 'border-exito bg-exito-suave' : 'border-atencion bg-atencion-suave',
           ].join(' ')}
         >
           {licencia.vigente ? (
@@ -242,9 +243,9 @@ export default function Panel() {
 
       <Tarjeta titulo="Alumnos con su perfil completo">
         {datos.cobertura && datos.cobertura.publicable ? (
-          <p className="text-2xl font-semibold tabular-nums">
+          <p className="text-xl font-semibold tabular-nums">
             {datos.cobertura.con_perfil}
-            <span className="text-base font-normal text-texto-suave"> de {datos.cobertura.alumnos} alumnos</span>
+            <span className="text-base font-normal text-tinta-suave"> de {datos.cobertura.alumnos} alumnos</span>
           </p>
         ) : (
           <SinDatosSuficientes n={datos.cobertura?.alumnos ?? 0} />
@@ -254,8 +255,8 @@ export default function Panel() {
       <Tarjeta titulo="Siguen sin rumbo definido">
         {datos.sinRumbo?.publicable ? (
           <>
-            <p className="text-2xl font-semibold tabular-nums">{datos.sinRumbo.porcentaje}%</p>
-            <p className="text-xs text-texto-suave">
+            <p className="text-xl font-semibold tabular-nums">{datos.sinRumbo.porcentaje}%</p>
+            <p className="text-micro text-tinta-suave">
               Alumnos que reportan 1 o 2 en seguridad de su decisión, sobre {datos.sinRumbo.n} respuestas.
             </p>
           </>
@@ -271,9 +272,9 @@ export default function Panel() {
           <ul className="space-y-2">
             {datos.areas.map((area) => (
               <li key={area.area}>
-                <div className="flex justify-between text-sm">
+                <div className="flex justify-between text-chico">
                   <span>{area.area}</span>
-                  <span className="tabular-nums text-texto-suave">{area.porcentaje}%</span>
+                  <span className="tabular-nums text-tinta-suave">{area.porcentaje}%</span>
                 </div>
                 <div className="mt-1 h-2 rounded-full bg-superficie-2">
                   <div className="h-full rounded-full bg-serie-a" style={{ width: `${area.porcentaje}%` }} />
@@ -288,9 +289,9 @@ export default function Panel() {
         {datos.impacto.length === 0 || datos.impacto[0]?.publicable === false ? (
           <SinDatosSuficientes n={datos.impacto[0]?.n_inicial ?? 0} />
         ) : (
-          <table className="w-full text-left text-sm">
+          <table className="w-full text-left text-chico">
             <thead>
-              <tr className="border-b border-borde text-xs text-texto-suave">
+              <tr className="border-b border-borde text-micro text-tinta-suave">
                 <th scope="col" className="py-1">Indicador</th>
                 <th scope="col" className="py-1 text-right">Antes</th>
                 <th scope="col" className="py-1 text-right">Después</th>
@@ -299,7 +300,7 @@ export default function Panel() {
             </thead>
             <tbody>
               {datos.impacto.map((fila) => (
-                <tr key={fila.indicador} className="border-b border-borde/50">
+                <tr key={fila.indicador} className="border-b border-borde">
                   <th scope="row" className="py-1 pr-2 font-normal">{fila.indicador}</th>
                   <td className="py-1 text-right tabular-nums">{fila.inicial}</td>
                   <td className="py-1 text-right tabular-nums">{fila.seguimiento}</td>
@@ -315,16 +316,16 @@ export default function Panel() {
         {datos.carreras.length === 0 ? (
           <SinDatosSuficientes n={datos.cobertura?.alumnos ?? 0} />
         ) : (
-          <ol className="space-y-1 text-sm">
+          <ol className="space-y-1 text-chico">
             {datos.carreras.map((carrera) => (
               <li key={carrera.carrera_id} className="flex justify-between gap-3">
                 <span>{carrera.carrera_id}</span>
-                <span className="tabular-nums text-texto-suave">{carrera.alumnos} alumnos</span>
+                <span className="tabular-nums text-tinta-suave">{carrera.alumnos} alumnos</span>
               </li>
             ))}
           </ol>
         )}
-        <p className="text-xs text-texto-suave">
+        <p className="text-micro text-tinta-suave">
           Las carreras que nadie abrió no aparecen aquí: son justo las que conviene presentarle a la
           generación. Se identifican comparando esta lista contra el catálogo completo.
         </p>
@@ -337,7 +338,7 @@ export default function Panel() {
         <Boton variante="secundario" anchoCompleto onClick={() => window.print()}>
           Imprimir o guardar como PDF
         </Boton>
-        <p className="text-xs text-texto-suave">
+        <p className="text-micro text-tinta-suave">
           El PDF sale del diálogo de impresión del navegador: sin librerías extra y con los mismos datos
           que ves aquí.
         </p>

@@ -4,6 +4,7 @@ import { ErrorLimite } from '@/components/ErrorLimite';
 import { Marco } from '@/components/Marco';
 import { ProveedorSesion } from '@/features/sesion/SesionContexto';
 import { ProveedorPrivacidad } from '@/features/privacidad/ProveedorPrivacidad';
+import { ProveedorAvisos } from '@/components/Avisos';
 import Inicio from '@/pages/Inicio';
 
 // Inicio va en el bundle inicial; el resto se carga al navegar (menos KB en el primer render).
@@ -18,12 +19,16 @@ const Privacidad = lazy(() => import('@/pages/Privacidad'));
 const MisDatos = lazy(() => import('@/pages/MisDatos'));
 const ConsentimientoPagina = lazy(() => import('@/pages/ConsentimientoPagina'));
 const Panel = lazy(() => import('@/pages/Panel'));
+const Estilo = lazy(() => import('@/pages/Estilo'));
+const Componentes = lazy(() => import('@/pages/Componentes'));
+const EstadosPagina = lazy(() => import('@/pages/EstadosPagina'));
 const NoEncontrada = lazy(() => import('@/pages/NoEncontrada'));
 
 export default function App() {
   return (
     <ErrorLimite>
-      <ProveedorPrivacidad>
+      <ProveedorAvisos>
+        <ProveedorPrivacidad>
         <ProveedorSesion>
         <Routes>
           <Route element={<Marco />}>
@@ -41,11 +46,16 @@ export default function App() {
             <Route path="mis-datos" element={<MisDatos />} />
             <Route path="consentimiento" element={<ConsentimientoPagina />} />
             <Route path="panel" element={<Panel />} />
+            {/* páginas de revisión del sistema de diseño, no del producto */}
+            <Route path="estilo" element={<Estilo />} />
+            <Route path="componentes" element={<Componentes />} />
+            <Route path="estados" element={<EstadosPagina />} />
             <Route path="*" element={<NoEncontrada />} />
           </Route>
         </Routes>
         </ProveedorSesion>
-      </ProveedorPrivacidad>
+        </ProveedorPrivacidad>
+      </ProveedorAvisos>
     </ErrorLimite>
   );
 }

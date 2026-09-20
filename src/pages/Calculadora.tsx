@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
-import { Cargando } from '@/components/Cargando';
+import { EsqueletoLista } from '@/components/Esqueleto';
 import { Grafica } from '@/features/roi/Grafica';
 import {
   ETIQUETA_DEDICACION,
@@ -53,7 +53,7 @@ function ControlRuta({
       <h3 className="text-base font-semibold">{titulo}</h3>
 
       <div>
-        <label htmlFor={`${id}-carrera`} className="block text-sm font-semibold">
+        <label htmlFor={`${id}-carrera`} className="block text-chico font-semibold">
           Carrera
         </label>
         <select
@@ -72,7 +72,7 @@ function ControlRuta({
       </div>
 
       <fieldset>
-        <legend className="text-sm font-semibold">Tipo de escuela</legend>
+        <legend className="text-chico font-semibold">Tipo de escuela</legend>
         <div className="mt-1 flex gap-2">
           {(['publica', 'privada'] as const).map((tipo) => (
             <button
@@ -83,8 +83,8 @@ function ControlRuta({
                 onCambio({ ...entradas, tipo, colegiatura: tipo === 'publica' ? 0 : Math.max(entradas.colegiatura, 3500) })
               }
               className={[
-                'toque flex-1 rounded-xl2 border px-3 py-2 text-sm',
-                entradas.tipo === tipo ? 'border-marca bg-marca-suave text-marca' : 'border-borde',
+                'toque flex-1 rounded-xl2 border px-3 py-2 text-chico',
+                entradas.tipo === tipo ? 'border-primario bg-primario-suave text-primario' : 'border-borde',
               ].join(' ')}
             >
               {tipo === 'publica' ? 'Pública' : 'Privada'}
@@ -94,9 +94,9 @@ function ControlRuta({
       </fieldset>
 
       <div>
-        <label htmlFor={`${id}-colegiatura`} className="flex justify-between text-sm font-semibold">
+        <label htmlFor={`${id}-colegiatura`} className="flex justify-between text-chico font-semibold">
           <span>Colegiatura al mes</span>
-          <span className="tabular-nums text-marca">{pesos(entradas.colegiatura)}</span>
+          <span className="tabular-nums text-primario">{pesos(entradas.colegiatura)}</span>
         </label>
         <input
           id={`${id}-colegiatura`}
@@ -106,15 +106,15 @@ function ControlRuta({
           step={250}
           value={entradas.colegiatura}
           onChange={(evento) => onCambio({ ...entradas, colegiatura: Number(evento.target.value) })}
-          className="mt-2 h-11 w-full accent-marca"
+          className="mt-2 h-11 w-full accent-primario"
         />
-        <p className="text-xs text-texto-suave">Muévelo para ver qué cambia si estudias en pública.</p>
+        <p className="text-micro text-tinta-suave">Muévelo para ver qué cambia si estudias en pública.</p>
       </div>
 
       <div>
-        <label htmlFor={`${id}-gastos`} className="flex justify-between text-sm font-semibold">
+        <label htmlFor={`${id}-gastos`} className="flex justify-between text-chico font-semibold">
           <span>Gastos de vida y transporte al mes</span>
-          <span className="tabular-nums text-marca">{pesos(entradas.gastos)}</span>
+          <span className="tabular-nums text-primario">{pesos(entradas.gastos)}</span>
         </label>
         <input
           id={`${id}-gastos`}
@@ -124,12 +124,12 @@ function ControlRuta({
           step={250}
           value={entradas.gastos}
           onChange={(evento) => onCambio({ ...entradas, gastos: Number(evento.target.value) })}
-          className="mt-2 h-11 w-full accent-marca"
+          className="mt-2 h-11 w-full accent-primario"
         />
       </div>
 
       <div>
-        <label htmlFor={`${id}-ingreso`} className="block text-sm font-semibold">
+        <label htmlFor={`${id}-ingreso`} className="block text-chico font-semibold">
           Lo que esperas ganar al mes cuando salgas
         </label>
         <input
@@ -142,7 +142,7 @@ function ControlRuta({
           onChange={(evento) => onCambio({ ...entradas, ingresoEsperado: Number(evento.target.value) })}
           className="toque mt-1 w-full rounded-xl2 border border-borde bg-superficie-2 px-3 py-3 text-base tabular-nums"
         />
-        <p className="text-xs text-texto-suave">
+        <p className="text-micro text-tinta-suave">
           {carrera && tieneFuente(carrera.laboral.salarioEntradaMxn)
             ? 'Viene de la ficha, con fuente citada. Puedes cambiarlo.'
             : 'Todavía no tenemos este dato con fuente, así que el número es tuyo, no nuestro. Pregunta a alguien que ya trabaje de eso.'}
@@ -150,7 +150,7 @@ function ControlRuta({
       </div>
 
       <div>
-        <label htmlFor={`${id}-dedicacion`} className="block text-sm font-semibold">
+        <label htmlFor={`${id}-dedicacion`} className="block text-chico font-semibold">
           ¿Vas a trabajar mientras estudias?
         </label>
         <select
@@ -226,13 +226,13 @@ export default function Calculadora() {
     return compararRutas(rutas, { ingresoSinCarreraMensualMxn: ingresoSinCarrera, horizonteAnios: 10 });
   }, [carreras, a, b, ingresoSinCarrera]);
 
-  if (!carreras) return <Cargando etiqueta="Abriendo la calculadora…" />;
+  if (!carreras) return <div className="contenedor-app"><EsqueletoLista filas={3} /></div>;
 
   return (
     <div className="contenedor-app space-y-6">
       <header className="space-y-2">
-        <h1 className="text-2xl">¿Cuánto cuesta de verdad y en cuánto se recupera?</h1>
-        <p className="text-texto-suave">
+        <h1 className="text-xl">¿Cuánto cuesta de verdad y en cuánto se recupera?</h1>
+        <p className="text-tinta-suave">
           Compara dos rutas: cuánto te cuesta cada una, cuánto dejas de ganar mientras estudias y cómo
           van las dos a los 5 y a los 10 años.
         </p>
@@ -240,10 +240,10 @@ export default function Calculadora() {
 
       <aside
         aria-label="Advertencia sobre las estimaciones"
-        className="rounded-xl2 border-l-4 border-aviso bg-aviso/10 p-4 text-sm"
+        className="rounded-xl2 border-l-4 border-atencion bg-atencion-suave p-4 text-chico"
       >
         <p className="font-semibold">Son estimaciones, no promesas.</p>
-        <p className="mt-1 text-texto-suave">
+        <p className="mt-1 text-tinta-suave">
           Los resultados salen de los números que tú pones y de medianas nacionales cuando existen con
           fuente. Los casos individuales varían muchísimo: la ciudad, la escuela, los contactos y la
           suerte cambian todo. Nadie te está garantizando ningún sueldo ni ningún resultado.
@@ -251,7 +251,7 @@ export default function Calculadora() {
       </aside>
 
       <div>
-        <label htmlFor="sin-carrera" className="block text-sm font-semibold">
+        <label htmlFor="sin-carrera" className="block text-chico font-semibold">
           Si te pusieras a trabajar ya, ¿cuánto ganarías al mes?
         </label>
         <input
@@ -264,7 +264,7 @@ export default function Calculadora() {
           onChange={(evento) => setIngresoSinCarrera(Number(evento.target.value))}
           className="toque mt-1 w-full rounded-xl2 border border-borde bg-superficie-2 px-3 py-3 text-base tabular-nums"
         />
-        <p className="text-xs text-texto-suave">
+        <p className="text-micro text-tinta-suave">
           De aquí sale el costo de oportunidad: lo que dejas de ganar por estar estudiando.
         </p>
       </div>
@@ -280,15 +280,15 @@ export default function Calculadora() {
             </h2>
 
             {comparacion.rutas.map((resultado) => (
-              <div key={resultado.ruta.id} className="tarjeta space-y-2 text-sm">
+              <div key={resultado.ruta.id} className="tarjeta space-y-2 text-chico">
                 <p className="text-base font-semibold">{resultado.ruta.nombre}</p>
                 <dl className="space-y-1">
                   <div className="flex justify-between gap-3">
-                    <dt className="text-texto-suave">Costo total de estudiar</dt>
+                    <dt className="text-tinta-suave">Costo total de estudiar</dt>
                     <dd className="tabular-nums">{pesos(resultado.costoDirectoMxn)}</dd>
                   </div>
                   <div className="flex justify-between gap-3">
-                    <dt className="text-texto-suave">Lo que dejas de ganar mientras estudias</dt>
+                    <dt className="text-tinta-suave">Lo que dejas de ganar mientras estudias</dt>
                     <dd className="tabular-nums">{pesos(resultado.costoOportunidadMxn)}</dd>
                   </div>
                   <div className="flex justify-between gap-3 border-t border-borde pt-1 font-semibold">
@@ -296,11 +296,11 @@ export default function Calculadora() {
                     <dd className="tabular-nums">{pesos(resultado.inversionTotalMxn)}</dd>
                   </div>
                   <div className="flex justify-between gap-3">
-                    <dt className="text-texto-suave">Ingreso esperado al año</dt>
+                    <dt className="text-tinta-suave">Ingreso esperado al año</dt>
                     <dd className="tabular-nums">{pesos(resultado.ingresoAnualEsperadoMxn)}</dd>
                   </div>
                   <div className="flex justify-between gap-3">
-                    <dt className="text-texto-suave">Tiempo para recuperar la inversión</dt>
+                    <dt className="text-tinta-suave">Tiempo para recuperar la inversión</dt>
                     <dd className="tabular-nums">
                       {resultado.aniosParaRecuperar === null
                         ? 'No se recupera con estos números'
@@ -309,7 +309,7 @@ export default function Calculadora() {
                   </div>
                 </dl>
                 {resultado.aniosParaRecuperar === null && (
-                  <p className="text-xs text-aviso">
+                  <p className="text-micro text-atencion">
                     Con los números que pusiste, ganarías lo mismo o menos que sin estudiar. Revisa el
                     ingreso esperado o compara con una ruta más corta.
                   </p>
@@ -323,11 +323,11 @@ export default function Calculadora() {
               Cómo van a los 5 y a los 10 años
             </h2>
             <Grafica comparacion={comparacion} />
-            <ul className="space-y-1 text-sm">
+            <ul className="space-y-1 text-chico">
               {comparacion.cortes.map((corte) => (
                 <li key={corte.anio} className="tarjeta">
                   <p className="font-semibold">Al año {corte.anio}</p>
-                  <ul className="mt-1 space-y-0.5 text-texto-suave">
+                  <ul className="mt-1 space-y-0.5 text-tinta-suave">
                     {corte.valores.map((valor) => {
                       const ruta = comparacion.rutas.find((r) => r.ruta.id === valor.rutaId);
                       return (
@@ -345,7 +345,7 @@ export default function Calculadora() {
                 </li>
               ))}
             </ul>
-            <p className="text-xs text-texto-suave">
+            <p className="text-micro text-tinta-suave">
               Quien va arriba a los 5 años no siempre va arriba a los 10: las rutas cortas empiezan a
               ganar antes, las largas suelen alcanzar después. Por eso están los dos cortes.
             </p>
@@ -355,7 +355,7 @@ export default function Calculadora() {
             <h2 id="supuestos" className="text-lg">
               Los supuestos que se usaron
             </h2>
-            <ul className="tarjeta list-disc space-y-2 pl-5 text-sm text-texto-suave">
+            <ul className="tarjeta list-disc space-y-2 pl-5 text-chico text-tinta-suave">
               {describirSupuestos(comparacion).map((linea) => (
                 <li key={linea}>{linea}</li>
               ))}
@@ -363,14 +363,14 @@ export default function Calculadora() {
           </section>
         </>
       ) : (
-        <p className="tarjeta text-sm text-texto-suave">
+        <p className="tarjeta text-chico text-tinta-suave">
           Elige al menos una carrera arriba para ver los números.{' '}
-          <Link to="/explorar" className="text-marca underline">
+          <Link to="/explorar" className="text-primario underline">
             Ver carreras
           </Link>
         </p>
       )}
-      <p className="text-xs text-texto-suave">
+      <p className="text-micro text-tinta-suave">
         Modelo abierto: la aritmética completa está en <code>src/features/roi/calculo.ts</code>.
       </p>
     </div>

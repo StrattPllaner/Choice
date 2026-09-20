@@ -10,13 +10,13 @@ export default function Inicio() {
   return (
     <div className="contenedor-app space-y-6">
       <section aria-labelledby="titulo-inicio" className="space-y-3">
-        <p className="text-sm font-medium text-marca">
+        <p className="text-chico font-medium text-primario">
           {nombre ? `Qué onda, ${nombre}` : 'Bienvenida o bienvenido'}
         </p>
-        <h1 id="titulo-inicio" className="text-2xl">
+        <h1 id="titulo-inicio" className="text-xl">
           ¿Qué vas a estudiar cuando salgas de la prepa?
         </h1>
-        <p className="text-texto-suave">
+        <p className="text-tinta-suave">
           Aquí puedes ver a qué se dedica cada carrera, qué se estudia y qué dicen los datos. Sin palabras
           raras y sin necesitar internet.
         </p>
@@ -41,15 +41,15 @@ export default function Inicio() {
         <h2 id="titulo-ayuda" className="text-base">
           Tus respuestas se quedan en este celular
         </h2>
-        <p className="mt-1 text-sm text-texto-suave">
+        <p className="mt-1 text-chico text-tinta-suave">
           No pedimos correo ni contraseña. Nadie de tu escuela ve lo que contestas.
         </p>
-        <p className="mt-2 text-sm">
-          <Link to="/privacidad" className="text-marca underline">
+        <p className="mt-2 text-chico">
+          <Link to="/privacidad" className="text-primario underline">
             Aviso de privacidad
           </Link>{' '}
           ·{' '}
-          <Link to="/mis-datos" className="text-marca underline">
+          <Link to="/mis-datos" className="text-primario underline">
             Mis datos
           </Link>
         </p>

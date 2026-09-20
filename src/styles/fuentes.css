@@ -1,0 +1,24 @@
+/* Tipografías autoalojadas, recortadas al juego de caracteres del español mexicano
+   (scripts/subconjunto-fuentes.mjs). Nada de CDN: una petición a un tercero en 3G
+   cuesta más que la fuente, y además filtra a los alumnos a otro servidor.
+
+   Nunito 700 · títulos · 10.3 KB
+   Inter 400–600 (variable) · cuerpo · 24.5 KB                                    */
+
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('./fuentes/nunito-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0100-0101, U+2013-2014, U+2018-201D, U+2022, U+2026, U+20AC, U+2190-2193, U+2605-2606, U+2713, U+25CF;
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url('./fuentes/inter-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0100-0101, U+2013-2014, U+2018-201D, U+2022, U+2026, U+20AC, U+2190-2193, U+2605-2606, U+2713, U+25CF;
+}

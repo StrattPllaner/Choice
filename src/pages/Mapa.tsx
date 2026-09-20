@@ -1,7 +1,8 @@
 import { useCallback, useEffect, useState } from 'react';
 import { AvisoGuia } from '@/components/AvisoGuia';
 import { Boton } from '@/components/Boton';
-import { Cargando } from '@/components/Cargando';
+import { EsqueletoMapa } from '@/components/Esqueleto';
+import { Celebracion } from '@/components/Celebracion';
 import { Cuestionario } from '@/features/perfil/Cuestionario';
 import { MapaAfinidad } from '@/features/perfil/MapaAfinidad';
 import { TOTAL_REACTIVOS } from '@/features/perfil/reactivos';
@@ -26,6 +27,7 @@ export default function Mapa() {
   const [historial, setHistorial] = useState<VersionPerfil[]>([]);
   const [borrador, setBorrador] = useState<Borrador | null>(null);
   const [actual, setActual] = useState<VersionPerfil | null>(null);
+  const [reciente, setReciente] = useState(false);
 
   const recargar = useCallback(async () => {
     const [versiones, pendiente] = await Promise.all([leerHistorial(), leerBorrador()]);
@@ -45,11 +47,12 @@ export default function Mapa() {
     setActual(version);
     setHistorial((previas) => [...previas, version]);
     setBorrador(null);
+    setReciente(true);
     setVista('resultado');
     window.scrollTo({ top: 0 });
   };
 
-  if (vista === 'cargando') return <Cargando etiqueta="Abriendo tu mapa…" />;
+  if (vista === 'cargando') return <div className="contenedor-app"><EsqueletoMapa /></div>;
 
   if (vista === 'cuestionario') {
     return (
@@ -66,15 +69,22 @@ export default function Mapa() {
 
   if (vista === 'resultado' && actual) {
     return (
-      <MapaAfinidad
-        version={actual}
-        primera={primerPerfil(historial)}
-        onRehacer={() => {
-          void borrarBorrador();
-          setBorrador(null);
-          setVista('cuestionario');
-        }}
-      />
+      <div className="space-y-4">
+        {reciente && (
+          <div className="contenedor-app">
+            <Celebracion texto="Listo, ya tienes tu mapa" />
+          </div>
+        )}
+        <MapaAfinidad
+          version={actual}
+          primera={primerPerfil(historial)}
+          onRehacer={() => {
+            void borrarBorrador();
+            setBorrador(null);
+            setVista('cuestionario');
+          }}
+        />
+      </div>
     );
   }
 
@@ -82,8 +92,8 @@ export default function Mapa() {
 
   return (
     <div className="contenedor-app space-y-5">
-      <h1 className="text-2xl">Arma tu mapa de exploración</h1>
-      <p className="text-texto-suave">
+      <h1 className="text-xl">Arma tu mapa de exploración</h1>
+      <p className="text-tinta-suave">
         Son {TOTAL_REACTIVOS} preguntas cortas sobre lo que te late, lo que se te da, cómo te gusta
         trabajar y qué te importa. Se contesta en menos de 7 minutos y puedes pausarlo.
       </p>
@@ -92,7 +102,7 @@ export default function Mapa() {
 
       {borrador && contestadas > 0 ? (
         <div className="space-y-2">
-          <p className="tarjeta text-sm">
+          <p className="tarjeta text-chico">
             Tienes {contestadas} de {TOTAL_REACTIVOS} preguntas contestadas.
           </p>
           <Boton anchoCompleto onClick={() => setVista('cuestionario')}>
@@ -121,7 +131,7 @@ export default function Mapa() {
           <h2 id="titulo-historial" className="text-lg">
             Tus mapas anteriores
           </h2>
-          <ul className="space-y-2 text-sm">
+          <ul className="space-y-2 text-chico">
             {[...historial].reverse().map((version) => (
               <li key={version.version}>
                 <button

@@ -17,7 +17,7 @@ export function ResumenGrupo({
     return (
       <div className="tarjeta space-y-2">
         <h3 className="text-base font-semibold">{grupo}</h3>
-        <p className="text-sm text-texto-suave">
+        <p className="text-chico text-tinta-suave">
           No se muestran resultados: el grupo tiene menos de {MINIMO_GRUPO} respuestas en alguna de las dos
           mediciones ({inicial.n} inicial, {seguimiento.n} seguimiento). Con tan pocas, los promedios
           permitirían identificar a un alumno.
@@ -36,16 +36,16 @@ export function ResumenGrupo({
         <h3 id={`grupo-${grupo}`} className="text-base font-semibold">
           {grupo}
         </h3>
-        <p className="text-xs text-texto-suave">
+        <p className="text-micro text-tinta-suave">
           {inicial.n} alumnos en la primera medición · {seguimiento.n} en la segunda
           {periodo ? ` · ${periodo}` : ''}
         </p>
       </header>
 
-      <table className="w-full text-left text-sm">
+      <table className="w-full text-left text-chico">
         <caption className="sr-only">Comparación del grupo entre la primera y la segunda medición</caption>
         <thead>
-          <tr className="border-b border-borde text-xs text-texto-suave">
+          <tr className="border-b border-borde text-micro text-tinta-suave">
             <th scope="col" className="py-1">Indicador</th>
             <th scope="col" className="py-1 text-right">Antes</th>
             <th scope="col" className="py-1 text-right">Después</th>
@@ -57,14 +57,14 @@ export function ResumenGrupo({
             const mejoro = fila.subirEsBueno ? fila.cambio > 0 : fila.cambio < 0;
             const empeoro = fila.cambio !== 0 && !mejoro;
             return (
-              <tr key={fila.indicador} className="border-b border-borde/50">
+              <tr key={fila.indicador} className="border-b border-borde">
                 <th scope="row" className="py-1 pr-2 font-normal">{fila.indicador}</th>
                 <td className="py-1 text-right tabular-nums">{formatear(fila.antes, fila.unidad)}</td>
                 <td className="py-1 text-right tabular-nums">{formatear(fila.despues, fila.unidad)}</td>
                 <td
                   className={[
                     'py-1 text-right tabular-nums',
-                    mejoro ? 'text-exito' : empeoro ? 'text-texto-suave' : '',
+                    mejoro ? 'text-exito' : empeoro ? 'text-tinta-suave' : '',
                   ].join(' ')}
                 >
                   {fila.cambio > 0 ? '+' : ''}
@@ -77,7 +77,7 @@ export function ResumenGrupo({
         </tbody>
       </table>
 
-      <p className="text-xs text-texto-suave">
+      <p className="text-micro text-tinta-suave">
         Son datos agregados del grupo. Ningún renglón corresponde a un alumno identificable, y el cambio no
         prueba causalidad: no hubo grupo de control.
       </p>

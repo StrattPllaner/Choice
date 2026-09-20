@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
-import { Cargando } from '@/components/Cargando';
+import { EsqueletoLista } from '@/components/Esqueleto';
+import { VacioComparador } from '@/components/Estados';
 import { ListaFuentes } from '@/components/Fuente';
 import { DIMENSIONES, mejoresPorDimension } from '@/features/comparador/dimensiones';
 import { cargarCarreras } from '@/lib/carreras';
@@ -72,7 +73,7 @@ export default function Comparar() {
     });
   }, []);
 
-  if (!carreras) return <Cargando etiqueta="Abriendo el comparador…" />;
+  if (!carreras) return <div className="contenedor-app"><EsqueletoLista filas={3} /></div>;
 
   const elegidas = seleccionadas
     .map((id) => carreras.find((c) => c.id === id))
@@ -103,8 +104,8 @@ export default function Comparar() {
   return (
     <div className="contenedor-app space-y-5">
       <header className="space-y-2">
-        <h1 className="text-2xl">Comparar carreras</h1>
-        <p className="text-texto-suave">
+        <h1 className="text-xl">Comparar carreras</h1>
+        <p className="text-tinta-suave">
           Hasta {MAXIMO} carreras, lado a lado, en las mismas cosas. No hay ganadora: se resalta en qué va
           mejor cada una y tú decides, porque esto no es solo números.
         </p>
@@ -117,7 +118,7 @@ export default function Comparar() {
               <button
                 type="button"
                 onClick={() => quitar(carrera.id)}
-                className="toque rounded-xl2 border border-marca bg-marca-suave px-3 py-2 text-sm text-marca"
+                className="toque rounded-xl2 border border-primario bg-primario-suave px-3 py-2 text-chico text-primario"
               >
                 {carrera.nombre} <span aria-hidden="true">×</span>
                 <span className="sr-only">Quitar de la comparación</span>
@@ -129,7 +130,7 @@ export default function Comparar() {
 
       {elegidas.length < MAXIMO && (
         <div>
-          <label htmlFor="agregar" className="block text-sm font-semibold">
+          <label htmlFor="agregar" className="block text-chico font-semibold">
             Agregar carrera
           </label>
           <select
@@ -151,7 +152,7 @@ export default function Comparar() {
       )}
 
       {elegidas.length >= 2 && !hayCorta && (
-        <p className="rounded-xl2 border-l-4 border-marca bg-marca-suave p-3 text-sm">
+        <p className="rounded-xl2 border-l-4 border-primario bg-primario-suave p-3 text-chico">
           Estás comparando puras carreras largas. Mete también una técnica o un TSU: cuestan menos, se
           empieza a trabajar antes y no siempre se gana menos.
         </p>
@@ -159,7 +160,7 @@ export default function Comparar() {
 
       {elegidas.length >= 1 && (
         <section aria-labelledby="sugerencias" className="space-y-2">
-          <h2 id="sugerencias" className="text-sm font-semibold">
+          <h2 id="sugerencias" className="text-chico font-semibold">
             También puedes comparar con
           </h2>
           <ul className="flex flex-wrap gap-2">
@@ -169,10 +170,10 @@ export default function Comparar() {
                   type="button"
                   onClick={() => agregar(carrera.id)}
                   disabled={elegidas.length >= MAXIMO}
-                  className="toque rounded-xl2 border border-borde px-3 py-2 text-sm disabled:opacity-50"
+                  className="toque rounded-xl2 border border-borde px-3 py-2 text-chico disabled:opacity-50"
                 >
                   + {carrera.nombre}
-                  <span className="ml-1 text-xs text-texto-suave">{ETIQUETA_NIVEL[carrera.nivel]}</span>
+                  <span className="ml-1 text-micro text-tinta-suave">{ETIQUETA_NIVEL[carrera.nivel]}</span>
                 </button>
               </li>
             ))}
@@ -181,12 +182,7 @@ export default function Comparar() {
       )}
 
       {elegidas.length < 2 ? (
-        <p className="tarjeta text-sm text-texto-suave">
-          Elige al menos dos carreras para compararlas.{' '}
-          <Link to="/explorar" className="text-marca underline">
-            Ver todas
-          </Link>
-        </p>
+        <VacioComparador />
       ) : (
         <>
           {/* encabezado de columnas, también sincronizado */}
@@ -198,8 +194,8 @@ export default function Comparar() {
             <div className="flex gap-3">
               {elegidas.map((carrera) => (
                 <div key={carrera.id} className="w-56 shrink-0">
-                  <p className="text-sm font-semibold">{carrera.nombre}</p>
-                  <p className="text-xs text-texto-suave">{ETIQUETA_NIVEL[carrera.nivel]}</p>
+                  <p className="text-chico font-semibold">{carrera.nombre}</p>
+                  <p className="text-micro text-tinta-suave">{ETIQUETA_NIVEL[carrera.nivel]}</p>
                 </div>
               ))}
             </div>
@@ -208,10 +204,10 @@ export default function Comparar() {
           <div className="space-y-4">
             {DIMENSIONES.map((dimension, indice) => (
               <section key={dimension.id} aria-labelledby={`dim-${dimension.id}`}>
-                <h2 id={`dim-${dimension.id}`} className="text-sm font-semibold">
+                <h2 id={`dim-${dimension.id}`} className="text-chico font-semibold">
                   {dimension.etiqueta}
                 </h2>
-                {dimension.ayuda && <p className="text-xs text-texto-suave">{dimension.ayuda}</p>}
+                {dimension.ayuda && <p className="text-micro text-tinta-suave">{dimension.ayuda}</p>}
 
                 <div
                   ref={(nodo) => registrar(nodo, indice + 1)}
@@ -229,18 +225,18 @@ export default function Comparar() {
                           key={carrera.id}
                           className={[
                             'w-56 shrink-0 rounded-xl2 border p-3',
-                            gana ? 'border-exito bg-exito/10' : 'border-borde bg-superficie',
+                            gana ? 'border-exito bg-exito-suave' : 'border-borde bg-superficie',
                           ].join(' ')}
                         >
-                          <p className={sinDato ? 'text-sm text-texto-suave' : 'text-sm font-medium'}>{texto}</p>
+                          <p className={sinDato ? 'text-chico text-tinta-suave' : 'text-chico font-medium'}>{texto}</p>
                           {gana && (
-                            <p className="mt-1 text-xs font-semibold text-exito">
+                            <p className="mt-1 text-micro font-semibold text-exito">
                               ✓ Va mejor aquí
                               <span className="sr-only"> que las otras carreras comparadas</span>
                             </p>
                           )}
                           {sinDato && dimension.porQueFalta && (
-                            <p className="mt-1 text-xs text-texto-suave">{dimension.porQueFalta}</p>
+                            <p className="mt-1 text-micro text-tinta-suave">{dimension.porQueFalta}</p>
                           )}
                           <ListaFuentes fuentes={fuentes} />
                         </div>
@@ -252,7 +248,7 @@ export default function Comparar() {
             ))}
           </div>
 
-          <p className="tarjeta text-sm text-texto-suave">
+          <p className="tarjeta text-chico text-tinta-suave">
             Que una gane en varias cosas no la vuelve la correcta. El gusto, la vida que quieres y lo que
             puede tu familia pesan más que cualquiera de estos números.
           </p>
@@ -261,7 +257,7 @@ export default function Comparar() {
             <button
               type="button"
               onClick={compartir}
-              className="toque w-full rounded-xl2 bg-marca px-5 py-3 font-semibold text-sobre-marca"
+              className="toque w-full rounded-xl2 bg-primario px-5 py-3 font-semibold text-sobre-primario"
             >
               {copiado ? 'Enlace copiado' : 'Compartir esta comparación'}
             </button>

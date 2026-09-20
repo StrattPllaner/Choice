@@ -1,0 +1,244 @@
+/* ═══════════════════════════════════════════════════════════════════════
+   NOMBREAPP · sistema de diseño
+   ───────────────────────────────────────────────────────────────────────
+   Quien usa esto tiene 16 años y está nervioso por una decisión grande.
+   La interfaz tiene que bajarle la tensión: base arena y crema, tinta cálida,
+   un primario sobrio y un acento que casi no aparece. Nada de rojo de alerta
+   salpicado, nada que se sienta examen.
+
+   Regla: ningún componente inventa valores. Todo sale de estos tokens.
+   Los pares de texto y fondo los valida `npm run validar-contraste` en el build.
+   ═══════════════════════════════════════════════════════════════════════ */
+
+:root {
+  /* ── Color · superficies ─────────────────────────────────────────────
+     fondo      : lienzo de la app, crema cálido que no deslumbra de noche
+     superficie : tarjetas y hojas, el plano que "flota" sobre el fondo
+     superficie-2: zonas hundidas, campos de texto, chips en reposo
+     borde      : separaciones normales · borde-fuerte: bordes de control  */
+  --color-fondo: #fdfbf7;
+  --color-superficie: #ffffff;
+  --color-superficie-2: #f5f0e7;
+  --color-borde: #e4dbcd;
+  --color-borde-fuerte: #90826d;
+
+  /* ── Color · tinta ───────────────────────────────────────────────────
+     tinta      : texto principal, títulos y cuerpo
+     tinta-suave: texto secundario, ayudas y descripciones
+     tinta-tenue: metadatos y marcas de agua; SOLO texto ≥ 18.66px o bold  */
+  --color-tinta: #1f1b16;
+  --color-tinta-suave: #5c544a;
+  --color-tinta-tenue: #6f6659;
+
+  /* ── Color · primario ────────────────────────────────────────────────
+     Verde azulado sobrio: confiable sin ser corporativo ni escolar.
+     primario      : acciones principales, enlaces, foco
+     primario-fuerte: estado presionado o hover en superficies claras
+     primario-suave : fondos de selección y avisos informativos
+     sobre-primario : texto sobre el primario                             */
+  --color-primario: #0f766e;
+  --color-primario-fuerte: #0b5f58;
+  --color-primario-suave: #e3f0ee;
+  --color-sobre-primario: #ffffff;
+
+  /* ── Color · acento ──────────────────────────────────────────────────
+     Terracota cálido, con moderación: destaca UNA cosa por pantalla.
+     acento      : rellenos decorativos y marcadores (no texto chico)
+     acento-texto: la misma familia, oscurecida, para texto sobre crema
+     sobre-acento: texto sobre el acento (tinta, no blanco)               */
+  --color-acento: #e07a5f;
+  --color-acento-texto: #a2432a;
+  --color-acento-suave: #fbeae3;
+  --color-sobre-acento: #1f1b16;
+
+  /* ── Color · estados ─────────────────────────────────────────────────
+     Sin rojo de alerta como decoración: el error solo aparece cuando de
+     verdad algo falló, y el "atención" es ámbar, no rojo.                */
+  --color-exito: #2f6d51;
+  --color-exito-suave: #e4f0ea;
+  --color-atencion: #96450b;
+  --color-atencion-suave: #fbeddd;
+  --color-error: #ab251e;
+  --color-error-suave: #fbe9e7;
+  --color-sobre-estado: #ffffff;
+
+  /* ── Color · datos (validados para daltonismo) ───────────────────── */
+  --color-serie-a: #0f766e;
+  --color-serie-b: #b45309;
+  --color-referencia: #8a8071;
+
+  --color-foco: #0f766e;
+  --color-velo: rgb(31 27 22 / 0.4); /* fondo de modales y hojas */
+
+  /* ── Tipografía ──────────────────────────────────────────────────────
+     Dos familias, tres pesos en total. Nunito (700) para títulos: formas
+     suaves y redondeadas, que es lo que hace que no se sienta escolar.
+     Inter (400 y 600) para cuerpo: legible en pantallas malas y chicas.  */
+  --fuente-titulo: 'Nunito', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --fuente-cuerpo: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+
+  --peso-cuerpo: 400;
+  --peso-medio: 600;
+  --peso-titulo: 700;
+
+  /* Escala modular, razón 1.2 desde 16px. El cuerpo NUNCA baja de 16px:
+     texto-chico (13.33) y texto-micro (11.11) son solo para metadatos. */
+  --texto-micro: 0.694rem;   /* 11.11px · sellos y notas al pie          */
+  --texto-chico: 0.833rem;   /* 13.33px · metadatos, nunca cuerpo        */
+  --texto-base: 1rem;        /* 16px    · cuerpo, mínimo absoluto        */
+  --texto-md: 1.2rem;        /* 19.2px  · subtítulos                     */
+  --texto-lg: 1.44rem;       /* 23.04px · títulos de sección             */
+  --texto-xl: 1.728rem;      /* 27.65px · título de pantalla             */
+  --texto-2xl: 2.074rem;     /* 33.18px · número grande, una vez         */
+  --texto-3xl: 2.488rem;     /* 39.81px · portada                        */
+
+  --interlinea-cuerpo: 1.5;
+  --interlinea-titulo: 1.2;
+  --espaciado-titulo: -0.01em;
+
+  /* ── Espaciado · escala de 4px ─────────────────────────────────────── */
+  --esp-1: 0.25rem;  /*  4px */
+  --esp-2: 0.5rem;   /*  8px */
+  --esp-3: 0.75rem;  /* 12px */
+  --esp-4: 1rem;     /* 16px */
+  --esp-5: 1.25rem;  /* 20px */
+  --esp-6: 1.5rem;   /* 24px */
+  --esp-8: 2rem;     /* 32px */
+  --esp-10: 2.5rem;  /* 40px */
+  --esp-12: 3rem;    /* 48px */
+  --esp-16: 4rem;    /* 64px */
+
+  /* Área de toque mínima: 44px, no negociable en celular. */
+  --toque-minimo: 2.75rem;
+
+  /* ── Radios ──────────────────────────────────────────────────────────
+     chico: campos, botones · tarjeta: tarjetas · hoja: modales y hojas   */
+  --radio-chico: 0.5rem;   /*  8px */
+  --radio-tarjeta: 1rem;   /* 16px */
+  --radio-hoja: 1.5rem;    /* 24px */
+  --radio-lleno: 999px;    /* chips */
+
+  /* ── Sombras · tinte cálido, nunca negro puro ────────────────────────
+     1: reposo · 2: hover de tarjeta y elementos flotantes · 3: hojas     */
+  --sombra-1: 0 1px 2px rgb(61 46 28 / 0.06), 0 1px 3px rgb(61 46 28 / 0.08);
+  --sombra-2: 0 2px 4px rgb(61 46 28 / 0.07), 0 6px 12px rgb(61 46 28 / 0.09);
+  --sombra-3: 0 8px 16px rgb(61 46 28 / 0.1), 0 16px 32px rgb(61 46 28 / 0.14);
+
+  /* ── Movimiento ──────────────────────────────────────────────────────
+     rapido : respuesta inmediata al dedo (presionar)
+     estado : cambios de estado (color, selección)
+     entrada: aparición de elementos
+     Solo se animan transform y opacity. Nunca width, height, top, left,
+     margin ni box-shadow: en gama baja eso provoca reflow y se entrecorta. */
+  --dur-rapida: 120ms;
+  --dur-estado: 180ms;
+  --dur-entrada: 240ms;
+  --curva-entrada: cubic-bezier(0.2, 0, 0, 1);
+  --curva-salida: cubic-bezier(0.4, 0, 1, 1);
+  --escalonado: 40ms; /* separación entre elementos de una lista */
+
+  --ancho-contenido: 30rem; /* diseñado para 360px, centrado en pantallas grandes */
+
+  color-scheme: light;
+}
+
+/* ── Variante oscura ───────────────────────────────────────────────────
+   No es un invertido automático: cada paso se eligió contra el fondo
+   oscuro y se volvió a validar. La tinta cálida se conserva.            */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-tema='claro']) {
+    --color-fondo: #14110e;
+    --color-superficie: #1d1915;
+    --color-superficie-2: #272119;
+    --color-borde: #3a3229;
+    --color-borde-fuerte: #6b6155;
+
+    --color-tinta: #f6f1ea;
+    --color-tinta-suave: #c3b8a9;
+    --color-tinta-tenue: #a89c8c;
+
+    --color-primario: #5cc9bd;
+    --color-primario-fuerte: #8adcd2;
+    --color-primario-suave: #17322f;
+    --color-sobre-primario: #08201d;
+
+    --color-acento: #f0a68d;
+    --color-acento-texto: #f0a68d;
+    --color-acento-suave: #3a231b;
+    --color-sobre-acento: #1f1b16;
+
+    --color-exito: #6fc79b;
+    --color-exito-suave: #162c22;
+    --color-atencion: #e9a13b;
+    --color-atencion-suave: #33240f;
+    --color-error: #f08a82;
+    --color-error-suave: #331714;
+    --color-sobre-estado: #14110e;
+
+    --color-serie-a: #5cc9bd;
+    --color-serie-b: #e9a13b;
+    --color-referencia: #9c9082;
+
+    --color-foco: #5cc9bd;
+    --color-velo: rgb(8 6 4 / 0.6);
+
+    --sombra-1: 0 1px 2px rgb(0 0 0 / 0.4);
+    --sombra-2: 0 2px 4px rgb(0 0 0 / 0.45), 0 6px 12px rgb(0 0 0 / 0.35);
+    --sombra-3: 0 8px 16px rgb(0 0 0 / 0.5), 0 16px 32px rgb(0 0 0 / 0.45);
+
+    color-scheme: dark;
+  }
+}
+
+:root[data-tema='oscuro'] {
+  --color-fondo: #14110e;
+  --color-superficie: #1d1915;
+  --color-superficie-2: #272119;
+  --color-borde: #3a3229;
+  --color-borde-fuerte: #6b6155;
+
+  --color-tinta: #f6f1ea;
+  --color-tinta-suave: #c3b8a9;
+  --color-tinta-tenue: #a89c8c;
+
+  --color-primario: #5cc9bd;
+  --color-primario-fuerte: #8adcd2;
+  --color-primario-suave: #17322f;
+  --color-sobre-primario: #08201d;
+
+  --color-acento: #f0a68d;
+  --color-acento-texto: #f0a68d;
+  --color-acento-suave: #3a231b;
+  --color-sobre-acento: #1f1b16;
+
+  --color-exito: #6fc79b;
+  --color-exito-suave: #162c22;
+  --color-atencion: #e9a13b;
+  --color-atencion-suave: #33240f;
+  --color-error: #f08a82;
+  --color-error-suave: #331714;
+  --color-sobre-estado: #14110e;
+
+  --color-serie-a: #5cc9bd;
+  --color-serie-b: #e9a13b;
+  --color-referencia: #9c9082;
+
+  --color-foco: #5cc9bd;
+  --color-velo: rgb(8 6 4 / 0.6);
+
+  --sombra-1: 0 1px 2px rgb(0 0 0 / 0.4);
+  --sombra-2: 0 2px 4px rgb(0 0 0 / 0.45), 0 6px 12px rgb(0 0 0 / 0.35);
+  --sombra-3: 0 8px 16px rgb(0 0 0 / 0.5), 0 16px 32px rgb(0 0 0 / 0.45);
+
+  color-scheme: dark;
+}
+
+/* Preferencia del sistema: con movimiento reducido solo quedan cambios de opacidad. */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-rapida: 1ms;
+    --dur-estado: 1ms;
+    --dur-entrada: 1ms;
+    --escalonado: 0ms;
+  }
+}

@@ -14,13 +14,13 @@ const ETIQUETA_TIPO: Record<TipoFuente['tipo'], string> = {
  *  depende de que se vea de dónde salió cada número, no de un pie de página. */
 export function Fuente({ fuente }: { fuente: TipoFuente }) {
   return (
-    <p className="text-xs text-texto-suave">
+    <p className="text-micro text-tinta-suave">
       Fuente:{' '}
       <a
         href={fuente.url}
         target="_blank"
         rel="noopener noreferrer"
-        className="text-marca underline underline-offset-2"
+        className="text-primario underline underline-offset-2"
       >
         {fuente.nombre}
       </a>{' '}

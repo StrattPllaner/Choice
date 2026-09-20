@@ -1,6 +1,8 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
-import { Cargando, Esqueleto } from '@/components/Cargando';
+import { EsqueletoLista } from '@/components/Esqueleto';
+import { EstadoError, VacioBusqueda } from '@/components/Estados';
+import { useEsperaLarga } from '@/lib/retraso';
 import {
   cargarCarreras,
   filtrarCarreras,
@@ -14,19 +16,22 @@ const NIVELES: Nivel[] = ['licenciatura', 'ingenieria', 'tsu', 'tecnica', 'certi
 export default function Explorar() {
   const [carreras, setCarreras] = useState<Carrera[] | null>(null);
   const [error, setError] = useState(false);
+  const [intento, setIntento] = useState(0);
+  const esperaLarga = useEsperaLarga(carreras === null && !error);
   const [parametros] = useSearchParams();
   const areaInicial = parametros.get('area') as IdArea | null;
   const [filtros, setFiltros] = useState<FiltrosCarrera>(areaInicial ? { areas: [areaInicial] } : {});
 
   useEffect(() => {
     let vigente = true;
+    setError(false);
     cargarCarreras()
       .then((datos) => vigente && setCarreras(datos))
       .catch(() => vigente && setError(true));
     return () => {
       vigente = false;
     };
-  }, []);
+  }, [intento]);
 
   const resultado = useMemo(
     () => (carreras ? ordenarCarreras(filtrarCarreras(carreras, filtros)) : []),
@@ -43,17 +48,20 @@ export default function Explorar() {
   if (error) {
     return (
       <div className="contenedor-app">
-        <p className="tarjeta">No pudimos cargar las carreras. Revisa tu internet y vuelve a entrar.</p>
+        <EstadoError
+          tipo={navigator.onLine ? 'servidor' : 'conexion'}
+          onReintentar={() => setIntento((n) => n + 1)}
+        />
       </div>
     );
   }
 
   return (
     <div className="contenedor-app space-y-4">
-      <h1 className="text-2xl">Explorar carreras</h1>
+      <h1 className="text-xl">Explorar carreras</h1>
 
       <div>
-        <label htmlFor="buscar" className="block text-sm font-semibold">
+        <label htmlFor="buscar" className="block text-chico font-semibold">
           Busca por nombre
         </label>
         <input
@@ -68,12 +76,12 @@ export default function Explorar() {
       </div>
 
       {filtros.areas?.length ? (
-        <p className="flex items-center gap-2 text-sm">
-          <span className="rounded-full bg-marca-suave px-3 py-1 text-marca">Filtrando por área</span>
+        <p className="flex items-center gap-2 text-chico">
+          <span className="rounded-full bg-primario-suave px-3 py-1 text-primario">Filtrando por área</span>
           <button
             type="button"
             onClick={() => setFiltros((p) => ({ ...p, areas: [] }))}
-            className="underline text-texto-suave"
+            className="underline text-tinta-suave"
           >
             Quitar filtro
           </button>
@@ -81,7 +89,7 @@ export default function Explorar() {
       ) : null}
 
       <fieldset>
-        <legend className="text-sm font-semibold">Tipo de carrera</legend>
+        <legend className="text-chico font-semibold">Tipo de carrera</legend>
         <div className="mt-2 flex flex-wrap gap-2">
           {NIVELES.map((nivel) => {
             const activo = filtros.niveles?.includes(nivel) ?? false;
@@ -92,8 +100,8 @@ export default function Explorar() {
                 aria-pressed={activo}
                 onClick={() => alternarNivel(nivel)}
                 className={[
-                  'toque rounded-xl2 border px-4 py-2 text-sm',
-                  activo ? 'border-marca bg-marca-suave text-marca' : 'border-borde text-texto',
+                  'toque rounded-xl2 border px-4 py-2 text-chico',
+                  activo ? 'border-primario bg-primario-suave text-primario' : 'border-borde text-tinta',
                 ].join(' ')}
               >
                 {ETIQUETA_NIVEL[nivel]}
@@ -104,21 +112,18 @@ export default function Explorar() {
       </fieldset>
 
       {!carreras ? (
-        <>
-          <Cargando etiqueta="Cargando carreras…" />
-          <Esqueleto lineas={4} />
-        </>
+        esperaLarga ? <EsqueletoLista filas={5} /> : null
       ) : (
         <>
-          <p role="status" className="text-sm text-texto-suave">
+          <p role="status" className="text-chico text-tinta-suave">
             {resultado.length} de {carreras.length} carreras
           </p>
           <ul className="space-y-3">
             {resultado.map((carrera) => (
-              <li key={carrera.id}>
+              <li key={carrera.id} className="entra">
                 <Link to={`/carrera/${carrera.id}`} className="tarjeta block">
                   <span className="text-base font-semibold">{carrera.nombre}</span>
-                  <span className="mt-1 block text-sm text-texto-suave">
+                  <span className="mt-1 block text-chico text-tinta-suave">
                     {ETIQUETA_NIVEL[carrera.nivel]} · {carrera.duracionAnios}{' '}
                     {carrera.duracionAnios === 1 ? 'año' : 'años'}
                     {!carrera.verificado && ' · datos laborales pendientes'}
@@ -128,7 +133,10 @@ export default function Explorar() {
             ))}
           </ul>
           {resultado.length === 0 && (
-            <p className="tarjeta text-texto-suave">No encontramos carreras con esa búsqueda.</p>
+            <VacioBusqueda
+              consulta={filtros.texto ?? ''}
+              onLimpiar={() => setFiltros({})}
+            />
           )}
         </>
       )}

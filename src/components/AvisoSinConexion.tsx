@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
 
-/** Barra discreta cuando no hay internet: la app se puede seguir leyendo. */
+/** Barra de sin conexión: discreta, dice qué SÍ se puede seguir haciendo
+ *  (la app lee offline) y se va sola cuando vuelve la señal. */
 export function AvisoSinConexion() {
-  const [enLinea, setEnLinea] = useState(() => navigator.onLine);
+  const [enLinea, setEnLinea] = useState(() => (typeof navigator === 'undefined' ? true : navigator.onLine));
 
   useEffect(() => {
     const conectado = () => setEnLinea(true);
@@ -18,8 +19,11 @@ export function AvisoSinConexion() {
   if (enLinea) return null;
 
   return (
-    <p role="status" className="bg-aviso/15 px-4 py-2 text-center text-sm text-texto">
-      Sin internet. Puedes seguir leyendo lo que ya se descargó.
+    <p
+      role="status"
+      className="entra-pantalla bg-atencion-suave px-4 py-2 text-center text-chico text-tinta"
+    >
+      Sin internet. Puedes seguir leyendo las carreras y tus respuestas se guardan en el celular.
     </p>
   );
 }

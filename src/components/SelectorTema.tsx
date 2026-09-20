@@ -16,14 +16,14 @@ export function SelectorTema() {
 
   return (
     <fieldset className="tarjeta">
-      <legend className="px-1 text-sm font-semibold">Colores de la app</legend>
+      <legend className="px-1 text-chico font-semibold">Colores de la app</legend>
       <div className="mt-2 flex flex-wrap gap-2">
         {opciones.map(({ valor, etiqueta }) => (
           <label
             key={valor}
             className={[
-              'toque cursor-pointer rounded-xl2 border px-4 py-2 text-sm',
-              tema === valor ? 'border-marca bg-marca-suave text-marca' : 'border-borde text-texto',
+              'toque cursor-pointer rounded-xl2 border px-4 py-2 text-chico',
+              tema === valor ? 'border-primario bg-primario-suave text-primario' : 'border-borde text-tinta',
             ].join(' ')}
           >
             <input

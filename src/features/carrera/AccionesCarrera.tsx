@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import type { Carrera } from '@/data/tipos';
+import { usarAvisos } from '@/components/Avisos';
 import { usarSesion } from '@/features/sesion/usarSesion';
 
 /** URL que se comparte: una página estática por carrera (dist/c/<id>.html) que sí trae
@@ -12,6 +13,7 @@ export function urlCompartible(carrera: Carrera): string {
 
 export function AccionesCarrera({ carrera }: { carrera: Carrera }) {
   const { sesion, alternarFavorita } = usarSesion();
+  const { mostrar } = usarAvisos();
   const [copiado, setCopiado] = useState(false);
   const guardada = sesion?.favoritas.includes(carrera.id) ?? false;
 
@@ -46,11 +48,20 @@ export function AccionesCarrera({ carrera }: { carrera: Carrera }) {
       <div className="flex gap-2">
         <button
           type="button"
-          onClick={() => alternarFavorita(carrera.id)}
+          onClick={() => {
+            // confirmación inmediata: la lista se actualiza al instante y el aviso
+            // aparece en el mismo cuadro, aunque el guardado real tarde más
+            alternarFavorita(carrera.id);
+            mostrar({
+              texto: guardada ? 'La quitamos de tus carreras' : 'Guardada en tus carreras',
+              tono: guardada ? 'neutro' : 'exito',
+              accion: { etiqueta: 'Deshacer', alActivar: () => alternarFavorita(carrera.id) },
+            });
+          }}
           aria-pressed={guardada}
           className={[
-            'toque flex-1 gap-2 rounded-xl2 border px-4 py-3 text-sm font-semibold',
-            guardada ? 'border-marca bg-marca-suave text-marca' : 'border-borde text-texto',
+            'toque flex-1 gap-2 rounded-xl2 border px-4 py-3 text-chico font-semibold',
+            guardada ? 'border-primario bg-primario-suave text-primario' : 'border-borde text-tinta',
           ].join(' ')}
         >
           {guardada ? '★ Guardada en mis carreras' : '☆ Guardar en mis carreras'}
@@ -58,12 +69,12 @@ export function AccionesCarrera({ carrera }: { carrera: Carrera }) {
         <button
           type="button"
           onClick={compartir}
-          className="toque gap-2 rounded-xl2 bg-marca px-4 py-3 text-sm font-semibold text-sobre-marca"
+          className="toque gap-2 rounded-xl2 bg-primario px-4 py-3 text-chico font-semibold text-sobre-primario"
         >
           Compartir
         </button>
       </div>
-      <button type="button" onClick={copiar} className="toque w-full text-xs text-texto-suave underline">
+      <button type="button" onClick={copiar} className="toque w-full text-micro text-tinta-suave underline">
         {copiado ? 'Enlace copiado' : 'Copiar enlace de esta ficha'}
       </button>
       <p role="status" aria-live="polite" className="sr-only">

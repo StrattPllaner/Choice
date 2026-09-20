@@ -40,12 +40,12 @@ export function Cuestionario({ borrador, onTerminar, onSalir }: Props) {
   return (
     <div className="contenedor-app space-y-5">
       <AvisoGuia compacto />
-      <BarraProgreso actual={indice + 1} total={TOTAL_REACTIVOS} />
+      <BarraProgreso actual={indice + 1} total={TOTAL_REACTIVOS} etiqueta="Avance del cuestionario" />
 
       {primeroDelBloque && (
-        <div className="rounded-xl2 bg-marca-suave p-3">
-          <p className="text-sm font-semibold text-marca">{ETIQUETA_BLOQUE[reactivo.bloque]}</p>
-          <p className="text-sm text-texto-suave">{INTRO_BLOQUE[reactivo.bloque]}</p>
+        <div className="rounded-xl2 bg-primario-suave p-3">
+          <p className="text-chico font-semibold text-primario">{ETIQUETA_BLOQUE[reactivo.bloque]}</p>
+          <p className="text-chico text-tinta-suave">{INTRO_BLOQUE[reactivo.bloque]}</p>
         </div>
       )}
 
@@ -66,7 +66,7 @@ export function Cuestionario({ borrador, onTerminar, onSalir }: Props) {
                 onClick={() => responder(opcion.valor)}
                 className={[
                   'toque w-full justify-between rounded-xl2 border px-5 py-4 text-left text-base',
-                  elegida ? 'border-marca bg-marca-suave text-marca' : 'border-borde bg-superficie text-texto',
+                  elegida ? 'border-primario bg-primario-suave text-primario' : 'border-borde bg-superficie text-tinta',
                 ].join(' ')}
               >
                 <span>{opcion.etiqueta}</span>
@@ -81,12 +81,12 @@ export function Cuestionario({ borrador, onTerminar, onSalir }: Props) {
         <Boton variante="secundario" onClick={() => setIndice((i) => Math.max(0, i - 1))} disabled={indice === 0}>
           Atrás
         </Boton>
-        <Boton variante="texto" onClick={onSalir}>
+        <Boton variante="fantasma" onClick={onSalir}>
           Pausar y seguir después
         </Boton>
       </div>
 
-      <p className="text-xs text-texto-suave">
+      <p className="text-micro text-tinta-suave">
         Se va guardando solo. Puedes cerrar la app y retomar donde te quedaste.
       </p>
     </div>

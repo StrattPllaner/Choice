@@ -1,77 +1,9 @@
+@import './styles/tokens.css';
+@import './styles/fuentes.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-/* ── Tokens de color (claro) ─────────────────────────────────────────── */
-:root {
-  --c-fondo: 255 255 255;
-  --c-superficie: 255 255 255;
-  --c-superficie-2: 244 246 251;
-  --c-borde: 209 216 228;
-  --c-texto: 17 24 39;          /* 16.1:1 sobre fondo  */
-  --c-texto-suave: 75 85 99;    /*  7.6:1 sobre fondo  */
-  --c-marca: 29 78 216;         /*  6.3:1 con blanco   */
-  --c-marca-fuerte: 23 61 173;
-  --c-marca-suave: 235 242 255;
-  --c-sobre-marca: 255 255 255;
-  --c-exito: 21 128 61;
-  --c-aviso: 180 83 9;
-  --c-error: 185 28 28;
-  --c-foco: 29 78 216;
-  --c-serie-a: 29 78 216;   /* #1d4ed8 */
-  --c-serie-b: 180 83 9;    /* #b45309 */
-  --c-referencia: 107 114 128;
-
-  --sombra-1: 0 1px 2px rgb(17 24 39 / 0.06), 0 1px 3px rgb(17 24 39 / 0.08);
-  color-scheme: light;
-}
-
-/* ── Tokens de color (oscuro) ────────────────────────────────────────── */
-@media (prefers-color-scheme: dark) {
-  :root:not([data-tema='claro']) {
-    --c-fondo: 11 18 32;
-    --c-superficie: 19 28 46;
-    --c-superficie-2: 27 38 59;
-    --c-borde: 51 65 92;
-    --c-texto: 240 244 252;
-    --c-texto-suave: 174 187 208;
-    --c-marca: 125 176 255;
-    --c-marca-fuerte: 158 197 255;
-    --c-marca-suave: 25 40 70;
-    --c-sobre-marca: 8 14 26;
-    --c-exito: 74 222 128;
-    --c-aviso: 251 191 36;
-    --c-error: 248 113 113;
-    --c-foco: 147 197 253;
-    --c-serie-a: 79 146 247;  /* #4f92f7 */
-    --c-serie-b: 194 116 10;  /* #c2740a */
-    --c-referencia: 156 163 175;
-    --sombra-1: 0 1px 2px rgb(0 0 0 / 0.5);
-    color-scheme: dark;
-  }
-}
-
-:root[data-tema='oscuro'] {
-  --c-fondo: 11 18 32;
-  --c-superficie: 19 28 46;
-  --c-superficie-2: 27 38 59;
-  --c-borde: 51 65 92;
-  --c-texto: 240 244 252;
-  --c-texto-suave: 174 187 208;
-  --c-marca: 125 176 255;
-  --c-marca-fuerte: 158 197 255;
-  --c-marca-suave: 25 40 70;
-  --c-sobre-marca: 8 14 26;
-  --c-exito: 74 222 128;
-  --c-aviso: 251 191 36;
-  --c-error: 248 113 113;
-  --c-foco: 147 197 253;
-  --c-serie-a: 79 146 247;  /* #4f92f7 */
-  --c-serie-b: 194 116 10;  /* #c2740a */
-  --c-referencia: 156 163 175;
-  --sombra-1: 0 1px 2px rgb(0 0 0 / 0.5);
-  color-scheme: dark;
-}
 
 @layer base {
   html {
@@ -80,88 +12,211 @@
   }
 
   body {
-    @apply bg-fondo text-texto font-sans antialiased;
-    font-size: 1rem;      /* nunca menos de 16px en móvil */
-    line-height: 1.6;
+    @apply bg-fondo text-tinta antialiased;
+    font-family: var(--fuente-cuerpo);
+    font-size: var(--texto-base);
+    font-weight: var(--peso-cuerpo);
+    line-height: var(--interlinea-cuerpo);
     min-height: 100dvh;
     text-wrap: pretty;
   }
 
-  h1, h2, h3 {
-    @apply font-semibold text-texto;
-    line-height: 1.25;
+  h1, h2, h3, h4 {
+    font-family: var(--fuente-titulo);
+    font-weight: var(--peso-titulo);
+    line-height: var(--interlinea-titulo);
+    letter-spacing: var(--espaciado-titulo);
+    color: var(--color-tinta);
     text-wrap: balance;
   }
 
-  /* foco visible siempre, también en gama baja sin hover */
+  /* El foco siempre se ve. Nunca `outline: none` sin reemplazo. */
   :focus-visible {
-    outline: 3px solid rgb(var(--c-foco));
+    outline: 2px solid var(--color-foco);
     outline-offset: 2px;
-    border-radius: 0.375rem;
+    border-radius: var(--radio-chico);
+  }
+
+  /* Los nombres de token y rutas son largos: que partan en vez de desbordar a 360px. */
+  code {
+    font-size: 0.9em;
+    overflow-wrap: anywhere;
   }
 
   ::selection {
-    background: rgb(var(--c-marca) / 0.25);
+    background: var(--color-primario-suave);
+    color: var(--color-tinta);
   }
 
+  /* Solo transform y opacity. Nada de animar width, height, top, left o sombras. */
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
-      animation-duration: 0.01ms !important;
-      transition-duration: 0.01ms !important;
+      animation-duration: 1ms !important;
+      animation-iteration-count: 1 !important;
+      transition-property: opacity !important;
+      transition-duration: 1ms !important;
       scroll-behavior: auto !important;
     }
   }
 }
 
 @layer components {
-  /* área de toque mínima 44x44 (WCAG 2.5.8 / guía de Android) */
+  /* Área de toque mínima 44×44 (WCAG 2.5.8). */
   .toque {
-    @apply min-h-toque min-w-toque inline-flex items-center justify-center;
+    min-height: var(--toque-minimo);
+    min-width: var(--toque-minimo);
+    @apply inline-flex items-center justify-center;
   }
 
   .tarjeta {
-    @apply bg-superficie border border-borde rounded-xl2 p-4;
+    @apply bg-superficie border border-borde;
+    border-radius: var(--radio-tarjeta);
+    padding: var(--esp-4);
     box-shadow: var(--sombra-1);
   }
 
   .contenedor-app {
-    @apply mx-auto w-full max-w-contenido px-4;
+    @apply mx-auto w-full;
+    max-width: var(--ancho-contenido);
+    padding-inline: var(--esp-4);
   }
 
-  /* solo visible al navegar con teclado */
   .salta-al-contenido {
     @apply sr-only;
   }
   .salta-al-contenido:focus {
-    @apply not-sr-only fixed left-4 top-4 z-50 rounded-lg bg-marca px-4 py-3 text-sobre-marca;
+    @apply not-sr-only fixed left-4 top-4 z-50 bg-primario px-4 py-3 text-sobre-primario;
+    border-radius: var(--radio-chico);
   }
 }
 
-/* Impresión: de aquí sale el PDF del panel para juntas de consejo, sin librerías. */
+  /* ── Microinteracciones ──────────────────────────────────────────────
+     Solo transform y opacity tienen transición. La sombra cambia de golpe
+     a propósito: animarla obliga a repintar y en gama baja se entrecorta. */
+  .pulsable {
+    transition: transform var(--dur-estado) var(--curva-entrada);
+    will-change: transform;
+  }
+  .pulsable:active {
+    transform: scale(0.97);
+    transition-duration: var(--dur-rapida);
+    transition-timing-function: var(--curva-salida);
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .pulsable:hover:not(:disabled) {
+      transform: translateY(-1px);
+      box-shadow: var(--sombra-2);
+    }
+  }
+
+  .elevable {
+    transition: transform var(--dur-estado) var(--curva-entrada);
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .elevable:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--sombra-2);
+    }
+  }
+
+  /* Anillo de foco: 2px de grosor, 2px de separación, siempre visible. */
+  .anillo-foco:focus-visible {
+    outline: 2px solid var(--color-foco);
+    outline-offset: 2px;
+  }
+
+@layer utilities {
+  /* ── Entradas de lista ───────────────────────────────────────────────
+     Escalonado de 40ms, máximo 6 elementos. Del séptimo en adelante
+     aparecen sin animación: en gama baja, animar 30 tarjetas se siente peor
+     que no animar nada.                                                  */
+  .entra {
+    animation: entrar var(--dur-entrada) var(--curva-entrada) both;
+  }
+  .entra:nth-child(1) { animation-delay: 0ms; }
+  .entra:nth-child(2) { animation-delay: var(--escalonado); }
+  .entra:nth-child(3) { animation-delay: calc(var(--escalonado) * 2); }
+  .entra:nth-child(4) { animation-delay: calc(var(--escalonado) * 3); }
+  .entra:nth-child(5) { animation-delay: calc(var(--escalonado) * 4); }
+  .entra:nth-child(6) { animation-delay: calc(var(--escalonado) * 5); }
+  .entra:nth-child(n + 7) { animation: none; }
+
+  /* Transición de pantalla: solo opacidad, sin deslizamientos laterales. */
+  .entra-pantalla {
+    animation: aparecer var(--dur-estado) var(--curva-entrada) both;
+  }
+
+  /* Celebración discreta, solo CSS, una vez por sesión. */
+  .celebra {
+    animation: celebrar 600ms var(--curva-entrada) both;
+  }
+
+  .brilla {
+    animation: barrer 1.4s linear infinite;
+  }
+
+  /* Confirmación del chip: un rebote corto que regresa. */
+  .confirma {
+    animation: confirmar var(--dur-entrada) var(--curva-entrada);
+  }
+}
+
+@keyframes entrar {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: none; }
+}
+
+@keyframes aparecer {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes confirmar {
+  0%   { transform: scale(1); }
+  40%  { transform: scale(1.03); }
+  100% { transform: scale(1); }
+}
+
+@keyframes subir-hoja {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: none; }
+}
+
+@keyframes girar {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes celebrar {
+  0%   { opacity: 0; transform: scale(0.94); }
+  45%  { opacity: 1; transform: scale(1.02); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+/* El brillo del esqueleto se mueve con transform, nunca con background-position. */
+@keyframes barrer {
+  from { transform: translateX(-100%); }
+  to   { transform: translateX(100%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .entra, .entra-pantalla, .celebra, .confirma {
+    animation: aparecer 1ms both;
+  }
+  .brilla { animation: none; }
+}
+
+/* Impresión: de aquí sale el PDF del panel para juntas de consejo. */
 @media print {
   :root {
-    --c-fondo: 255 255 255;
-    --c-superficie: 255 255 255;
-    --c-superficie-2: 245 245 245;
-    --c-texto: 0 0 0;
-    --c-texto-suave: 70 70 70;
-    --c-borde: 180 180 180;
+    --color-fondo: #ffffff;
+    --color-superficie: #ffffff;
+    --color-superficie-2: #f5f5f5;
+    --color-tinta: #000000;
+    --color-tinta-suave: #333333;
+    --color-borde: #b4b4b4;
   }
-  header,
-  nav,
-  .salta-al-contenido {
-    display: none !important;
-  }
-  .tarjeta {
-    box-shadow: none;
-    break-inside: avoid;
-  }
-  .contenedor-app {
-    max-width: none;
-  }
-  a[href^='http']::after {
-    content: ' (' attr(href) ')';
-    font-size: 0.75em;
-    color: #444;
-  }
+  header, nav, .salta-al-contenido { display: none !important; }
+  .tarjeta { box-shadow: none; break-inside: avoid; }
+  .contenedor-app { max-width: none; }
+  a[href^='http']::after { content: ' (' attr(href) ')'; font-size: 0.75em; }
 }

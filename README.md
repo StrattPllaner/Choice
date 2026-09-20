@@ -134,6 +134,35 @@ El SDK de Supabase se carga con `import()` dinámico: no entra en el bundle inic
   base (`borrar_mis_datos()`), sin baja lógica.
 - Registro de accesos por rol, visible para el propio alumno.
 
+## Sistema de diseño
+
+Todo vive en [`src/styles/tokens.css`](src/styles/tokens.css) y se mapea en `tailwind.config.js`.
+**Ningún componente inventa valores**: si un color, espacio, radio o duración no está en tokens.css,
+no existe.
+
+- **Color**: base arena y crema, tinta cálida, primario verde azulado sobrio y acento terracota
+  con moderación. Variante oscura elegida paso a paso contra el fondo oscuro, no invertida.
+  `npm run validar-contraste` comprueba los 26 pares de texto y fondo en claro y en oscuro contra
+  WCAG AA y **falla el build** si alguno no pasa.
+- **Tipografía**: Nunito 700 (títulos, formas suaves) e Inter 400–600 (cuerpo). Autoalojadas y
+  recortadas al juego de caracteres del español con `npm run fuentes`: 35 KB en total, sin CDN.
+  Escala de razón 1.2 desde 16px; el cuerpo nunca baja de 16px.
+- **Movimiento**: 120ms respuesta / 180ms estado / 240ms entrada, con las curvas de entrada y
+  salida. **Solo se animan `transform` y `opacity`**; con `prefers-reduced-motion` queda solo la
+  opacidad.
+- Páginas de revisión: `/estilo` (tokens), `/componentes` (todos los estados) y `/estados`
+  (carga, vacío, error, sin conexión). Se puede forzar el tema con `?tema=claro` o `?tema=oscuro`.
+
+## Estados
+
+- **Carga**: esqueletos con la forma real del contenido (`src/components/Esqueleto.tsx`). El brillo
+  se desplaza con `transform`, nunca con `background-position`. Si la espera dura menos de 200ms no
+  se muestra nada (`useEsperaLarga`), para que no parpadee.
+- **Vacíos**: uno por pantalla, con ilustración SVG inline hecha con los tokens. El texto dice qué
+  va a pasar y ofrece una acción; nunca culpa al usuario.
+- **Errores**: conexión, servidor y no encontrado, cada uno con su mensaje humano y su reintento.
+- **Confirmaciones**: actualización optimista con aviso emergente y opción de deshacer.
+
 ## Reglas del proyecto
 
 - Ningún componente toca `localStorage`: todo pasa por `src/lib/storage.ts` (API asíncrona,

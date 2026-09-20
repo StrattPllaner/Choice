@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { SelectorTema } from '@/components/SelectorTema';
+import { VacioGuardadas } from '@/components/Estados';
+import { usarAvisos } from '@/components/Avisos';
 import { usarSesion } from '@/features/sesion/usarSesion';
 import { cargarCarreras } from '@/lib/carreras';
 import { almacenaEnDispositivo } from '@/lib/storage';
@@ -16,6 +18,7 @@ const ESTADOS = [
 
 export default function Perfil() {
   const { sesion, actualizar } = usarSesion();
+  const { mostrar } = usarAvisos();
   const [guardadas, setGuardadas] = useState<Carrera[]>([]);
 
   useEffect(() => {
@@ -36,27 +39,21 @@ export default function Perfil() {
 
   return (
     <div className="contenedor-app space-y-5">
-      <h1 className="text-2xl">Mi perfil</h1>
+      <h1 className="text-xl">Mi perfil</h1>
 
       <section aria-labelledby="mis-carreras" className="space-y-2">
         <h2 id="mis-carreras" className="text-lg">
           Mis carreras
         </h2>
         {guardadas.length === 0 ? (
-          <p className="tarjeta text-sm text-texto-suave">
-            Todavía no guardas ninguna.{' '}
-            <Link to="/explorar" className="text-marca underline">
-              Explora carreras
-            </Link>{' '}
-            y guarda las que te llamen con la estrella.
-          </p>
+          <VacioGuardadas />
         ) : (
           <ul className="space-y-2">
             {guardadas.map((carrera) => (
-              <li key={carrera.id}>
+              <li key={carrera.id} className="entra">
                 <Link to={`/carrera/${carrera.id}`} className="tarjeta block">
                   <span className="font-semibold">{carrera.nombre}</span>
-                  <span className="mt-1 block text-sm text-texto-suave">{ETIQUETA_NIVEL[carrera.nivel]}</span>
+                  <span className="mt-1 block text-chico text-tinta-suave">{ETIQUETA_NIVEL[carrera.nivel]}</span>
                 </Link>
               </li>
             ))}
@@ -65,7 +62,7 @@ export default function Perfil() {
       </section>
 
       <div className="tarjeta space-y-2">
-        <label htmlFor="nombre" className="block text-sm font-semibold">
+        <label htmlFor="nombre" className="block text-chico font-semibold">
           ¿Cómo te llamamos?
         </label>
         <input
@@ -77,20 +74,23 @@ export default function Perfil() {
           value={sesion?.nombre ?? ''}
           onChange={(evento) => actualizar({ nombre: evento.target.value || null })}
           placeholder="Tu nombre o apodo"
-          className="toque w-full rounded-xl2 border border-borde bg-superficie-2 px-4 py-3 text-base text-texto placeholder:text-texto-suave"
+          className="toque w-full rounded-xl2 border border-borde bg-superficie-2 px-4 py-3 text-base text-tinta placeholder:text-tinta-suave"
         />
-        <p className="text-xs text-texto-suave">Es opcional. Solo se usa para saludarte.</p>
+        <p className="text-micro text-tinta-suave">Es opcional. Solo se usa para saludarte.</p>
       </div>
 
       <div className="tarjeta space-y-3">
         <div>
-          <label htmlFor="estado" className="block text-sm font-semibold">
+          <label htmlFor="estado" className="block text-chico font-semibold">
             ¿En qué estado vives?
           </label>
           <select
             id="estado"
             value={sesion?.estado ?? ''}
-            onChange={(evento) => actualizar({ estado: evento.target.value || null })}
+            onChange={(evento) => {
+              actualizar({ estado: evento.target.value || null });
+              mostrar({ texto: 'Listo, guardamos tu estado', tono: 'exito' });
+            }}
             className="toque mt-1 w-full rounded-xl2 border border-borde bg-superficie-2 px-4 py-3 text-base"
           >
             <option value="">Prefiero no decir</option>
@@ -100,13 +100,13 @@ export default function Perfil() {
               </option>
             ))}
           </select>
-          <p className="mt-1 text-xs text-texto-suave">
+          <p className="mt-1 text-micro text-tinta-suave">
             Sirve para mostrarte primero las escuelas que te quedan cerca.
           </p>
         </div>
 
         <div>
-          <label htmlFor="grado" className="block text-sm font-semibold">
+          <label htmlFor="grado" className="block text-chico font-semibold">
             ¿En qué grado vas?
           </label>
           <select
@@ -122,7 +122,7 @@ export default function Perfil() {
             <option value="2">2° de prepa</option>
             <option value="3">3° de prepa</option>
           </select>
-          <p className="mt-1 text-xs text-texto-suave">
+          <p className="mt-1 text-micro text-tinta-suave">
             Se guarda con tu mapa para que puedas comparar cómo cambias de primero a tercero.
           </p>
         </div>
@@ -130,15 +130,15 @@ export default function Perfil() {
 
       <SelectorTema />
 
-      <nav aria-label="Privacidad y avance" className="tarjeta space-y-2 text-sm">
-        <Link to="/impacto" className="block text-marca underline">Mi avance (mediciones)</Link>
-        <Link to="/mis-datos" className="block text-marca underline">Mis datos: ver, corregir o borrar</Link>
-        <Link to="/privacidad" className="block text-marca underline">Aviso de privacidad</Link>
-        <Link to="/panel" className="block text-texto-suave underline">Panel de la escuela (orientación y dirección)</Link>
+      <nav aria-label="Privacidad y avance" className="tarjeta space-y-2 text-chico">
+        <Link to="/impacto" className="block text-primario underline">Mi avance (mediciones)</Link>
+        <Link to="/mis-datos" className="block text-primario underline">Mis datos: ver, corregir o borrar</Link>
+        <Link to="/privacidad" className="block text-primario underline">Aviso de privacidad</Link>
+        <Link to="/panel" className="block text-tinta-suave underline">Panel de la escuela (orientación y dirección)</Link>
       </nav>
 
       {!almacenaEnDispositivo && (
-        <p className="tarjeta text-sm text-texto-suave">
+        <p className="tarjeta text-chico text-tinta-suave">
           Tu navegador no está guardando datos, así que la app va a olvidar tus respuestas al cerrarla.
         </p>
       )}

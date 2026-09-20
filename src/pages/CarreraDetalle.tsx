@@ -1,7 +1,9 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { BloqueDato } from '@/components/BloqueDato';
-import { Cargando } from '@/components/Cargando';
+import { EsqueletoFicha } from '@/components/Esqueleto';
+import { EstadoError } from '@/components/Estados';
+import { useEsperaLarga } from '@/lib/retraso';
 import { ListaFuentes } from '@/components/Fuente';
 import { AccionesCarrera } from '@/features/carrera/AccionesCarrera';
 import { MapaMaterias } from '@/features/carrera/MapaMaterias';
@@ -69,6 +71,8 @@ export default function CarreraDetalle() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
 
+  const esperaLarga = useEsperaLarga(carrera === undefined);
+
   const senales = useMemo(() => {
     if (!carrera || !perfil) return [];
     const lista = senalesPara(carrera.area, perfil.respuestas);
@@ -76,15 +80,19 @@ export default function CarreraDetalle() {
     return duracion ? [...lista, duracion] : lista;
   }, [carrera, perfil]);
 
-  if (carrera === undefined) return <Cargando etiqueta="Abriendo la ficha…" />;
+  if (carrera === undefined) return esperaLarga ? <div className="contenedor-app"><EsqueletoFicha /></div> : null;
 
   if (carrera === null) {
     return (
-      <div className="contenedor-app space-y-3">
-        <h1 className="text-2xl">No encontramos esa carrera</h1>
-        <Link to="/explorar" className="text-marca underline">
-          Ver todas las carreras
-        </Link>
+      <div className="contenedor-app">
+        <EstadoError
+          tipo={navigator.onLine ? 'no-encontrado' : 'conexion'}
+          accionAlterna={
+            <Link to="/explorar" className="toque anillo-foco rounded-chico border border-borde-fuerte px-5 py-3 font-medium">
+              Ver todas las carreras
+            </Link>
+          }
+        />
       </div>
     );
   }
@@ -98,16 +106,16 @@ export default function CarreraDetalle() {
   return (
     <article className="contenedor-app space-y-7 pb-4">
       <header className="space-y-2">
-        <p className="text-sm text-texto-suave">
+        <p className="text-chico text-tinta-suave">
           {area?.nombre ?? carrera.area} · {ETIQUETA_NIVEL[carrera.nivel]}
         </p>
-        <h1 className="text-2xl">{carrera.nombre}</h1>
-        <p className="text-sm text-texto-suave">
+        <h1 className="text-xl">{carrera.nombre}</h1>
+        <p className="text-chico text-tinta-suave">
           {carrera.duracionAnios} {carrera.duracionAnios === 1 ? 'año' : 'años'} ·{' '}
           {carrera.modalidades.map((m) => ETIQUETA_MODALIDAD[m]).join(' · ')}
         </p>
         {carrera.nombresAlternativos.length > 0 && (
-          <p className="text-xs text-texto-suave">También la llaman: {carrera.nombresAlternativos.join(', ')}</p>
+          <p className="text-micro text-tinta-suave">También la llaman: {carrera.nombresAlternativos.join(', ')}</p>
         )}
       </header>
 
@@ -136,8 +144,8 @@ export default function CarreraDetalle() {
         </h2>
 
         {perfil ? (
-          <div className="rounded-xl2 border-l-4 border-marca bg-marca-suave p-4 text-sm">
-            <p className="font-semibold text-marca">Según tu mapa</p>
+          <div className="rounded-xl2 border-l-4 border-primario bg-primario-suave p-4 text-chico">
+            <p className="font-semibold text-primario">Según tu mapa</p>
             <p className="mt-1">
               {enSugeridas
                 ? `Esta área salió entre las que te sugerimos explorar primero (lugar ${posicionEnMapa + 1} de ${perfil.resultado.afinidades.length}).`
@@ -150,24 +158,24 @@ export default function CarreraDetalle() {
                 ))}
               </ul>
             )}
-            <p className="mt-2 text-xs text-texto-suave">
+            <p className="mt-2 text-micro text-tinta-suave">
               Esto sale de lo que tú contestaste, no de una evaluación profesional.
             </p>
           </div>
         ) : (
-          <p className="tarjeta text-sm">
-            <Link to="/mapa" className="text-marca underline">
+          <p className="tarjeta text-chico">
+            <Link to="/mapa" className="text-primario underline">
               Arma tu mapa
             </Link>{' '}
             y esta parte se personaliza con lo que contestaste.
           </p>
         )}
 
-        <div className="tarjeta space-y-3 text-sm">
+        <div className="tarjeta space-y-3 text-chico">
           <p>{carrera.quienBatalla.resumen}</p>
           <div>
             <p className="font-semibold">Aguas si te identificas con esto</p>
-            <ul className="mt-1 list-disc space-y-1 pl-5 text-texto-suave">
+            <ul className="mt-1 list-disc space-y-1 pl-5 text-tinta-suave">
               {carrera.quienBatalla.senales.map((senal) => (
                 <li key={senal}>{senal}</li>
               ))}
@@ -175,7 +183,7 @@ export default function CarreraDetalle() {
           </div>
           <div>
             <p className="font-semibold">Qué sí ayuda</p>
-            <ul className="mt-1 list-disc space-y-1 pl-5 text-texto-suave">
+            <ul className="mt-1 list-disc space-y-1 pl-5 text-tinta-suave">
               {carrera.quienBatalla.queAyuda.map((ayuda) => (
                 <li key={ayuda}>{ayuda}</li>
               ))}
@@ -271,8 +279,8 @@ export default function CarreraDetalle() {
             }}
           </BloqueDato>
           {!sesion?.estado && (
-            <p className="text-xs text-texto-suave">
-              <Link to="/perfil" className="text-marca underline">
+            <p className="text-micro text-tinta-suave">
+              <Link to="/perfil" className="text-primario underline">
                 Dinos en qué estado vives
               </Link>{' '}
               para mostrarte primero lo que te queda cerca.
@@ -303,7 +311,7 @@ export default function CarreraDetalle() {
           Becas y apoyos para esta ruta
         </h2>
         {becasAplicables.length === 0 ? (
-          <p className="tarjeta text-sm text-texto-suave">
+          <p className="tarjeta text-chico text-tinta-suave">
             Todavía no tenemos becas verificadas para este nivel. Pregunta en tu escuela: casi siempre hay
             apoyos estatales que no están publicados en un solo lugar.
           </p>
@@ -312,11 +320,11 @@ export default function CarreraDetalle() {
             {becasAplicables.map((beca) => (
               <li key={beca.id} className="tarjeta space-y-2">
                 <p className="font-semibold">{beca.nombre}</p>
-                <p className="text-xs text-texto-suave">{beca.institucion}</p>
+                <p className="text-micro text-tinta-suave">{beca.institucion}</p>
                 <BloqueDato etiqueta="Monto" dato={beca.montoMxn} porQueFalta="La convocatoria vigente no publica monto.">
                   {(rango) => formatearRango(rango)}
                 </BloqueDato>
-                <p className="text-sm">{beca.requisitosResumen}</p>
+                <p className="text-chico">{beca.requisitosResumen}</p>
                 <ListaFuentes fuentes={beca.fuentes} />
               </li>
             ))}
@@ -324,7 +332,7 @@ export default function CarreraDetalle() {
         )}
       </section>
 
-      <footer className="space-y-2 border-t border-borde pt-4 text-xs text-texto-suave">
+      <footer className="space-y-2 border-t border-borde pt-4 text-micro text-tinta-suave">
         <p>
           Datos duros con fuente: {datos.conFuente} de {datos.total}.{' '}
           {datos.verificada

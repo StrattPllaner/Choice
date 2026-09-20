@@ -117,23 +117,23 @@ export function Grafica({ comparacion }: { comparacion: Comparacion }) {
       </svg>
 
       {/* leyenda: la identidad nunca depende solo del color */}
-      <ul className="flex flex-wrap gap-x-4 gap-y-1 text-xs">
+      <ul className="flex flex-wrap gap-x-4 gap-y-1 text-micro">
         {series.map((serie) => (
           <li key={serie.id} className="flex items-center gap-2">
             <span aria-hidden="true" className="h-1 w-4 rounded-full" style={{ background: serie.color }} />
             <span>{serie.nombre}</span>
           </li>
         ))}
-        <li className="flex items-center gap-2 text-texto-suave">
+        <li className="flex items-center gap-2 text-tinta-suave">
           <span aria-hidden="true" className="h-0.5 w-4 border-t-2 border-dashed border-referencia" />
           <span>Si trabajas desde ya, sin estudiar</span>
         </li>
       </ul>
 
-      <details className="text-sm">
-        <summary className="toque cursor-pointer text-marca underline">Ver los números en tabla</summary>
+      <details className="text-chico">
+        <summary className="toque cursor-pointer text-primario underline">Ver los números en tabla</summary>
         <div className="mt-2 overflow-x-auto">
-          <table className="w-full text-left text-xs">
+          <table className="w-full text-left text-micro">
             <caption className="sr-only">Dinero acumulado por año en cada ruta</caption>
             <thead>
               <tr className="border-b border-borde">
@@ -150,14 +150,14 @@ export function Grafica({ comparacion }: { comparacion: Comparacion }) {
               {Array.from({ length: horizonte + 1 }, (_, anio) => anio)
                 .filter((anio) => anio % 2 === 0 || cortes.includes(anio))
                 .map((anio) => (
-                  <tr key={anio} className="border-b border-borde/50">
+                  <tr key={anio} className="border-b border-borde">
                     <th scope="row" className="py-1 pr-2 font-normal">{anio}</th>
                     {series.map((serie) => (
                       <td key={serie.id} className="py-1 pr-2 tabular-nums">
                         {pesos(serie.valores[anio] ?? 0)}
                       </td>
                     ))}
-                    <td className="py-1 tabular-nums text-texto-suave">{pesos(comparacion.referencia[anio] ?? 0)}</td>
+                    <td className="py-1 tabular-nums text-tinta-suave">{pesos(comparacion.referencia[anio] ?? 0)}</td>
                   </tr>
                 ))}
             </tbody>
@@ -165,7 +165,7 @@ export function Grafica({ comparacion }: { comparacion: Comparacion }) {
         </div>
       </details>
 
-      <figcaption className="text-xs text-texto-suave">
+      <figcaption className="text-micro text-tinta-suave">
         Dinero acumulado: lo que llevas ganado menos lo que llevas gastado en estudiar. No es ahorro real;
         sirve para comparar rutas entre sí con los mismos supuestos.
       </figcaption>

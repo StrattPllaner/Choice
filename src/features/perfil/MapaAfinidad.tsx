@@ -38,9 +38,9 @@ export function MapaAfinidad({
   return (
     <div className="contenedor-app space-y-6">
       <header className="space-y-2">
-        <p className="text-sm font-medium text-marca">Tu mapa · versión {version.version}</p>
-        <h1 className="text-2xl">Esto es lo que tus respuestas sugieren explorar primero</h1>
-        <p className="text-texto-suave">
+        <p className="text-chico font-medium text-primario">Tu mapa · versión {version.version}</p>
+        <h1 className="text-xl">Esto es lo que tus respuestas sugieren explorar primero</h1>
+        <p className="text-tinta-suave">
           No es una recomendación de carrera ni una predicción. Son áreas por donde te conviene empezar
           a ver, y siempre son varias: casi nadie encaja en una sola.
         </p>
@@ -49,7 +49,7 @@ export function MapaAfinidad({
       <AvisoGuia />
 
       {resultado.confianza === 'baja' && resultado.motivoConfianza && (
-        <p role="status" className="tarjeta text-sm">
+        <p role="status" className="tarjeta text-chico">
           {resultado.motivoConfianza}
         </p>
       )}
@@ -63,7 +63,7 @@ export function MapaAfinidad({
             <li key={area}>
               <Link to={`/explorar?area=${area}`} className="tarjeta block">
                 <span className="font-semibold">{nombreArea(area)}</span>
-                <span className="mt-1 block text-sm text-texto-suave">
+                <span className="mt-1 block text-chico text-tinta-suave">
                   {areas?.find((a) => a.id === area)?.descripcion ?? 'Ver carreras de esta área'}
                 </span>
               </Link>
@@ -79,9 +79,9 @@ export function MapaAfinidad({
         <ul className="space-y-3">
           {resultado.afinidades.map((afinidad) => (
             <li key={afinidad.area}>
-              <div className="flex items-baseline justify-between gap-3 text-sm">
+              <div className="flex items-baseline justify-between gap-3 text-chico">
                 <span className="font-medium">{nombreArea(afinidad.area)}</span>
-                <span className="text-texto-suave">{afinidad.puntaje}</span>
+                <span className="text-tinta-suave">{afinidad.puntaje}</span>
               </div>
               <div
                 role="img"
@@ -89,14 +89,14 @@ export function MapaAfinidad({
                 className="mt-1 h-3 w-full overflow-hidden rounded-full bg-superficie-2"
               >
                 <div
-                  className="h-full rounded-full bg-marca"
+                  className="h-full rounded-full bg-primario"
                   style={{ width: `${Math.round((afinidad.puntaje / maximo) * 100)}%` }}
                 />
               </div>
             </li>
           ))}
         </ul>
-        <p className="text-xs text-texto-suave">
+        <p className="text-micro text-tinta-suave">
           El número compara tus áreas entre sí. No es un porcentaje de éxito ni qué tan bueno vas a ser.
         </p>
       </section>
@@ -106,26 +106,26 @@ export function MapaAfinidad({
           <h2 id="titulo-cambio" className="text-lg">
             Cómo cambiaste desde la primera vez
           </h2>
-          <p className="text-sm text-texto-suave">
+          <p className="text-chico text-tinta-suave">
             Primera vez: {new Date(primera.fecha).toLocaleDateString('es-MX', { month: 'long', year: 'numeric' })}
             {primera.grado ? ` (${primera.grado}° de prepa)` : ''} · Ahora:{' '}
             {new Date(version.fecha).toLocaleDateString('es-MX', { month: 'long', year: 'numeric' })}
             {version.grado ? ` (${version.grado}° de prepa)` : ''}
           </p>
           {!mismoAlgoritmo && (
-            <p className="text-sm text-aviso">
+            <p className="text-chico text-atencion">
               Ojo: los dos mapas se calcularon con versiones distintas del método, así que la comparación
               es aproximada.
             </p>
           )}
-          <ul className="space-y-1 text-sm">
+          <ul className="space-y-1 text-chico">
             {compararPerfiles(primera.resultado, resultado)
               .filter((cambio) => cambio.cambio !== 0)
               .slice(0, 4)
               .map((cambio) => (
                 <li key={cambio.area} className="flex justify-between gap-3 tarjeta py-2">
                   <span>{nombreArea(cambio.area)}</span>
-                  <span className={cambio.cambio > 0 ? 'text-exito' : 'text-texto-suave'}>
+                  <span className={cambio.cambio > 0 ? 'text-exito' : 'text-tinta-suave'}>
                     {cambio.cambio > 0 ? 'subió' : 'bajó'} {Math.abs(cambio.cambio)} puntos
                   </span>
                 </li>
@@ -135,7 +135,7 @@ export function MapaAfinidad({
       )}
 
       <div className="space-y-2">
-        <Link to="/explorar" className="toque w-full rounded-xl2 bg-marca px-5 py-3 font-semibold text-sobre-marca">
+        <Link to="/explorar" className="toque w-full rounded-xl2 bg-primario px-5 py-3 font-semibold text-sobre-primario">
           Ver carreras de estas áreas
         </Link>
         <button
@@ -145,7 +145,7 @@ export function MapaAfinidad({
         >
           Contestar otra vez
         </button>
-        <p className="text-xs text-texto-suave">
+        <p className="text-micro text-tinta-suave">
           Puedes volver a contestarlo cuando quieras. Guardamos cada versión para que veas cómo cambias.
         </p>
       </div>

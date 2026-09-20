@@ -19,14 +19,14 @@ export function MapaMaterias({ carrera }: { carrera: Carrera }) {
 
   return (
     <div className="space-y-3">
-      <p className="text-sm text-texto-suave">
+      <p className="text-chico text-tinta-suave">
         {mapa.periodos.length} {NOMBRE_PERIODO[mapa.tipoPeriodo][mapa.periodos.length === 1 ? 0 : 1].toLowerCase()} ·{' '}
         {totalRiesgo} materias marcadas como difíciles
       </p>
 
-      <p className="flex flex-wrap items-center gap-2 text-xs">
-        <span className="inline-flex items-center gap-1 rounded-full bg-aviso/15 px-2 py-1">
-          <span aria-hidden="true" className="h-2 w-2 rounded-full bg-aviso" />
+      <p className="flex flex-wrap items-center gap-2 text-micro">
+        <span className="inline-flex items-center gap-1 rounded-full bg-atencion-suave px-2 py-1">
+          <span aria-hidden="true" className="h-2 w-2 rounded-full bg-atencion-suave" />
           Se reprueba mucho o es materia filtro
         </span>
       </p>
@@ -34,7 +34,7 @@ export function MapaMaterias({ carrera }: { carrera: Carrera }) {
       <ol className="space-y-3">
         {mapa.periodos.map((periodo) => (
           <li key={periodo.numero} className="tarjeta">
-            <p className="text-sm font-semibold">
+            <p className="text-chico font-semibold">
               {singular} {periodo.numero}
             </p>
             <ul className="mt-2 flex flex-wrap gap-2">
@@ -42,10 +42,10 @@ export function MapaMaterias({ carrera }: { carrera: Carrera }) {
                 <li
                   key={materia.nombre}
                   className={[
-                    'rounded-lg px-2 py-1 text-sm',
+                    'rounded-lg px-2 py-1 text-chico',
                     materia.riesgo
-                      ? 'bg-aviso/15 font-medium text-texto ring-1 ring-aviso/40'
-                      : 'bg-superficie-2 text-texto-suave',
+                      ? 'bg-atencion-suave font-medium text-tinta ring-1 ring-atencion'
+                      : 'bg-superficie-2 text-tinta-suave',
                   ].join(' ')}
                 >
                   {materia.nombre}
@@ -53,7 +53,7 @@ export function MapaMaterias({ carrera }: { carrera: Carrera }) {
                     <span className="sr-only"> — {ETIQUETA_RIESGO[materia.riesgo]}</span>
                   )}
                   {materia.riesgo && (
-                    <span aria-hidden="true" className="ml-1 text-aviso">
+                    <span aria-hidden="true" className="ml-1 text-atencion">
                       ●
                     </span>
                   )}
@@ -65,7 +65,7 @@ export function MapaMaterias({ carrera }: { carrera: Carrera }) {
       </ol>
 
       {mapa.estado === 'plantilla' ? (
-        <p className="rounded-xl2 bg-superficie-2 p-3 text-xs text-texto-suave">
+        <p className="rounded-xl2 bg-superficie-2 p-3 text-micro text-tinta-suave">
           Estas son las materias típicas de esta carrera en México, no el plan de una universidad en
           particular. Cada escuela cambia el orden y algunos nombres: revisa el plan de la escuela que te
           interesa antes de decidir.

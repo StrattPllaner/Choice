@@ -24,17 +24,17 @@ export function BloqueDato<T>({
 
   return (
     <div className="border-t border-borde pt-3 first:border-t-0 first:pt-0">
-      <p className="text-sm font-semibold">{etiqueta}</p>
+      <p className="text-chico font-semibold">{etiqueta}</p>
       {hay ? (
         <>
           <div className="mt-1 text-base">{children((dato as { valor: T }).valor)}</div>
-          {aclaracion && <p className="mt-1 text-xs text-texto-suave">{aclaracion}</p>}
+          {aclaracion && <p className="mt-1 text-micro text-tinta-suave">{aclaracion}</p>}
           <ListaFuentes fuentes={(dato as { fuentes: Parameters<typeof ListaFuentes>[0]['fuentes'] }).fuentes} />
         </>
       ) : (
         <div className="mt-1">
-          <p className="text-base text-texto-suave">Dato no disponible</p>
-          <p className="mt-1 text-xs text-texto-suave">{porQueFalta}</p>
+          <p className="text-base text-tinta-suave">Dato no disponible</p>
+          <p className="mt-1 text-micro text-tinta-suave">{porQueFalta}</p>
         </div>
       )}
     </div>

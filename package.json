@@ -8,7 +8,7 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "npm run iconos && npm run validar-datos && npm run probar-puntuacion && node scripts/preparar-datos.mjs && tsc -b && vite build && npm run tarjetas && npm run verificar-peso",
+    "build": "npm run iconos && npm run validar-datos && npm run validar-contraste && npm run probar-puntuacion && node scripts/preparar-datos.mjs && tsc -b && vite build && npm run tarjetas && npm run verificar-peso",
     "preview": "vite preview --host --port 4173",
     "iconos": "node scripts/generar-iconos.mjs",
     "verificar-peso": "node scripts/verificar-peso.mjs",
@@ -17,7 +17,9 @@
     "datos": "node scripts/validar-catalogo.mjs --escribir && node scripts/preparar-datos.mjs",
     "validar-datos": "node scripts/validar-catalogo.mjs",
     "probar-puntuacion": "node scripts/probar-puntuacion.mjs",
-    "tarjetas": "node scripts/generar-tarjetas.mjs"
+    "tarjetas": "node scripts/generar-tarjetas.mjs",
+    "validar-contraste": "node scripts/validar-contraste.mjs",
+    "fuentes": "node scripts/subconjunto-fuentes.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.116.0",
