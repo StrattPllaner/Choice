@@ -1,4 +1,4 @@
--- NOMBREAPP · derecho de cancelación (ARCO) con borrado REAL
+-- Vocatlas · derecho de cancelación (ARCO) con borrado REAL
 -- Nada de baja lógica: se eliminan los renglones. Lo único que sobrevive es el registro
 -- de que hubo una revocación, que la propia ley obliga a poder acreditar.
 

@@ -25,7 +25,7 @@ const recortar = (texto, limite) => {
 };
 
 for (const carrera of catalogo.carreras) {
-  const titulo = `${carrera.nombre} · NOMBREAPP`;
+  const titulo = `${carrera.nombre} · Vocatlas`;
   const descripcion = recortar(carrera.martesTipico, 180);
   const destino = `../#/carrera/${carrera.id}`;
 
@@ -39,7 +39,7 @@ for (const carrera of catalogo.carreras) {
     <link rel="canonical" href="${SITIO}c/${carrera.id}.html" />
 
     <meta property="og:type" content="article" />
-    <meta property="og:site_name" content="NOMBREAPP" />
+    <meta property="og:site_name" content="Vocatlas" />
     <meta property="og:locale" content="es_MX" />
     <meta property="og:title" content="${escapar(carrera.nombre)}" />
     <meta property="og:description" content="${escapar(descripcion)}" />
@@ -61,7 +61,7 @@ for (const carrera of catalogo.carreras) {
   <body>
     <h1>${escapar(carrera.nombre)}</h1>
     <p>${escapar(descripcion)}</p>
-    <p><a href="${destino}">Abrir la ficha en NOMBREAPP</a></p>
+    <p><a href="${destino}">Abrir la ficha en Vocatlas</a></p>
   </body>
 </html>
 `;

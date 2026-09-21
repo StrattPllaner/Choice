@@ -1,4 +1,4 @@
--- NOMBREAPP · esquema base
+-- Vocatlas · esquema base
 -- Principio: la privacidad se aplica en la base, no en la interfaz. Si un endpoint del
 -- panel pudiera devolver el renglón de un alumno, la política de privacidad sería un adorno.
 

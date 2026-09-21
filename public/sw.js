@@ -1,4 +1,4 @@
-/* Service worker de NOMBREAPP — escrito a mano (sin Workbox: 0 KB extra en el bundle).
+/* Service worker de Vocatlas — escrito a mano (sin Workbox: 0 KB extra en el bundle).
    Estrategias:
    - navegación  → caché primero con revalidación en segundo plano (abre al instante offline)
    - /assets/*   → caché primero (nombres con hash: nunca cambian de contenido)

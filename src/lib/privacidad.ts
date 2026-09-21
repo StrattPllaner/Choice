@@ -139,7 +139,7 @@ export async function exportarMisDatos(): Promise<string> {
     {
       exportadoEl: new Date().toISOString(),
       versionAviso: VERSION_AVISO,
-      nota: 'Esto es todo lo que NOMBREAPP guarda de ti en este dispositivo.',
+      nota: 'Esto es todo lo que Vocatlas guarda de ti en este dispositivo.',
       datos,
     },
     null,

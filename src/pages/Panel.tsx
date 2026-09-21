@@ -198,7 +198,7 @@ export default function Panel() {
         filas: datos.carreras.map((c) => [c.carrera_id, c.alumnos]),
       },
     ]);
-    descargar(`panel-nombreapp-${new Date().toISOString().slice(0, 10)}.csv`, csv, 'text/csv');
+    descargar(`panel-vocatlas-${new Date().toISOString().slice(0, 10)}.csv`, csv, 'text/csv');
     await registrarAcceso(perfil.rol, 'agregados_del_plantel', 'exportar');
   };
 

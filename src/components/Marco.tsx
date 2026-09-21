@@ -19,7 +19,7 @@ export function Marco() {
 
       <header className="sticky top-0 z-40 border-b border-borde bg-superficie backdrop-blur">
         <div className="contenedor-app flex h-14 items-center justify-between">
-          <span className="text-lg font-bold tracking-tight">NOMBREAPP</span>
+          <span className="text-lg font-bold tracking-tight">Vocatlas</span>
           <span className="text-micro text-tinta-suave">Funciona sin internet</span>
         </div>
       </header>

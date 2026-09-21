@@ -1,4 +1,4 @@
--- NOMBREAPP · funciones agregadas del panel institucional
+-- Vocatlas · funciones agregadas del panel institucional
 --
 -- Estas son las ÚNICAS vías por las que un orientador o dirección obtienen datos.
 -- Todas aplican k-anonimato: si el grupo tiene menos de MINIMO_GRUPO respuestas, no

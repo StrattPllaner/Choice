@@ -15,6 +15,9 @@ export interface Almacen {
   suscribir(clave: string, escucha: (valor: unknown) => void): () => void;
 }
 
+/** Prefijo de las claves guardadas. Se queda como 'nombreapp' aunque la app ahora se
+ *  llame Vocatlas: cambiarlo dejaría fuera de alcance lo que los alumnos ya tienen
+ *  guardado en su dispositivo. Es un identificador interno, no se muestra a nadie. */
 export const ESPACIO = 'nombreapp';
 export const VERSION_DATOS = 'v1';
 

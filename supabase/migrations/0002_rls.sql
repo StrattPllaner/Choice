@@ -1,4 +1,4 @@
--- NOMBREAPP · Row Level Security
+-- Vocatlas · Row Level Security
 --
 -- Regla dura: orientación y dirección NO tienen ninguna política de lectura sobre las
 -- tablas con datos de alumnos. Ni una. Lo único que pueden llamar son funciones

@@ -1,9 +1,9 @@
-NOMBREAPP - QUÉ DATOS RECOGEMOS Y CÓMO LOS TRATAMOS
+Vocatlas - QUÉ DATOS RECOGEMOS Y CÓMO LOS TRATAMOS
 Documento para el área legal o jurídica de la escuela. Versión 1.0 - 20 de septiembre de 2026.
 Contacto: [PENDIENTE: razón social, domicilio y correo del responsable]
 
 1. QUÉ ES
-NOMBREAPP es una aplicación web de exploración vocacional para estudiantes de bachillerato.
+Vocatlas es una aplicación web de exploración vocacional para estudiantes de bachillerato.
 Funciona sin conexión y puede usarse sin entregar ningún dato personal: el catálogo de carreras
 es público y no requiere cuenta.
 

@@ -100,7 +100,7 @@ export default function MisDatos() {
           variante="secundario"
           anchoCompleto
           onClick={async () => {
-            descargar('mis-datos-nombreapp.json', await exportarMisDatos());
+            descargar('mis-datos-vocatlas.json', await exportarMisDatos());
             setMensaje('Descargamos un archivo con todo lo que guardamos de ti.');
           }}
         >

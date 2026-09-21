@@ -17,7 +17,7 @@ export function AccionesCarrera({ carrera }: { carrera: Carrera }) {
   const [copiado, setCopiado] = useState(false);
   const guardada = sesion?.favoritas.includes(carrera.id) ?? false;
 
-  const texto = `${carrera.nombre}: qué se estudia, qué se gana y dónde. Mira la ficha en NOMBREAPP 👇`;
+  const texto = `${carrera.nombre}: qué se estudia, qué se gana y dónde. Mira la ficha en Vocatlas 👇`;
   const url = urlCompartible(carrera);
 
   const compartir = async () => {

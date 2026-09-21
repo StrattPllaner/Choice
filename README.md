@@ -1,4 +1,4 @@
-# NOMBREAPP
+# Vocatlas
 
 PWA de exploración vocacional para prepa (México). Lectura 100% offline, pensada para celulares
 de gama baja en 3G y pantallas de 360 px.
