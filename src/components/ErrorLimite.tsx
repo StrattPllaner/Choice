@@ -21,7 +21,7 @@ export class ErrorLimite extends Component<{ children: ReactNode }, { fallo: boo
         <button
           type="button"
           onClick={() => window.location.reload()}
-          className="toque mt-6 rounded-xl2 bg-primario px-5 py-3 font-semibold text-sobre-primario"
+          className="toque ondulado mt-6 rounded-chico bg-primario px-5 py-3 font-semibold text-sobre-primario"
         >
           Reintentar
         </button>

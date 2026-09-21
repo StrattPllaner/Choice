@@ -23,7 +23,7 @@ export function NavInferior() {
               end={a === '/'}
               className={({ isActive }) =>
                 [
-                  'toque w-full flex-col gap-1 px-1 py-2 text-micro font-medium',
+                  'toque ondulado w-full flex-col gap-1 px-1 py-2 text-micro font-medium',
                   isActive ? 'text-primario' : 'text-tinta-suave',
                 ].join(' ')
               }

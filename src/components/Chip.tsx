@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { usarPulso } from '@/lib/pulso';
 
 /** Chip de filtro. Al seleccionarse da un rebote corto: es la confirmación de que
  *  el toque sí registró, que en pantallas lentas no siempre es obvio. */
@@ -16,6 +17,7 @@ export function Chip({
   cuenta?: number;
 }) {
   const [confirmando, setConfirmando] = useState(false);
+  const { propsPulso } = usarPulso<HTMLButtonElement>();
 
   return (
     <button
@@ -23,6 +25,7 @@ export function Chip({
       role="switch"
       aria-checked={seleccionado}
       disabled={deshabilitado}
+      {...(deshabilitado ? {} : propsPulso)}
       onClick={() => {
         onCambio(!seleccionado);
         if (!seleccionado) {
@@ -31,7 +34,7 @@ export function Chip({
         }
       }}
       className={[
-        'toque anillo-foco rounded-lleno border px-4 py-2 text-chico font-medium',
+        'toque ondulado anillo-foco rounded-lleno border px-4 py-2 text-chico font-medium',
         'transition-colors duration-estado ease-entrada disabled:opacity-50',
         confirmando ? 'confirma' : '',
         seleccionado

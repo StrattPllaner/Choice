@@ -65,7 +65,7 @@ export function MapaMaterias({ carrera }: { carrera: Carrera }) {
       </ol>
 
       {mapa.estado === 'plantilla' ? (
-        <p className="rounded-xl2 bg-superficie-2 p-3 text-micro text-tinta-suave">
+        <p className="rounded-tarjeta bg-superficie-2 p-3 text-micro text-tinta-suave">
           Estas son las materias típicas de esta carrera en México, no el plan de una universidad en
           particular. Cada escuela cambia el orden y algunos nombres: revisa el plan de la escuela que te
           interesa antes de decidir.

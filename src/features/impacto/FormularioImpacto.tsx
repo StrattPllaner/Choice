@@ -36,7 +36,7 @@ function Reactivo({
             setTexto(evento.target.value);
             onCambio(Math.min(contarRenglones(evento.target.value), reactivo.maximoConteo ?? 20));
           }}
-          className="w-full rounded-xl2 border border-borde bg-superficie-2 p-3 text-base"
+          className="w-full rounded-tarjeta border border-borde bg-superficie-2 p-3 text-base"
         />
         <p className="text-chico text-tinta-suave">Llevas {valor ?? 0}.</p>
       </div>
@@ -55,7 +55,7 @@ function Reactivo({
             aria-pressed={valor === opcion.valor}
             onClick={() => onCambio(opcion.valor)}
             className={[
-              'toque w-full justify-start rounded-xl2 border px-4 py-3 text-left text-base',
+              'toque ondulado w-full justify-start rounded-chico border px-4 py-3 text-left text-base',
               valor === opcion.valor ? 'border-primario bg-primario-suave text-primario' : 'border-borde',
             ].join(' ')}
           >

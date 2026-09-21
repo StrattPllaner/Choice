@@ -75,7 +75,7 @@ export default function Perfil() {
           value={sesion?.nombre ?? ''}
           onChange={(evento) => actualizar({ nombre: evento.target.value || null })}
           placeholder="Tu nombre o apodo"
-          className="toque w-full rounded-xl2 border border-borde bg-superficie-2 px-4 py-3 text-base text-tinta placeholder:text-tinta-suave"
+          className="toque w-full rounded-chico border border-borde bg-superficie-2 px-4 py-3 text-base text-tinta placeholder:text-tinta-suave"
         />
         <p className="text-micro text-tinta-suave">Es opcional. Solo se usa para saludarte.</p>
       </div>
@@ -92,7 +92,7 @@ export default function Perfil() {
               actualizar({ estado: evento.target.value || null });
               mostrar({ texto: 'Listo, guardamos tu estado', tono: 'exito' });
             }}
-            className="toque mt-1 w-full rounded-xl2 border border-borde bg-superficie-2 px-4 py-3 text-base"
+            className="toque mt-1 w-full rounded-chico border border-borde bg-superficie-2 px-4 py-3 text-base"
           >
             <option value="">Prefiero no decir</option>
             {ESTADOS.map((estado) => (
@@ -116,7 +116,7 @@ export default function Perfil() {
             onChange={(evento) =>
               actualizar({ grado: evento.target.value ? (Number(evento.target.value) as 1 | 2 | 3) : null })
             }
-            className="toque mt-1 w-full rounded-xl2 border border-borde bg-superficie-2 px-4 py-3 text-base"
+            className="toque mt-1 w-full rounded-chico border border-borde bg-superficie-2 px-4 py-3 text-base"
           >
             <option value="">Sin decir</option>
             <option value="1">1° de prepa</option>

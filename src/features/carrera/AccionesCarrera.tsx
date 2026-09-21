@@ -60,7 +60,7 @@ export function AccionesCarrera({ carrera }: { carrera: Carrera }) {
           }}
           aria-pressed={guardada}
           className={[
-            'toque flex-1 gap-2 rounded-xl2 border px-4 py-3 text-chico font-semibold',
+            'toque ondulado flex-1 gap-2 rounded-chico border px-4 py-3 text-chico font-semibold',
             guardada ? 'border-primario bg-primario-suave text-primario' : 'border-borde text-tinta',
           ].join(' ')}
         >
@@ -69,7 +69,7 @@ export function AccionesCarrera({ carrera }: { carrera: Carrera }) {
         <button
           type="button"
           onClick={compartir}
-          className="toque gap-2 rounded-xl2 bg-primario px-4 py-3 text-chico font-semibold text-sobre-primario"
+          className="toque ondulado gap-2 rounded-chico bg-primario px-4 py-3 text-chico font-semibold text-sobre-primario"
         >
           Compartir
         </button>

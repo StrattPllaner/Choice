@@ -46,7 +46,7 @@ export function Pestanas({ pestanas, inicial }: { pestanas: Pestana[]; inicial?:
                 if (evento.key === 'End') mover(pestanas.length - 1);
               }}
               className={[
-                'toque anillo-foco shrink-0 px-4 py-3 text-chico font-medium',
+                'toque ondulado anillo-foco shrink-0 px-4 py-3 text-chico font-medium',
                 'transition-colors duration-estado ease-entrada',
                 seleccionada ? 'border-b-2 border-primario text-primario' : 'text-tinta-suave',
               ].join(' ')}

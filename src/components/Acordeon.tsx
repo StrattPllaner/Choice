@@ -22,7 +22,7 @@ export function Acordeon({
           aria-expanded={abierto}
           aria-controls={`${id}-panel`}
           onClick={() => setAbierto((previo) => !previo)}
-          className="toque anillo-foco flex w-full items-center justify-between gap-3 py-4 text-left text-base font-medium"
+          className="toque ondulado anillo-foco flex w-full items-center justify-between gap-3 py-4 text-left text-base font-medium"
         >
           <span>{titulo}</span>
           <span

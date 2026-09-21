@@ -64,7 +64,7 @@ function Acceso({ onEntrar }: { onEntrar: () => void }) {
             autoComplete="username"
             value={correo}
             onChange={(e) => setCorreo(e.target.value)}
-            className="toque mt-1 w-full rounded-xl2 border border-borde bg-superficie-2 px-3 py-3 text-base"
+            className="toque mt-1 w-full rounded-chico border border-borde bg-superficie-2 px-3 py-3 text-base"
           />
         </div>
         <div>
@@ -75,7 +75,7 @@ function Acceso({ onEntrar }: { onEntrar: () => void }) {
             autoComplete="current-password"
             value={clave}
             onChange={(e) => setClave(e.target.value)}
-            className="toque mt-1 w-full rounded-xl2 border border-borde bg-superficie-2 px-3 py-3 text-base"
+            className="toque mt-1 w-full rounded-chico border border-borde bg-superficie-2 px-3 py-3 text-base"
           />
         </div>
         <Boton anchoCompleto disabled={entrando} onClick={entrar}>
@@ -214,7 +214,7 @@ export default function Panel() {
       {licencia && (
         <div
           className={[
-            'rounded-xl2 border-l-4 p-3 text-chico',
+            'rounded-tarjeta border-l-4 p-3 text-chico',
             licencia.vigente ? 'border-exito bg-exito-suave' : 'border-atencion bg-atencion-suave',
           ].join(' ')}
         >

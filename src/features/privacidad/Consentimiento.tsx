@@ -116,7 +116,7 @@ export function Consentimiento({ onListo }: { onListo: () => void }) {
           value={nombreTutor}
           onChange={(e) => setNombreTutor(e.target.value)}
           placeholder="Nombre de la madre, padre o tutor"
-          className="toque mt-1 w-full rounded-xl2 border border-borde bg-superficie-2 px-3 py-3 text-base"
+          className="toque mt-1 w-full rounded-chico border border-borde bg-superficie-2 px-3 py-3 text-base"
         />
         <p className="mt-1 text-micro text-tinta-suave">
           Es lo único que pedimos, y solo para poder acreditar que hubo permiso.
@@ -132,7 +132,7 @@ export function Consentimiento({ onListo }: { onListo: () => void }) {
           type="text"
           value={parentesco}
           onChange={(e) => setParentesco(e.target.value)}
-          className="toque mt-1 w-full rounded-xl2 border border-borde bg-superficie-2 px-3 py-3 text-base"
+          className="toque mt-1 w-full rounded-chico border border-borde bg-superficie-2 px-3 py-3 text-base"
         />
       </div>
 
@@ -144,7 +144,7 @@ export function Consentimiento({ onListo }: { onListo: () => void }) {
           id="forma"
           value={forma}
           onChange={(e) => setForma(e.target.value as FormaConsentimiento)}
-          className="toque mt-1 w-full rounded-xl2 border border-borde bg-superficie-2 px-3 py-3 text-base"
+          className="toque mt-1 w-full rounded-chico border border-borde bg-superficie-2 px-3 py-3 text-base"
         >
           {(Object.keys(ETIQUETA_FORMA) as FormaConsentimiento[]).map((valor) => (
             <option key={valor} value={valor}>

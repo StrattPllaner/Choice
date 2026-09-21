@@ -151,7 +151,7 @@ export default function CarreraDetalle() {
         </h2>
 
         {perfil ? (
-          <div className="rounded-xl2 border-l-4 border-primario bg-primario-suave p-4 text-chico">
+          <div className="rounded-tarjeta border-l-4 border-primario bg-primario-suave p-4 text-chico">
             <p className="font-semibold text-primario">Según tu mapa</p>
             <p className="mt-1">
               {enSugeridas

@@ -76,7 +76,7 @@ export default function MisDatos() {
               value={sesion?.escuela ?? ''}
               onChange={(evento) => actualizar({ escuela: evento.target.value || null })}
               placeholder="El que te dio tu escuela"
-              className="toque mt-1 w-full rounded-xl2 border border-borde bg-superficie-2 px-3 py-3 text-base"
+              className="toque mt-1 w-full rounded-chico border border-borde bg-superficie-2 px-3 py-3 text-base"
             />
             <p className="mt-1 text-micro text-tinta-suave">
               Con esto te identificamos. No usamos tu nombre completo.

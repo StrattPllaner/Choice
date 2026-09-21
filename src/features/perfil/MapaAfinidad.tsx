@@ -135,13 +135,13 @@ export function MapaAfinidad({
       )}
 
       <div className="space-y-2">
-        <Link to="/explorar" className="toque w-full rounded-xl2 bg-primario px-5 py-3 font-semibold text-sobre-primario">
+        <Link to="/explorar" className="toque ondulado w-full rounded-chico bg-primario px-5 py-3 font-semibold text-sobre-primario">
           Ver carreras de estas áreas
         </Link>
         <button
           type="button"
           onClick={onRehacer}
-          className="toque w-full rounded-xl2 border border-borde px-5 py-3 font-semibold"
+          className="toque ondulado w-full rounded-chico border border-borde px-5 py-3 font-semibold"
         >
           Contestar otra vez
         </button>

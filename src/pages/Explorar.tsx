@@ -71,7 +71,7 @@ export default function Explorar() {
           enterKeyHint="search"
           placeholder="Enfermería, soldadura, sistemas…"
           onChange={(evento) => setFiltros((p) => ({ ...p, texto: evento.target.value }))}
-          className="toque mt-1 w-full rounded-xl2 border border-borde bg-superficie-2 px-4 py-3 text-base"
+          className="toque mt-1 w-full rounded-chico border border-borde bg-superficie-2 px-4 py-3 text-base"
         />
       </div>
 
@@ -100,7 +100,7 @@ export default function Explorar() {
                 aria-pressed={activo}
                 onClick={() => alternarNivel(nivel)}
                 className={[
-                  'toque rounded-xl2 border px-4 py-2 text-chico',
+                  'toque ondulado rounded-chico border px-4 py-2 text-chico',
                   activo ? 'border-primario bg-primario-suave text-primario' : 'border-borde text-tinta',
                 ].join(' ')}
               >

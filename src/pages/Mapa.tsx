@@ -140,7 +140,7 @@ export default function Mapa() {
                     setActual(version);
                     setVista('resultado');
                   }}
-                  className="tarjeta toque w-full justify-between text-left"
+                  className="tarjeta toque ondulado w-full justify-between text-left"
                 >
                   <span>
                     Versión {version.version} ·{' '}

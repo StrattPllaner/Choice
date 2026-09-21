@@ -1,5 +1,6 @@
 import type { ButtonHTMLAttributes, ReactNode } from 'react';
 import { Link, type LinkProps } from 'react-router-dom';
+import { usarPulso } from '@/lib/pulso';
 
 export type VarianteBoton = 'primario' | 'secundario' | 'fantasma' | 'destructivo';
 export type TamanoBoton = 'chico' | 'medio' | 'grande';
@@ -20,7 +21,7 @@ const TAMANOS: Record<TamanoBoton, string> = {
 };
 
 const BASE =
-  'toque pulsable anillo-foco relative rounded-chico font-medium ' +
+  'toque pulsable ondulado anillo-foco relative rounded-chico font-medium ' +
   'disabled:opacity-50 disabled:cursor-not-allowed disabled:pointer-events-none select-none';
 
 /** Indicador de carga: aparece a la izquierda del texto, que NO se quita.
@@ -56,12 +57,15 @@ export function Boton({
   disabled,
   ...resto
 }: Comunes & ButtonHTMLAttributes<HTMLButtonElement>) {
+  const { propsPulso } = usarPulso<HTMLButtonElement>();
+
   return (
     <button
       type="button"
       disabled={disabled || cargando}
       aria-busy={cargando || undefined}
       className={`${BASE} ${VARIANTES[variante]} ${TAMANOS[tamano]} ${anchoCompleto ? 'w-full' : ''} ${className}`}
+      {...(disabled || cargando ? {} : propsPulso)}
       {...resto}
     >
       <span
@@ -86,10 +90,13 @@ export function BotonEnlace({
   children,
   ...resto
 }: Comunes & { a: string } & Omit<LinkProps, 'to' | 'children'>) {
+  const { propsPulso } = usarPulso<HTMLAnchorElement>();
+
   return (
     <Link
       to={a}
       className={`${BASE} ${VARIANTES[variante]} ${TAMANOS[tamano]} ${anchoCompleto ? 'w-full' : ''} ${className}`}
+      {...propsPulso}
       {...resto}
     >
       {children}

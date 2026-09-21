@@ -118,7 +118,7 @@ export default function Comparar() {
               <button
                 type="button"
                 onClick={() => quitar(carrera.id)}
-                className="toque rounded-xl2 border border-primario bg-primario-suave px-3 py-2 text-chico text-primario"
+                className="toque ondulado rounded-chico border border-primario bg-primario-suave px-3 py-2 text-chico text-primario"
               >
                 {carrera.nombre} <span aria-hidden="true">×</span>
                 <span className="sr-only">Quitar de la comparación</span>
@@ -137,7 +137,7 @@ export default function Comparar() {
             id="agregar"
             value=""
             onChange={(evento) => evento.target.value && agregar(evento.target.value)}
-            className="toque mt-1 w-full rounded-xl2 border border-borde bg-superficie-2 px-3 py-3 text-base"
+            className="toque mt-1 w-full rounded-chico border border-borde bg-superficie-2 px-3 py-3 text-base"
           >
             <option value="">Elige una…</option>
             {carreras
@@ -152,7 +152,7 @@ export default function Comparar() {
       )}
 
       {elegidas.length >= 2 && !hayCorta && (
-        <p className="rounded-xl2 border-l-4 border-primario bg-primario-suave p-3 text-chico">
+        <p className="rounded-tarjeta border-l-4 border-primario bg-primario-suave p-3 text-chico">
           Estás comparando puras carreras largas. Mete también una técnica o un TSU: cuestan menos, se
           empieza a trabajar antes y no siempre se gana menos.
         </p>
@@ -170,7 +170,7 @@ export default function Comparar() {
                   type="button"
                   onClick={() => agregar(carrera.id)}
                   disabled={elegidas.length >= MAXIMO}
-                  className="toque rounded-xl2 border border-borde px-3 py-2 text-chico disabled:opacity-50"
+                  className="toque ondulado rounded-chico border border-borde px-3 py-2 text-chico disabled:opacity-50"
                 >
                   + {carrera.nombre}
                   <span className="ml-1 text-micro text-tinta-suave">{ETIQUETA_NIVEL[carrera.nivel]}</span>
@@ -224,7 +224,7 @@ export default function Comparar() {
                         <div
                           key={carrera.id}
                           className={[
-                            'w-56 shrink-0 rounded-xl2 border p-3',
+                            'w-56 shrink-0 rounded-tarjeta border p-3',
                             gana ? 'border-exito bg-exito-suave' : 'border-borde bg-superficie',
                           ].join(' ')}
                         >
@@ -257,13 +257,13 @@ export default function Comparar() {
             <button
               type="button"
               onClick={compartir}
-              className="toque w-full rounded-xl2 bg-primario px-5 py-3 font-semibold text-sobre-primario"
+              className="toque ondulado w-full rounded-chico bg-primario px-5 py-3 font-semibold text-sobre-primario"
             >
               {copiado ? 'Enlace copiado' : 'Compartir esta comparación'}
             </button>
             <Link
               to={`/calculadora?a=${elegidas[0]?.id ?? ''}&b=${elegidas[1]?.id ?? ''}`}
-              className="toque w-full rounded-xl2 border border-borde px-5 py-3 font-semibold"
+              className="toque w-full rounded-chico border border-borde px-5 py-3 font-semibold"
             >
               Ver cuánto cuesta cada una
             </Link>

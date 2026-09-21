@@ -43,7 +43,7 @@ export function Cuestionario({ borrador, onTerminar, onSalir }: Props) {
       <BarraProgreso actual={indice + 1} total={TOTAL_REACTIVOS} etiqueta="Avance del cuestionario" />
 
       {primeroDelBloque && (
-        <div className="rounded-xl2 bg-primario-suave p-3">
+        <div className="rounded-tarjeta bg-primario-suave p-3">
           <p className="text-chico font-semibold text-primario">{ETIQUETA_BLOQUE[reactivo.bloque]}</p>
           <p className="text-chico text-tinta-suave">{INTRO_BLOQUE[reactivo.bloque]}</p>
         </div>
@@ -65,7 +65,7 @@ export function Cuestionario({ borrador, onTerminar, onSalir }: Props) {
                 aria-pressed={elegida}
                 onClick={() => responder(opcion.valor)}
                 className={[
-                  'toque w-full justify-between rounded-xl2 border px-5 py-4 text-left text-base',
+                  'toque ondulado w-full justify-between rounded-chico border px-5 py-4 text-left text-base',
                   elegida ? 'border-primario bg-primario-suave text-primario' : 'border-borde bg-superficie text-tinta',
                 ].join(' ')}
               >

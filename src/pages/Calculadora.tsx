@@ -60,7 +60,7 @@ function ControlRuta({
           id={`${id}-carrera`}
           value={entradas.carreraId}
           onChange={(evento) => onCambio({ ...entradas, carreraId: evento.target.value })}
-          className="toque mt-1 w-full rounded-xl2 border border-borde bg-superficie-2 px-3 py-3 text-base"
+          className="toque mt-1 w-full rounded-chico border border-borde bg-superficie-2 px-3 py-3 text-base"
         >
           <option value="">Elige una carrera</option>
           {carreras.map((c) => (
@@ -83,7 +83,7 @@ function ControlRuta({
                 onCambio({ ...entradas, tipo, colegiatura: tipo === 'publica' ? 0 : Math.max(entradas.colegiatura, 3500) })
               }
               className={[
-                'toque flex-1 rounded-xl2 border px-3 py-2 text-chico',
+                'toque flex-1 rounded-chico border px-3 py-2 text-chico',
                 entradas.tipo === tipo ? 'border-primario bg-primario-suave text-primario' : 'border-borde',
               ].join(' ')}
             >
@@ -140,7 +140,7 @@ function ControlRuta({
           step={500}
           value={entradas.ingresoEsperado}
           onChange={(evento) => onCambio({ ...entradas, ingresoEsperado: Number(evento.target.value) })}
-          className="toque mt-1 w-full rounded-xl2 border border-borde bg-superficie-2 px-3 py-3 text-base tabular-nums"
+          className="toque mt-1 w-full rounded-chico border border-borde bg-superficie-2 px-3 py-3 text-base tabular-nums"
         />
         <p className="text-micro text-tinta-suave">
           {carrera && tieneFuente(carrera.laboral.salarioEntradaMxn)
@@ -157,7 +157,7 @@ function ControlRuta({
           id={`${id}-dedicacion`}
           value={entradas.dedicacion}
           onChange={(evento) => onCambio({ ...entradas, dedicacion: evento.target.value as DedicacionTrabajo })}
-          className="toque mt-1 w-full rounded-xl2 border border-borde bg-superficie-2 px-3 py-3 text-base"
+          className="toque mt-1 w-full rounded-chico border border-borde bg-superficie-2 px-3 py-3 text-base"
         >
           {(Object.keys(ETIQUETA_DEDICACION) as DedicacionTrabajo[]).map((valor) => (
             <option key={valor} value={valor}>
@@ -240,7 +240,7 @@ export default function Calculadora() {
 
       <aside
         aria-label="Advertencia sobre las estimaciones"
-        className="rounded-xl2 border-l-4 border-atencion bg-atencion-suave p-4 text-chico"
+        className="rounded-tarjeta border-l-4 border-atencion bg-atencion-suave p-4 text-chico"
       >
         <p className="font-semibold">Son estimaciones, no promesas.</p>
         <p className="mt-1 text-tinta-suave">
@@ -262,7 +262,7 @@ export default function Calculadora() {
           step={500}
           value={ingresoSinCarrera}
           onChange={(evento) => setIngresoSinCarrera(Number(evento.target.value))}
-          className="toque mt-1 w-full rounded-xl2 border border-borde bg-superficie-2 px-3 py-3 text-base tabular-nums"
+          className="toque mt-1 w-full rounded-chico border border-borde bg-superficie-2 px-3 py-3 text-base tabular-nums"
         />
         <p className="text-micro text-tinta-suave">
           De aquí sale el costo de oportunidad: lo que dejas de ganar por estar estudiando.

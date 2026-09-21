@@ -4,7 +4,7 @@ export function AvisoGuia({ compacto = false }: { compacto?: boolean }) {
   return (
     <aside
       aria-label="Aviso sobre qué es esta herramienta"
-      className="rounded-xl2 border-l-4 border-atencion bg-atencion-suave p-4 text-chico text-tinta"
+      className="rounded-tarjeta border-l-4 border-atencion bg-atencion-suave p-4 text-chico text-tinta"
     >
       <p className="font-semibold">Esto es una guía para explorar, no un diagnóstico.</p>
       {!compacto && (

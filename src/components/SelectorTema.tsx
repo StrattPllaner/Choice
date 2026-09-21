@@ -22,7 +22,7 @@ export function SelectorTema() {
           <label
             key={valor}
             className={[
-              'toque cursor-pointer rounded-xl2 border px-4 py-2 text-chico',
+              'toque ondulado cursor-pointer rounded-chico border px-4 py-2 text-chico',
               tema === valor ? 'border-primario bg-primario-suave text-primario' : 'border-borde text-tinta',
             ].join(' ')}
           >

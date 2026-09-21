@@ -178,6 +178,46 @@
     }
   }
 
+  /* ── Respuesta al clic, en todo lo que se toca ───────────────────────
+     Cualquier control con .toque se hunde un poco al presionarlo: 120ms con la
+     curva de salida al bajar y 180ms con la de entrada al regresar. No aplica a
+     campos de formulario, donde encogerse mientras escribes se siente mal.       */
+  .toque:not(input):not(select):not(textarea) {
+    transition: transform var(--dur-estado) var(--curva-entrada);
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+  .toque:not(input):not(select):not(textarea):active:not(:disabled):not([aria-disabled='true']) {
+    transform: scale(0.97);
+    transition-duration: var(--dur-rapida);
+    transition-timing-function: var(--curva-salida);
+  }
+
+  /* Onda que sale del punto donde tocaste. Solo transform y opacity. */
+  .ondulado {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+  }
+  .ondulado::after {
+    content: '';
+    position: absolute;
+    left: var(--px, 50%);
+    top: var(--py, 50%);
+    width: 1.25rem;
+    height: 1.25rem;
+    margin: -0.625rem;
+    border-radius: var(--radio-lleno);
+    background: currentColor;
+    opacity: 0;
+    transform: scale(0);
+    pointer-events: none;
+    z-index: -1;
+  }
+  .ondulado.pulsa::after {
+    animation: onda 420ms var(--curva-salida);
+  }
+
   /* Anillo de foco: 2px de grosor, 2px de separación, siempre visible. */
   .anillo-foco:focus-visible {
     outline: 2px solid var(--color-foco);
@@ -230,6 +270,11 @@
   to   { opacity: 1; }
 }
 
+@keyframes onda {
+  from { opacity: 0.28; transform: scale(0); }
+  to   { opacity: 0; transform: scale(9); }
+}
+
 @keyframes confirmar {
   0%   { transform: scale(1); }
   40%  { transform: scale(1.03); }
@@ -261,6 +306,9 @@
   .entra, .entra-pantalla, .celebra, .confirma {
     animation: aparecer 1ms both;
   }
+  /* Con movimiento reducido no hay onda ni hundido: solo el cambio de color. */
+  .ondulado.pulsa::after { animation: none; }
+  .toque:active { transform: none !important; }
   .brilla { animation: none; }
 }
 
