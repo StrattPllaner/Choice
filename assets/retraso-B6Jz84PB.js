@@ -1,0 +1,1 @@
+import{r as o}from"./vendor-CN4vMdO-.js";function n(e,r=200){const[a,t]=o.useState(!1);return o.useEffect(()=>{if(!e){t(!1);return}const s=window.setTimeout(()=>t(!0),r);return()=>window.clearTimeout(s)},[e,r]),a}export{n as u};
